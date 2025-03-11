@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Description" content="JavaQuiz is designed for learners to learn, quiz, and test themselves on their
-        knowledge of Javascript."/>
-    <meta name="Keywords" content="Javascript, Learn, Quiz, Test, Knowledge, Coding"/>
+        knowledge of Javascript." />
+    <meta name="Keywords" content="Javascript, Learn, Quiz, Test, Knowledge, Coding" />
 
     <!-- My Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -17,34 +17,48 @@
 </head>
 
 <body>
-
     <!-- Header Content -->
     <header>
         <section>
             <div>
                 <a href="index.html">
-                    <h2>JavaQuiz!</h2>
+                    <h2>In Command</h2>
                 </a>
                 <p>Test your knowledge on our fun interactive Javascript quiz!</p>
-                <p>Race against the clock and challenge your buddies for bragging rights!</p>
+                <p>Race against the clock and challenge your friends!</p>
+
+                <p>You are a deep cover spy who has been tasked to gain access into the enemy forces base while they are currently under attack. You have located an access terminal for the NCM (Nuclear Command Module). You need to be fast to complete the objective!</p>
             </div>
         </section>
     </header>
     <!-- Main Content -->
     <main>
         <section>
-            <div id="options-container">
-                <div id="options-btn">
-                    <a href="#" class="option">PLAY</a>
-                    <a href="#" class="option">HOW TO PLAY</a>
-                    <a href="#" class="option">LEADERBOARD</a>
-                    <button>CHALLENGE A FRIEND</button>
+            <div id="menu">
+                <div id="menu-buttons">
+                    <a href="#" class="menu-btn"><button>Play</button></a>
+                    <button id="open-modal" class="menu-btn">How to play</button>
+                    <a href="#"><button class="menu-btn">Leaderboard</button></a>
+                    <button id="invite" class="menu-btn">Invite a friend</button>
+                </div>
             </div>
         </section>
     </main>
 
+    <!-- How to play Modal -->
+     <dialog id="modal">
+        <h3>How to play</h3>
+        <p>Choose your difficulty, higher difficulty means higher score.</p>
+        <p>Answer the questions in the quickest time possible to take command of the NCM and disarm the nuclear warhead.</p>
+        <p>Each question has a timer of 15 seconds, the quicker you are the higher you score.</p>
+        <p>Enter your alias at the end of the game to save your highscore!</p>
+        <p>Invite a fellow spy to challenge</p>
+        <p>Good luck</p>
+        <button id="close-modal">Understood!</button>
+     </dialog>
+
     <!-- Footer Content -->
-     <footer>
+    <footer>
         <section>
             <div>
                 <p>&copy; 2020 JavaQuiz! All Rights Reserved.</p>
@@ -53,12 +67,8 @@
         </section>
     </footer>
 
-
-
-
-
     <!-- My Javascript script -->
-    <script src="assets/js/script.js"></script>
+    <script src=" assets/js/script.js"></script>
 </body>
 
 
