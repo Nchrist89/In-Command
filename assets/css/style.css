@@ -4,17 +4,57 @@
     box-sizing: border-box;
 }
 
-#gameBG {
+/*#gameBG {
     position: fixed;
     z-index: -1;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border: 5px solid red;
 }
 
-.screen-calib {
+#screen-calib {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+#game-area {
+    width: 700px;
+    min-width: 200px;
+    height: 550px;
+    min-height: 200px;
+    position: absolute;
+    top: 45%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    border: 5px solid greenyellow
+}
+*/
+
+.game-screen {
+    position: relative;
+    border: 5px solid yellow
+}
+
+#parent {
+    display: flex;
     width: 100vw;
     height: 100vh;
     position: relative;
     border: 5px solid red;
+}
+
+#child {
+    width: 35%;
+    height: 52%;
+    position: absolute;
+    top: 45%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    border: 5px solid lightgreen;
+}
+
+#gameBG {
+    object-fit: cover;
 }

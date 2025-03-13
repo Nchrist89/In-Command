@@ -9,3 +9,9 @@ openModal.addEventListener('click', () => {
 closeModal.addEventListener('click', () => {
     modal.close();
 });
+
+fetch("https://opentdb.com/api.php?amount=15&category=18&difficulty=medium&type=multiple")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("content").innerText = data.question;
+    })
