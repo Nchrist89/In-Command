@@ -26,15 +26,17 @@
                 <p>Test your knowledge on our fun interactive Javascript quiz!</p>
                 <p>Race against the clock and challenge your friends!</p>
 
-                <p>You are a deep cover spy who has been tasked to gain access into the enemy forces base while they are currently distracted under attack. As a last ditch effort to win the war, the enemy has triggered nuclear warheads towards the allied forces. You have located an access terminal for the NCM (Nuclear Command Module). Hack the system being careful not to trigger the alarm and get caught. You need to be fast to complete the objective! Good luck!</p>
+                <p>You are a deep cover agent who has been tasked to gain access into the enemy forces base while they are currently distracted under attack. As a last ditch effort to win the war, the enemy has triggered nuclear warheads aimed towards the allied forces. You have located an access terminal for the NCM (Nuclear Command Module). Hack the system being careful not to trigger the alarm and get caught. You need to act fast to complete the objective! Good luck!</p>
             </div>
         </section>
     </header>
     <!-- Main Content -->
 
+    <button id="requestAPI">RequestAPI</button>
     <div id="content"></div>
 
     <main>
+        <!-- Main menu -->
         <section>
             <div id="menu">
                 <div id="menu-buttons">
@@ -45,6 +47,22 @@
                 </div>
             </div>
         </section>
+
+        <!-- Game screen -->
+        <section id="game-section">
+            <div id="game-display">
+                <video id="gameBG" src="assets/video/game-background4brightnowatermark.mp4" width="100%" height="100%"
+                    autoplay playsinline loop muted></video>
+                <audio src="assets/audio/RetroThunder2.mp3" loop autoplay muted></audio>
+                <div id="game-area"></div>
+            </div>
+        </section>
+
+        <!-- End Game screen -->
+        <section>
+
+        </section>
+
     </main>
 
     <!-- How to play Modal -->

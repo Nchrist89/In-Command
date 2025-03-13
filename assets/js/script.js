@@ -10,8 +10,26 @@ closeModal.addEventListener('click', () => {
     modal.close();
 });
 
-fetch("https://opentdb.com/api.php?amount=15&category=18&difficulty=medium&type=multiple")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("content").innerText = data.question;
-    })
+let questionNo = 0;
+let data = [];
+let content = {}
+
+const apiR = document.getElementById("requestAPI");
+apiR.addEventListener('click', requestAPI)
+
+const api_url = 'https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple'
+
+async function requestAPI() {
+    const response = await fetch(api_url)
+    const data = await response.json();
+    console.log(data.results[0]);
+}
+
+
+
+
+
+
+
+
+
