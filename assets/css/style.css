@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-#game-section {
+#game {
     display: none;
 }
 
@@ -28,4 +28,8 @@
 
 #gameBG {
     object-fit: cover;
+}
+
+header {
+    font-size: 24px;
 }
