@@ -21,12 +21,16 @@
         <section>
             <div>
                 <a href="index.html">
-                    <h2>In Command</h2>
+                    <h2 class="heading">In Command</h2>
                 </a>
                 <p>Test your knowledge on our fun interactive Javascript quiz!</p>
                 <p>Race against the clock and challenge your friends!</p>
 
-                <p>You are a deep cover agent who has been tasked to gain access into the enemy forces base while they are currently distracted under attack. As a last ditch effort to win the war, the enemy has triggered nuclear warheads aimed towards the allied forces. You have located an access terminal for the NCM (Nuclear Command Module). Hack the system being careful not to trigger the alarm and get caught. You need to act fast to complete the objective! Good luck!</p>
+                <p>You are a deep cover agent who has been tasked to gain access into the enemy forces base while they
+                    are currently distracted under attack. As a last ditch effort to win the war, the enemy has
+                    triggered nuclear warheads aimed towards the allied forces. You have located an access terminal for
+                    the NCM (Nuclear Command Module). Hack the system being careful not to trigger the alarm and get
+                    caught. You need to act fast to complete the objective! Good luck!</p>
             </div>
         </section>
     </header>
@@ -40,7 +44,7 @@
         <section>
             <div id="menu">
                 <div id="menu-buttons">
-                    <a href="game.html" class="menu-btn"><button>Play</button></a>
+                    <a href="#" class="menu-btn"><button>Play</button></a>
                     <button id="open-modal" class="menu-btn">How to play</button>
                     <a href="#"><button class="menu-btn">Leaderboard</button></a>
                     <button id="invite" class="menu-btn">Invite a friend</button>
@@ -54,7 +58,7 @@
             <!-- Difficulty selection -->
             <div id="difficulty">
                 <div id="diff-box">
-                    <h2>Choose your difficulty</h2>
+                    <h2 class="heading">Choose your difficulty</h2>
                     <p>Harder difficulty means more points</p>
                     <button class="btn">Easy</button>
                     <button class="btn">Medium</button>
@@ -88,34 +92,50 @@
             </div>
         </section>
 
+        <!-- End game failure section -->
+        <section id="failure">
+            <div>
+                <h3 class="heading">Mission failed!</h3>
+                <p>You were caught!</p>
+                <p>Press the button below to play again or return to the main menu</p>
+                <div>
+                    <button class="btn">Play again</button>
+                    <button class="btn">Main Menu</button>
+
+                </div>
+            </div>
+        </section>
+
         <!-- End game victory section -->
         <section id="endgame">
             <div id="victory">
-                <h3>Mission accomplished!</h3>
+                <h3 class="heading">Mission accomplished!</h3>
                 <p>You hacked the terminal and gained access to the NCM and deactivated the warhead! Well done!</p>
                 <p>Please enter your name below to save your score into our hall of fame leaderboard!</p>
 
                 <!-- Form input to save score -->
             </div>
             </div id="form-score">
-                <label class="form-control" for="name-score" name="H-score">Enter name</label>
-                <input class="form-control" id="name-score" name="H-score" type="text" required pattern="^(?!\s)[a-zA-Z ]{1,}$">
+            <label class="form-control" for="name-score" name="high_score">Enter name</label>
+            <input class="form-control" id="name-score" name="high_score" type="text" required
+                pattern="^(?!\s)[a-zA-Z ]{1,}$">
             </div>
         </section>
 
     </main>
 
     <!-- How to play Modal -->
-     <dialog id="modal">
+    <dialog id="modal">
         <h3>How to play</h3>
         <p>Choose your difficulty, higher difficulty means higher score.</p>
-        <p>Answer the questions in the quickest time possible to take command of the NCM and disarm the nuclear warhead.</p>
+        <p>Answer the questions in the quickest time possible to take command of the NCM and disarm the nuclear warhead.
+        </p>
         <p>Each question has a timer of 15 seconds, the quicker you are the higher you score.</p>
         <p>Enter your alias at the end of the game to save your highscore!</p>
         <p>Invite a fellow spy to challenge</p>
         <p>Good luck</p>
         <button id="close-modal">Understood!</button>
-     </dialog>
+    </dialog>
 
     <!-- Footer Content -->
     <footer>
