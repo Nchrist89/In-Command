@@ -88,8 +88,19 @@
             </div>
         </section>
 
-        <!-- End Game screen -->
-        <section>
+        <!-- End game victory section -->
+        <section id="endgame">
+            <div id="victory">
+                <h3>Mission accomplished!</h3>
+                <p>You hacked the terminal and gained access to the NCM and deactivated the warhead! Well done!</p>
+                <p>Please enter your name below to save your score into our hall of fame leaderboard!</p>
+
+                <!-- Form input to save score -->
+            </div>
+            </div id="form-score">
+                <label class="form-control" for="name-score" name="H-score">Enter name</label>
+                <input class="form-control" id="name-score" name="H-score" type="text" required pattern="^(?!\s)[a-zA-Z ]{1,}$">
+            </div>
         </section>
 
     </main>
