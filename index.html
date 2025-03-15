@@ -16,11 +16,12 @@
 </head>
 
 <body>
-    <!-- Header Content -->
-    <header>
-        <section>
+    <!-- Main content -->
+    <main>
+        <!-- Title screen and menu -->
+        <section id="title-screen">
             <div>
-                <a href="index.html">
+                <a id="title" href="index.html">
                     <h2 class="heading">In Command</h2>
                 </a>
                 <p>Test your knowledge on our fun interactive Javascript quiz!</p>
@@ -29,20 +30,13 @@
                 <p>You are a deep cover agent who has been tasked to gain access into the enemy forces base while they
                     are currently distracted under attack. As a last ditch effort to win the war, the enemy has
                     triggered nuclear warheads aimed towards the allied forces. You have located an access terminal for
-                    the NCM (Nuclear Command Module). Hack the system being careful not to trigger the alarm and get
-                    caught. You need to act fast to complete the objective! Good luck!</p>
+                    the NCM (Nuclear Command Module). Hack the system and take command being careful not to trigger the alarm and get
+                    caught. You need to act fast to complete the objective! Good luck!
+                </p>
             </div>
-        </section>
-    </header>
-    <!-- Main Content -->
 
-    <button id="requestAPI">RequestAPI</button>
-    <div id="content"></div>
-
-    <main>
-        <!-- Main menu -->
-        <section>
-            <div id="menu">
+            <!-- Main menu -->
+            <div id="main-menu">
                 <div id="menu-buttons">
                     <a href="#" class="menu-btn"><button>Play</button></a>
                     <button id="open-modal" class="menu-btn">How to play</button>
@@ -60,6 +54,7 @@
                 <div id="diff-box">
                     <h2 class="heading">Choose your difficulty</h2>
                     <p>Harder difficulty means more points</p>
+
                     <button class="btn">Easy</button>
                     <button class="btn">Medium</button>
                     <button class="btn">Hard</button>
@@ -107,8 +102,8 @@
         </section>
 
         <!-- End game victory section -->
-        <section id="endgame">
-            <div id="victory">
+        <section id="victory">
+            <div id="success">
                 <h3 class="heading">Mission accomplished!</h3>
                 <p>You hacked the terminal and gained access to the NCM and deactivated the warhead! Well done!</p>
                 <p>Please enter your name below to save your score into our hall of fame leaderboard!</p>

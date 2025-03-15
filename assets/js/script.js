@@ -22,8 +22,12 @@ const api_url = 'https://opentdb.com/api.php?amount=10&category=9&difficulty=med
 async function requestAPI() {
     const response = await fetch(api_url)
     const data = await response.json();
-    console.log(data.results[0]);
+    const results = data.results;
+
+    console.log(results);
 }
+
+
 
 
 

@@ -1,12 +1,39 @@
+/* Google font import */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Press+Start+2P&family=Special+Elite&family=VT323&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-#game {
+/* Global styles */
+.heading {
+    font-family: "Big Shoulders Stencil", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+}
+
+p {
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+}
+
+/* Title & Main menu styles */
+
+#title {
+    text-decoration: none;
+    color: Black;
+}
+
+#game,
+#leaderboard,
+#victory,
+#failure {
     display: none;
 }
+
+/* Game section styles */
 
 #game-display {
     display: flex;
@@ -30,6 +57,3 @@
     object-fit: cover;
 }
 
-header {
-    font-size: 24px;
-}
