@@ -18,33 +18,40 @@
 <body>
     <!-- Main content -->
     <main>
-        <!-- Title screen and menu -->
+        <!-- Title screen -->
         <section id="title-screen">
-            <div>
+            <div id=title-box>
                 <a id="title" href="index.html">
-                    <h2 class="heading">In Command</h2>
+                    <h1>In Command</h1>
                 </a>
-                <p>Test your knowledge on our fun interactive Javascript quiz!</p>
-                <p>Race against the clock and challenge your friends!</p>
+                <!-- Main menu buttons -->
+                <div id="main-menu">
+                    <div id="menu-buttons">
+                        <a href="#"><button class="menu-btn">Play</button></a>
+                        <button id="open-modal" class="menu-btn">How to play</button>
+                        <a href="#"><button class="menu-btn">Leaderboard</button></a>
+                        <button id="invite" class="menu-btn">Invite a friend</button>
+                    </div>
+                </div>
 
-                <p>You are a deep cover agent who has been tasked to gain access into the enemy forces base while they
-                    are currently distracted under attack. As a last ditch effort to win the war, the enemy has
-                    triggered nuclear warheads aimed towards the allied forces. You have located an access terminal for
-                    the NCM (Nuclear Command Module). Hack the system and take command being careful not to trigger the alarm and get
-                    caught. You need to act fast to complete the objective! Good luck!
-                </p>
-            </div>
-
-            <!-- Main menu -->
-            <div id="main-menu">
-                <div id="menu-buttons">
-                    <a href="#" class="menu-btn"><button>Play</button></a>
-                    <button id="open-modal" class="menu-btn">How to play</button>
-                    <a href="#"><button class="menu-btn">Leaderboard</button></a>
-                    <button id="invite" class="menu-btn">Invite a friend</button>
+                <div id="intro-box">
+                    <h3>Mission:</h3>
+                    <br><br>
+                    <p id="intro-text">You are a deep cover agent who has been tasked to gain access into the enemy
+                        forces base while they are currently distracted under attack.<br><br>As a last ditch effort to
+                        win the war, the enemy has triggered nuclear warheads aimed towards the allied
+                        forces.<br><br>You have located an access terminal for the NCM (Nuclear Command Module). Hack
+                        the system and take command being careful not to trigger the alarm and get caught. You need to
+                        act fast to complete the objective!<br><br>Good luck!
+                    </p>
                 </div>
             </div>
+
+            <div id="title-img-box">
+                <img src="assets/images/mainmenu10.jpg" alt="An undercover agent attempting to gain access to the NCM">
+            </div>
         </section>
+
 
         <!-- Game screen -->
         <section id="game">

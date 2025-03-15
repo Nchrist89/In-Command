@@ -8,22 +8,90 @@
 }
 
 /* Global styles */
-.heading {
-    font-family: "Big Shoulders Stencil", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-}
 
-p {
-  font-family: "Special Elite", system-ui;
-  font-weight: 400;
-}
 
 /* Title & Main menu styles */
 
+#title-screen {
+    background-color: black;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
 #title {
     text-decoration: none;
-    color: Black;
+    color: white;
+}
+
+#title-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+#title > h1 {
+    font-family: "Big Shoulders Stencil", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-size: 5em;
+    margin: 10px;
+    justify-self: center;
+}
+
+#intro-box {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin: 10px;
+}
+
+#intro-box > h3 {
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    color: white;
+    font-size: 30px;
+}
+
+#intro-text {
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    color: white;
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
+#title-img-box {
+    display: flex;
+    height: 100vh;
+    background-size: cover;
+    margin-left: auto;
+}
+
+#menu-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 30px 50px;
+    margin: 30px;
+    justify-content: space-around;
+    max-width: 760px;
+}
+
+.menu-btn {
+    width: 250px;
+    height: 80px;
+    font-size: 20px;
+    line-height: 1.5em;
+    background-color: burlywood;
+    border: 4px solid #6B3D35;
+    font-family: "Press Start 2P", system-ui;
 }
 
 #game,
