@@ -29,8 +29,8 @@
 #title-screen {
     background-color: black;
     display: flex;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: relative;
 }
 
@@ -54,7 +54,7 @@
     font-family: "Big Shoulders Stencil", sans-serif;
     font-optical-sizing: auto;
     font-weight: 900;
-    font-size: 5em;
+    font-size: calc(2.9vw + 1em);
     margin: 10px;
     justify-self: center;
 }
@@ -70,15 +70,14 @@
     font-family: var(--primary-font);
     font-weight: 400;
     color: white;
-    font-size: 30px;
+    font-size: calc(0.9vw + 1em)
 }
 
 #intro-text {
     font-family: var(--secondary-font);
     font-weight: 400;
     color: white;
-    font-size: 18px;
-    line-height: 1.5em;
+    font-size: calc(0.2vw + 1em);
 }
 
 #title-img-box {
@@ -88,30 +87,26 @@
     margin-left: auto;
 }
 
-#menu-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 30px 50px;
-    margin: 30px;
-    justify-content: space-around;
-    max-width: 760px;
-}
-
 .menu-btn {
-    width: 270px;
-    height: 80px;
-    font-size: 20px;
-    line-height: 1.5em;
+    padding: 5px;
+    width: 200px;
+    vertical-align: middle;
+    margin: 10px;
+    height: 50px;
+    line-height: 1.2em;
     background-color: burlywood;
     border: 4px solid #6B3D35;
     font-family: "Press Start 2P", system-ui;
 }
 
+#menu-buttons {
+    text-align: center;
+}
+
 #title-screen,
 #victory,
 #failure,
-#game {
+#leaderboard {
     display: none;
 }
 
@@ -193,6 +188,7 @@
 }
 
 /* Leaderboard styles */
+/*
 #leaderboard {
     width: 100vw;
     height: 100vh;
@@ -233,3 +229,4 @@
     letter-spacing: 2px;
     margin-bottom: 15px;
 }
+*/
