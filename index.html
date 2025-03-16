@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Description" content="JavaQuiz is designed for learners to learn, quiz, and test themselves on their
-        knowledge of Javascript.">
-    <meta name="Keywords" content="Javascript, Learn, Quiz, Test, Knowledge, Coding">
+    <meta name="Description" content="">
+    <meta name="Keywords" content="Learn, Quiz, Test, Knowledge">
 
     <!-- My Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -50,8 +49,21 @@
             <div id="title-img-box">
                 <img src="assets/images/mainmenu10.jpg" alt="An undercover agent attempting to gain access to the NCM">
             </div>
-        </section>
 
+            <!-- How to play Modal -->
+            <dialog id="modal">
+                <h3>How to play</h3>
+                <p>Choose your difficulty, higher difficulty means higher score.</p>
+                <p>Answer the questions in the quickest time possible to take command of the NCM and disarm the nuclear
+                    warhead.
+                </p>
+                <p>Each question has a timer of 15 seconds, the quicker you are the higher you score.</p>
+                <p>Enter your alias at the end of the game to save your highscore!</p>
+                <p>Invite a fellow spy to challenge</p>
+                <p>Good luck</p>
+                <button id="close-modal">Understood!</button>
+            </dialog>
+        </section>
 
         <!-- Game screen -->
         <section id="game">
@@ -74,23 +86,23 @@
                     </div>
                 </div>
             </div>
-
         </section>
 
         <!-- Leaderboard section -->
         <section id="leaderboard">
-            <div>
-                <ul id="highscores">
-                    <li><span></span></li>
-                    <li><span></span></li>
-                    <li><span></span></li>
-                    <li><span></span></li>
-                    <li><span></span></li>
-                    <li><span></span></li>
-                    <li><span></span></li>
-                    <li><span></span></li>
-                    <li><span></span></li>
-                    <li><span></span></li>
+            <img src="assets/images/leaderboard14edit.jpg">
+            <div id ="scoreboard">
+                <ul id="scores">
+                    <li><span>Nick</span></li>
+                    <li><span>James</span></li>
+                    <li><span>Kate</span></li>
+                    <li><span>Michael</span></li>
+                    <li><span>Jim</span></li>
+                    <li><span>Bob</span></li>
+                    <li><span>Bobby</span></li>
+                    <li><span>Claire</span></li>
+                    <li><span>Jeremy</span></li>
+                    <li><span>Richard</span></li>
                 </ul>
             </div>
         </section>
@@ -124,31 +136,7 @@
                 pattern="^(?!\s)[a-zA-Z ]{1,}$">
             </div>
         </section>
-
     </main>
-
-    <!-- How to play Modal -->
-    <dialog id="modal">
-        <h3>How to play</h3>
-        <p>Choose your difficulty, higher difficulty means higher score.</p>
-        <p>Answer the questions in the quickest time possible to take command of the NCM and disarm the nuclear warhead.
-        </p>
-        <p>Each question has a timer of 15 seconds, the quicker you are the higher you score.</p>
-        <p>Enter your alias at the end of the game to save your highscore!</p>
-        <p>Invite a fellow spy to challenge</p>
-        <p>Good luck</p>
-        <button id="close-modal">Understood!</button>
-    </dialog>
-
-    <!-- Footer Content -->
-    <footer>
-        <section>
-            <div>
-                <p>&copy; 2025 In Command! All Rights Reserved.</p>
-                <p>Created by Nick Christie</p>
-            </div>
-        </section>
-    </footer>
 
     <!-- My Javascript script -->
     <script src="assets/js/script.js"></script>

@@ -1,5 +1,5 @@
 /* Google font import */
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Press+Start+2P&family=Special+Elite&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,900&family=Cinzel:wght@400..900&family=Press+Start+2P&family=Special+Elite&family=VT323&display=swap');
 
 * {
     margin: 0;
@@ -109,18 +109,19 @@
 }
 
 #title-screen,
-#leaderboard,
 #victory,
-#failure {
+#failure,
+#game {
     display: none;
-    visibility: hidden;
 }
 
 /* Game section styles */
 
+/*
 #game {
     display: flex
 }
+*/
 
 #game-screen {
     width: 100vw;
@@ -191,3 +192,44 @@
     letter-spacing: 2px;
 }
 
+/* Leaderboard styles */
+#leaderboard {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#leaderboard > img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#scoreboard {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-apart;
+    width: 40%;
+    height: 50%;
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#scores {
+    list-style-type: none;
+    color: #f7d45e;
+    column-count: 2;
+    column-gap: 32%;
+    width: 70%;
+}
+
+#scores > li {
+    font-family: "Cinzel", serif;
+    font-size: 1.9vw;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
