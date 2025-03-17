@@ -68,9 +68,11 @@
         <!-- Game screen -->
         <section id="game">
             <div id="game-screen">
+                <!--
                 <video id="gameBG" src="assets/video/game-background4brightnowatermark.mp4" width="100%" height="100%"
                     playsinline loop muted></video>
                 <audio src="assets/audio/RetroThunder2.mp3" loop muted></audio>
+                -->
                 <!-- Difficulty selection -->
                 <div id="game-area">
                     <div id="diff-box">
@@ -84,8 +86,30 @@
                         </div>
                         <button class="rtn-menu">Main Menu</button>
                     </div>
+
+
+                    <div id="quiz-box">
+                        <!-- Hacking bar reflects quiz question progress -->
+                        <div id="hacking-bar"><p>Hacking Terminal: </p>
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                        </div>
+                        <h3>Question: <span>1</span></h3>
+                        <div id="question-box">What is the biggest city in the world?</div>
+                        <div id="answer-btn-box">
+                            <button class="ans-btn" id="answer1">Answer1</button>
+                            <button class="ans-btn" id="answer2">Answer2</button>
+                            <button class="ans-btn" id="answer3">Answer3</button>
+                            <button class="ans-btn" id="answer4">Answer4</button>
+                        </div>
+                        <div id="quiz-menu">
+                            <button class="">Main menu</button>
+                            <button id="next-btn" class="">Next</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
         </section>
 
         <!-- Leaderboard section -->

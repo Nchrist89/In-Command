@@ -11,21 +11,11 @@ closeModal.addEventListener('click', () => {
 });
 
 let questionNo = 0;
-let data = [];
-let content = {}
+let data = {};
 
-const apiR = document.getElementById("requestAPI");
-apiR.addEventListener('click', requestAPI)
 
-const api_url = 'https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple'
 
-async function requestAPI() {
-    const response = await fetch(api_url)
-    const data = await response.json();
-    const results = data.results;
 
-    console.log(results);
-}
 
 
 
