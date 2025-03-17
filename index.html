@@ -80,9 +80,9 @@
                         <p>Harder difficulty means more points</p>
 
                         <div>
-                            <button class="diff-btn">Easy</button>
-                            <button class="diff-btn">Medium</button>
-                            <button class="diff-btn">Hard</button>
+                            <button class="diff-btn" onclick="apiAddress = easyQuiz" id="easy-diff">Easy</button>
+                            <button class="diff-btn" id="medium-diff">Medium</button>
+                            <button class="diff-btn" id="hard-diff">Hard</button>
                         </div>
                         <button class="rtn-menu">Main Menu</button>
                     </div>
@@ -96,8 +96,8 @@
                             <span></span><span></span><span></span><span></span>
                             <span></span><span></span><span></span>
                         </div>
-                        <h3>Question: <span>1</span></h3>
-                        <div id="question-box">What is the biggest city in the world?</div>
+                        <h3>Question: <span id="question-num">1</span></h3>
+                        <div id="question-box"></div>
                         <div id="answer-btn-box">
                             <button class="ans-btn" id="answer1">Answer1</button>
                             <button class="ans-btn" id="answer2">Answer2</button>
