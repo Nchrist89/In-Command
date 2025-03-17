@@ -10,33 +10,23 @@ closeModal.addEventListener('click', () => {
     modal.close();
 });
 
-let data = {};
 let questionNum = 0;
-let questionBox = document.getElementById("question-box");
-
-easydiff.addEventListener('click', fetchQuestions());
-
-//API URLS
-const easyQuiz = "https://opentdb.com/api.php?amount=15&category=18&difficulty=easy&type=multiple";
-let apiAddress;
 
 //Fetch API Function
-async function fetchQuestions () {
-    const response = await fetch(apiAddress);
+async function fetchQuestions() {
+    const response = await fetch("https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple");
     data = await response.json();
-    getQuestion(data);
+    results = data.results;
+    getQuestion();
 }
 
 // retrieve question function
-function getQuestion () {
-    let results = data.results[questionNum];
-
-    questionBox.innerHTML = results.question;
-
+function getQuestion() {
+    let question = results[questionNum].question;
+    const questionBox = document.getElementById("question-box");
+    questionBox.innerText = question;
 }
 
-//difficulty
-const easydiff = document.getElementById("easy-diff");
 
 
 
@@ -51,9 +41,9 @@ const easydiff = document.getElementById("easy-diff");
 
 
 
+const nextQ = document.getElementById('next-btn');
 
-
-
+nextQ.addEventListener('click', fetchQuestions());
 
 
 
