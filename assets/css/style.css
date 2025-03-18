@@ -132,7 +132,7 @@
     top: 45%;
     left: 49%;
     transform: translate(-50%, -50%);
-    background-color: #1e463f;
+    background-color: #1c413a;
     border: 3px solid red;
     border-radius: 3%;
 }
@@ -159,10 +159,17 @@
 }
 
 #hacking-bar {
+    display: flex;
     height: 40px;
     font-family: "Press Start 2P", system-ui;
     color: #FFF01F;
     letter-spacing: 1px;
+}
+
+.fa-square {
+    height: 3%;
+    width: 3%;
+    margin-right: 0.3%;
 }
 
 #question-box {
@@ -180,14 +187,14 @@
 #answer-btn-box {
     display: flex;
     flex-direction: column;
-    height: 35%;
+    height: 40%;
 }
 
 .ans-btn {
     border: 2px dashed #41AB5D;
-    height: 25%;
-    margin: 2px;
-    background-color: greenyellow;
+    height: 28%;
+    margin: 4px;
+    background-color: #206b5ea7;
     font-family: "Press Start 2P", system-ui;
     color: black;
     letter-spacing: 2px;
@@ -198,7 +205,8 @@
     align-items: flex-end;
     justify-content: space-between;
     border: 1px solid red;
-    height: 10%;
+    height: 8%;
+    margin-top: 7px;
 }
 
 #quiz-box > h3 {
@@ -206,6 +214,13 @@
     font-size: 1.1em;
     letter-spacing: 3px;
     color: #00FF00;
+}
+
+.progress {
+    background-color: red;
+    width: 1%;
+    height: 1%;
+
 }
 
 /* Difficulty styles */

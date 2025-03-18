@@ -12,14 +12,24 @@ closeModal.addEventListener('click', () => {
 
 
 // After hours of failure trying to get API to work, I had gemini AI fix it for me.
-
-let data = null; // Initialize data to null
-
+let data;
 let questionNum = 0;
 
-const questionNumElement = document.getElementById("question-num"); // Corrected variable name
+const counter = document.getElementById("question-num"); // Corrected variable name
 
 const next = document.getElementById("next-btn");
+const QGet = document.getElementById("Q-get");
+
+const answer1 = document.getElementById("answer-1");
+const answer2 = document.getElementById("answer-2");
+const answer3 = document.getElementById("answer-3");
+const answer4 = document.getElementById("answer-4");
+
+let currentQuestion;
+let correctAns;
+let incorrectAns;
+
+
 
 //Fetch API Function
 async function fetchQuestions() {
@@ -33,32 +43,31 @@ async function fetchQuestions() {
     } catch (error) {
         console.error('Error fetching questions:', error);
     }
+
 }
 
-// retrieve question function
+//retrieve question function
 function getQuestion() {
-    if (data && data.results && data.results.length > questionNum) { //Check if data exists and if questionNum is in the array.
-        let question = data.results[questionNum].question;
+    if (questionNum <= 14) { //Check if data exists and if questionNum is in the array.
+        currentQuestion = data.results[questionNum];
         const questionBox = document.getElementById("question-box");
-        questionBox.innerText = question;
-        questionNumElement.innerText = questionNum + 1; // Update question number display
-    } else {
-        console.log("No more questions or data not available.");
+        questionBox.innerHTML = `${currentQuestion.question}`;
     }
-}
+  }
 
-next.addEventListener('click', function() { // Correct event listener
-    fetchQuestions();
-    questionNum++;
-});
+        //function answerDealer() {
 
-
-
-
+        //   answer1.innerHTML = `$(allAns[0])`;
+        //   answer2.innerHTML = `$(allAns[1])`;
+        //   answer3.innerHTML = `$(allAns[2])`;
+        //   answer4.innerHTML = `$(allAns[3])`;
 
 
+        next.addEventListener('click', function () { // Correct event listener
+            questionNum++;
+            getQuestion();
+        });
 
-
-
-
-
+        QGet.addEventListener('click', function () {
+            fetchQuestions();
+        });
