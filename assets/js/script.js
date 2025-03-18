@@ -28,6 +28,7 @@ const answer4 = document.getElementById("answer-4");
 let currentQuestion;
 let correctAns;
 let incorrectAns;
+let allAns;
 
 
 
@@ -52,22 +53,33 @@ function getQuestion() {
         currentQuestion = data.results[questionNum];
         const questionBox = document.getElementById("question-box");
         questionBox.innerHTML = `${currentQuestion.question}`;
+        answerDealer();
     }
-  }
+}
 
-        //function answerDealer() {
+function answerDealer() {
+    correctAns = currentQuestion.correct_answer;
+    incorrectAns = currentQuestion.incorrect_answers;
+    allAns = [...incorrectAns, correctAns];
+    answer1.innerHTML = `${allAns[0]}`;
+    answer2.innerHTML = `${allAns[1]}`;
+    answer3.innerHTML = `${allAns[2]}`;
+    answer4.innerHTML = `${allAns[3]}`;
+}
 
-        //   answer1.innerHTML = `$(allAns[0])`;
-        //   answer2.innerHTML = `$(allAns[1])`;
-        //   answer3.innerHTML = `$(allAns[2])`;
-        //   answer4.innerHTML = `$(allAns[3])`;
 
 
-        next.addEventListener('click', function () { // Correct event listener
-            questionNum++;
-            getQuestion();
-        });
 
-        QGet.addEventListener('click', function () {
-            fetchQuestions();
-        });
+
+
+
+
+next.addEventListener('click', function () { // Correct event listener
+    questionNum++;
+    getQuestion();
+});
+
+QGet.addEventListener('click', function () {
+    fetchQuestions();
+});
+
