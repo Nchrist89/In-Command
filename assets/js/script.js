@@ -10,8 +10,6 @@ closeModal.addEventListener('click', () => {
     modal.close();
 });
 
-
-// After hours of failure trying to get API to work, I had gemini AI fix it for me.
 let data;
 let questionNum = 0;
 
@@ -49,7 +47,7 @@ async function fetchQuestions() {
 
 //retrieve question function
 function getQuestion() {
-    if (questionNum <= 14) { //Check if data exists and if questionNum is in the array.
+    if (questionNum <= 14) { //Checks current question and proceeds if not reached 15;
         currentQuestion = data.results[questionNum];
         const questionBox = document.getElementById("question-box");
         questionBox.innerHTML = `${currentQuestion.question}`;
@@ -61,11 +59,27 @@ function answerDealer() {
     correctAns = currentQuestion.correct_answer;
     incorrectAns = currentQuestion.incorrect_answers;
     allAns = [...incorrectAns, correctAns];
+    console.log(allAns);
+    shuffleAns(allAns);
+
     answer1.innerHTML = `${allAns[0]}`;
     answer2.innerHTML = `${allAns[1]}`;
     answer3.innerHTML = `${allAns[2]}`;
     answer4.innerHTML = `${allAns[3]}`;
 }
+
+//Looked up how to shuffle answers with ChatGPT
+function shuffleAns(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; //swap elements.
+        console.log(allAns);
+    }
+}
+
+
+
+
 
 
 
