@@ -28,8 +28,7 @@ let currentQuestion;
 let correctAns;
 let incorrectAns;
 let allAns;
-
-
+let selectedAns = null;
 
 //Fetch API Function
 async function fetchQuestions() {
@@ -43,15 +42,15 @@ async function fetchQuestions() {
     } catch (error) {
         console.error('Error fetching questions:', error);
     }
-
 }
 
 //retrieve question function
 function getQuestion() {
-    if (counter <= 14) { //Checks current question and proceeds if not reached 15;
+    if (counter <= 14) { //Checks current question and proceeds if not reached 14;
         currentQuestion = data.results[counter];
         const questionBox = document.getElementById("question-box");
         questionBox.innerHTML = `${currentQuestion.question}`;
+        counter + 1;
         questionNum.innerHTML = counter;
         answerDealer();
     }
@@ -77,16 +76,39 @@ function assignCorrect() {
         if (button.innerText === correctAns) {
             button.setAttribute("data-value", "correct");
         }
+        button.addEventListener('click', checkAnswer);
+    };
+    console.log(correctAns);
+}
+
+function checkAnswer(e) {
+    let disableBtns = document.querySelectorAll(".ans-btn");
+    console.log(disableBtns);
+    let answerChosen = e.currentTarget;
+
+    if (answerChosen.dataset.value === "correct") {
+
+        answerChosen.style.color = "red";
     }
 }
 
+
+
+
+
+
+
+
 //Looked up how to shuffle answers with ChatGPT
+//mixes up the answers so the correct answer is always placed differently.
 function shuffleAns(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]]; //swap elements.
     }
 }
+
+
 
 
 
