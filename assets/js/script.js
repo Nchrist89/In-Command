@@ -28,7 +28,7 @@ let currentQuestion;
 let correctAns;
 let incorrectAns;
 let allAns;
-let selectedAns = null;
+let clickedAns;
 
 //Fetch API Function
 async function fetchQuestions() {
@@ -77,6 +77,7 @@ function assignCorrect() {
             button.setAttribute("data-value", "correct");
         }
         button.addEventListener('click', checkAnswer);
+
     };
     console.log(correctAns);
 }
@@ -85,12 +86,17 @@ function checkAnswer(e) {
     let disableBtns = document.querySelectorAll(".ans-btn");
     console.log(disableBtns);
     let answerChosen = e.currentTarget;
-
     if (answerChosen.dataset.value === "correct") {
-
-        answerChosen.style.color = "red";
+        clickedAns = answerChosen.id;
     }
+    console.log(clickedAns);
 }
+
+//function changeStyle() {
+//    if (changeStyle === "correct") {
+
+//   }
+//}
 
 
 
