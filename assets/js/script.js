@@ -11,9 +11,9 @@ closeModal.addEventListener('click', () => {
 });
 
 let data;
-let questionNum = 0;
+let counter = 0;
 
-const counter = document.getElementById("question-num"); // Corrected variable name
+const questionNum = document.getElementById("question-num");
 
 const next = document.getElementById("next-btn");
 const QGet = document.getElementById("Q-get");
@@ -22,6 +22,7 @@ const answer1 = document.getElementById("answer-1");
 const answer2 = document.getElementById("answer-2");
 const answer3 = document.getElementById("answer-3");
 const answer4 = document.getElementById("answer-4");
+const answerBtn = document.getElementsByClassName("ans-btn");
 
 let currentQuestion;
 let correctAns;
@@ -33,7 +34,7 @@ let allAns;
 //Fetch API Function
 async function fetchQuestions() {
     try {
-        const response = await fetch("https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple");
+        const response = await fetch("https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple");
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -47,10 +48,11 @@ async function fetchQuestions() {
 
 //retrieve question function
 function getQuestion() {
-    if (questionNum <= 14) { //Checks current question and proceeds if not reached 15;
-        currentQuestion = data.results[questionNum];
+    if (counter <= 14) { //Checks current question and proceeds if not reached 15;
+        currentQuestion = data.results[counter];
         const questionBox = document.getElementById("question-box");
         questionBox.innerHTML = `${currentQuestion.question}`;
+        questionNum.innerHTML = counter;
         answerDealer();
     }
 }
@@ -59,13 +61,23 @@ function answerDealer() {
     correctAns = currentQuestion.correct_answer;
     incorrectAns = currentQuestion.incorrect_answers;
     allAns = [...incorrectAns, correctAns];
-    console.log(allAns);
+    //Send to shuffle function which shuffles the answers
     shuffleAns(allAns);
-
     answer1.innerHTML = `${allAns[0]}`;
     answer2.innerHTML = `${allAns[1]}`;
     answer3.innerHTML = `${allAns[2]}`;
     answer4.innerHTML = `${allAns[3]}`;
+    assignCorrect();
+
+}
+
+//Assigns the correct answer the data-value of correct.
+function assignCorrect() {
+    for (let button of answerBtn) {
+        if (button.innerText === correctAns) {
+            button.setAttribute("data-value", "correct");
+        }
+    }
 }
 
 //Looked up how to shuffle answers with ChatGPT
@@ -73,7 +85,6 @@ function shuffleAns(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]]; //swap elements.
-        console.log(allAns);
     }
 }
 
@@ -83,13 +94,8 @@ function shuffleAns(array) {
 
 
 
-
-
-
-
-
 next.addEventListener('click', function () { // Correct event listener
-    questionNum++;
+    counter++;
     getQuestion();
 });
 
