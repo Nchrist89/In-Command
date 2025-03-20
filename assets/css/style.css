@@ -217,10 +217,18 @@
 }
 
 .progress {
-    background-color: red;
+    background-color: greenyellow;
     width: 1%;
     height: 1%;
+}
 
+/* correct and incorrect answer styling */
+.correct {
+    background-color: blue;
+}
+
+.incorrect {
+    background-color: red;
 }
 
 /* Difficulty styles */

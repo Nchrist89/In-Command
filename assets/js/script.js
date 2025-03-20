@@ -24,11 +24,13 @@ const answer3 = document.getElementById("answer-3");
 const answer4 = document.getElementById("answer-4");
 const answerBtn = document.getElementsByClassName("ans-btn");
 
+let answerChosen;
 let currentQuestion;
 let correctAns;
+let answerId;
+//let allAns;
+//let clickedAns;
 //let incorrectAns;
-let allAns;
-let clickedAns;
 
 //Fetch API Function
 async function fetchQuestions() {
@@ -50,7 +52,7 @@ function getQuestion() {
         currentQuestion = data.results[counter];
         const questionBox = document.getElementById("question-box");
         questionBox.innerHTML = `${currentQuestion.question}`;
-        counter + 1;
+        counter ++;
         questionNum.innerHTML = counter;
         answerDealer();
     }
@@ -58,8 +60,8 @@ function getQuestion() {
 
 function answerDealer() {
     correctAns = currentQuestion.correct_answer;
-    incorrectAns = currentQuestion.incorrect_answers;
-    allAns = [...incorrectAns, correctAns];
+    let incorrectStored = currentQuestion.incorrect_answers;
+    let allAns = [...incorrectStored, correctAns];
     //Send to shuffle function which shuffles the answers
     shuffleAns(allAns);
     answer1.innerHTML = `${allAns[0]}`;
@@ -83,6 +85,8 @@ function assignCorrect() {
     for (let button of answerBtn) {
         if (button.innerText === correctAns) {
             button.setAttribute("data-value", "correct");
+            answerId = button.id
+            console.log(answerId);
         }
         button.addEventListener('click', checkAnswer);
 
@@ -91,10 +95,9 @@ function assignCorrect() {
 }
 //Checks to see if answer button clicked is the correct button.
 function checkAnswer(e) {
-    let answerChosen = e.currentTarget;
+    answerChosen = e.currentTarget;
 
     if (answerChosen.dataset.value === "correct") {
-        correctAns = answerChosen.id;
         changeStyle("correct", answerChosen);
         console.log("You answered CORRECT!");
     } else {
@@ -105,18 +108,28 @@ function checkAnswer(e) {
 
 //changes style of button to indicate if right or wrong answer.
 function changeStyle(result, answerChosen) {
+    console.log(answerChosen);
     if (result === "correct") {
-        let correctStyle = document.getElementById(correctAns);
-        correctStyle.style.backgroundColor = "blue";
+        //const correctStyle = document.getElementById(correctAns);
+        answerChosen.classList.add("correct");
+        console.log(correctAns);
     } else if (result === "incorrect") {
-        answerChosen.style.backgroundColor = "red";
+        answerChosen.classList.add("incorrect");
     }
 }
 
-
-next.addEventListener('click', function () { // Correct event listener
-    counter++;
+//resets the question timer, dataset value and styling.
+function nextQuestion() {
+    let remAtt = document.getElementById(answerId);
+    remAtt.removeAttribute("data-value", "correct");
+    console.log(answerChosen);
+    answerChosen.classList.remove("incorrect", "correct");
     getQuestion();
+}
+
+
+next.addEventListener('click', function () {
+    nextQuestion();
 });
 
 QGet.addEventListener('click', function () {
