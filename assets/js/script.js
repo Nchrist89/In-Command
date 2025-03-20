@@ -26,7 +26,7 @@ const answerBtn = document.getElementsByClassName("ans-btn");
 
 let currentQuestion;
 let correctAns;
-let incorrectAns;
+//let incorrectAns;
 let allAns;
 let clickedAns;
 
@@ -67,7 +67,15 @@ function answerDealer() {
     answer3.innerHTML = `${allAns[2]}`;
     answer4.innerHTML = `${allAns[3]}`;
     assignCorrect();
+}
 
+//Looked up how to shuffle answers with ChatGPT
+//mixes up the answers so the correct answer is always placed differently.
+function shuffleAns(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; //swap elements.
+    }
 }
 
 //Assigns the correct answer the data-value of correct.
@@ -81,45 +89,29 @@ function assignCorrect() {
     };
     console.log(correctAns);
 }
-
+//Checks to see if answer button clicked is the correct button.
 function checkAnswer(e) {
-    let disableBtns = document.querySelectorAll(".ans-btn");
-    console.log(disableBtns);
     let answerChosen = e.currentTarget;
+
     if (answerChosen.dataset.value === "correct") {
-        clickedAns = answerChosen.id;
+        correctAns = answerChosen.id;
+        changeStyle("correct", answerChosen);
+        console.log("You answered CORRECT!");
+    } else {
+        changeStyle("incorrect", answerChosen);
+        console.log("answer chosen is incorrect!!");
     }
-    console.log(clickedAns);
-}
+};
 
-//function changeStyle() {
-//    if (changeStyle === "correct") {
-
-//   }
-//}
-
-
-
-
-
-
-
-
-//Looked up how to shuffle answers with ChatGPT
-//mixes up the answers so the correct answer is always placed differently.
-function shuffleAns(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; //swap elements.
+//changes style of button to indicate if right or wrong answer.
+function changeStyle(result, answerChosen) {
+    if (result === "correct") {
+        let correctStyle = document.getElementById(correctAns);
+        correctStyle.style.backgroundColor = "blue";
+    } else if (result === "incorrect") {
+        answerChosen.style.backgroundColor = "red";
     }
 }
-
-
-
-
-
-
-
 
 
 next.addEventListener('click', function () { // Correct event listener
