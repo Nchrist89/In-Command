@@ -18,6 +18,9 @@ const questionNum = document.getElementById("question-num");
 const next = document.getElementById("next-btn");
 const QGet = document.getElementById("Q-get");
 
+const timerDisplay = document.getElementById("countdown");
+const timer = new quizTimer(timerDisplay, handleTimeout);
+
 const answer1 = document.getElementById("answer-1");
 const answer2 = document.getElementById("answer-2");
 const answer3 = document.getElementById("answer-3");
@@ -33,6 +36,40 @@ let answerId;
 //let incorrectAns;
 
 //Fetch API Function
+
+function quizTimer(displayElement, ceaseTimer) {
+    this.display = displayElement;
+    this.ceaseTimer = ceaseTimer;
+    this.interval = null;
+    this.timeRemaining = 0;
+}
+
+//Constructs a timer to use for the quiz.
+quizTimer.prototype.start = function (duration) {
+    this.timeRemaining = duration;
+    this.updateDisplay();
+
+    this.interval = setInterval(() => {
+        this.timeRemaining--;
+        this.updateDisplay();
+
+        if (this.timeRemaining <= 0) {
+            this.stop();
+            this.ceaseTimer();
+        }
+    }, 1000);
+};
+
+quizTimer.prototype.stop = function () {
+    clearInterval(this.interval);
+};
+
+quizTimer.prototype.updateDisplay = function () {
+    const seconds = this.timeRemaining < 0 ? 0 : this.timeRemaining; //Prevent negative time remaining.
+    this.display.textContent = seconds < 10 ? "0" + seconds : seconds;
+}
+
+// Fetch questions from open trivia API.
 async function fetchQuestions() {
     try {
         const response = await fetch("https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple");
@@ -48,13 +85,14 @@ async function fetchQuestions() {
 
 //retrieve question function
 function getQuestion() {
-    if (counter <= 14) { //Checks current question number and proceeds if not reached 15;
+    if (counter <= 14) { //Checks current question index from the counter and proceeds if not reached 14 (question 15);
         currentQuestion = data.results[counter];
         const questionBox = document.getElementById("question-box");
         questionBox.innerHTML = `${currentQuestion.question}`;
-        counter ++;
+        counter++;
         questionNum.innerHTML = counter;
         answerDealer();
+        timer.start(10);
     }
 }
 
@@ -64,11 +102,16 @@ function answerDealer() {
     let allAns = [...incorrectStored, correctAns];
     //Send to shuffle function which shuffles the answers
     shuffleAns(allAns);
+
+    //inserts shuffled answers into answer boxes
     answer1.innerHTML = `${allAns[0]}`;
     answer2.innerHTML = `${allAns[1]}`;
     answer3.innerHTML = `${allAns[2]}`;
     answer4.innerHTML = `${allAns[3]}`;
+    //assigns the data-value="correct"
     assignCorrect();
+    //Enables the answer buttons to be clicked.
+    enableBtns();
 }
 
 //Looked up how to shuffle answers with ChatGPT
@@ -89,7 +132,6 @@ function assignCorrect() {
             console.log(answerId);
         }
         button.addEventListener('click', checkAnswer);
-
     };
     console.log(correctAns);
 }
@@ -114,10 +156,16 @@ function disableBtns() {
     console.log(answerBtn);
 }
 
+//Enables answer buttons when and answers are placed.
 function enableBtns() {
     answerBtn.forEach(button => {
         button.disabled = false;
     });
+}
+
+//Timeout for timer event handle.
+function handleTimeout() {
+    nextQuestion();
 }
 
 //changes style of button to indicate if right or wrong answer.
@@ -134,12 +182,21 @@ function changeStyle(result, answerChosen) {
 
 //resets the question timer, dataset value and styling.
 function nextQuestion() {
-    let remAtt = document.getElementById(answerId);
-    remAtt.removeAttribute("data-value", "correct");
-    console.log(answerChosen);
-    answerChosen.classList.remove("incorrect", "correct");
-    enableBtns();
-    getQuestion();
+    //if no answer is chosen, function will skip
+    if (!answerChosen) {
+        timer.stop();
+        getQuestion();
+        let remAtt = document.getElementById(answerId);
+        remAtt.removeAttribute("data-value", "correct");
+    } else {
+        timer.stop();
+        remAtt = document.getElementById(answerId);
+        remAtt.removeAttribute("data-value", "correct");
+        console.log(answerChosen);
+        answerChosen.classList.remove("incorrect", "correct");
+        getQuestion();
+    }
+
 }
 
 
