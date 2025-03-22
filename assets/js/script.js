@@ -31,11 +31,6 @@ let answerChosen;
 let currentQuestion;
 let correctAns;
 let answerId;
-//let allAns;
-//let clickedAns;
-//let incorrectAns;
-
-//Fetch API Function
 
 function quizTimer(displayElement, ceaseTimer) {
     this.display = displayElement;
@@ -137,6 +132,7 @@ function assignCorrect() {
 }
 //Checks to see if answer button clicked is the correct button.
 function checkAnswer(e) {
+    timer.stop();
     answerChosen = e.currentTarget;
     disableBtns(answerBtn);
     if (answerChosen.dataset.value === "correct") {
@@ -146,6 +142,7 @@ function checkAnswer(e) {
         changeStyle("incorrect", answerChosen);
         console.log("answer chosen is incorrect!!");
     }
+    setTimeout(() => nextQuestion(), 5000);
 };
 
 // Disables answer buttons after answer has been chosen
@@ -165,7 +162,7 @@ function enableBtns() {
 
 //Timeout for timer event handle.
 function handleTimeout() {
-    nextQuestion();
+    changeStyle("noAnswer", answerId);
 }
 
 //changes style of button to indicate if right or wrong answer.
@@ -177,21 +174,29 @@ function changeStyle(result, answerChosen) {
         console.log(correctAns);
     } else if (result === "incorrect") {
         answerChosen.classList.add("incorrect");
+    } else if (result === "noAnswer") {
+        console.log("NO ANSWER!");
+        let showCorrect = document.getElementById(answerId);
+        showCorrect.classList.add("no-answer");
+        //Add cool down timer to show correct answer before moving to next question.
+        setTimeout(() => nextQuestion(), 5000);
     }
 }
 
+
 //resets the question timer, dataset value and styling.
 function nextQuestion() {
+    let correctAnsId = document.getElementById(answerId);
     //if no answer is chosen, function will skip
     if (!answerChosen) {
         timer.stop();
+        correctAnsId.removeAttribute("data-value", "correct");
+        correctAnsId.classList.remove("no-answer");
         getQuestion();
-        let remAtt = document.getElementById(answerId);
-        remAtt.removeAttribute("data-value", "correct");
     } else {
         timer.stop();
-        remAtt = document.getElementById(answerId);
-        remAtt.removeAttribute("data-value", "correct");
+        correctAnsId = document.getElementById(answerId);
+        correctAnsId.removeAttribute("data-value", "correct");
         console.log(answerChosen);
         answerChosen.classList.remove("incorrect", "correct");
         getQuestion();

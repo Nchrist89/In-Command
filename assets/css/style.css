@@ -229,13 +229,16 @@
 }
 
 /* correct and incorrect answer button styling */
-
 .correct {
-    background-color: blue;
+    background-color: green;
 }
 
 .incorrect {
     background-color: red;
+}
+
+.no-answer {
+    background-color: greenyellow;
 }
 
 /* Difficulty styles */
