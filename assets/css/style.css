@@ -222,7 +222,8 @@
     height: 1%;
 }
 
-/* correct and incorrect answer styling */
+/* correct and incorrect answer button styling */
+
 .correct {
     background-color: blue;
 }

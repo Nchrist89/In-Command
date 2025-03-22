@@ -22,7 +22,7 @@ const answer1 = document.getElementById("answer-1");
 const answer2 = document.getElementById("answer-2");
 const answer3 = document.getElementById("answer-3");
 const answer4 = document.getElementById("answer-4");
-const answerBtn = document.getElementsByClassName("ans-btn");
+const answerBtn = document.querySelectorAll(".ans-btn");
 
 let answerChosen;
 let currentQuestion;
@@ -48,7 +48,7 @@ async function fetchQuestions() {
 
 //retrieve question function
 function getQuestion() {
-    if (counter <= 14) { //Checks current question and proceeds if not reached 14;
+    if (counter <= 14) { //Checks current question number and proceeds if not reached 15;
         currentQuestion = data.results[counter];
         const questionBox = document.getElementById("question-box");
         questionBox.innerHTML = `${currentQuestion.question}`;
@@ -96,7 +96,7 @@ function assignCorrect() {
 //Checks to see if answer button clicked is the correct button.
 function checkAnswer(e) {
     answerChosen = e.currentTarget;
-
+    disableBtns(answerBtn);
     if (answerChosen.dataset.value === "correct") {
         changeStyle("correct", answerChosen);
         console.log("You answered CORRECT!");
@@ -105,6 +105,20 @@ function checkAnswer(e) {
         console.log("answer chosen is incorrect!!");
     }
 };
+
+// Disables answer buttons after answer has been chosen
+function disableBtns() {
+    answerBtn.forEach(button => {
+        button.disabled = true;
+    });
+    console.log(answerBtn);
+}
+
+function enableBtns() {
+    answerBtn.forEach(button => {
+        button.disabled = false;
+    });
+}
 
 //changes style of button to indicate if right or wrong answer.
 function changeStyle(result, answerChosen) {
@@ -124,6 +138,7 @@ function nextQuestion() {
     remAtt.removeAttribute("data-value", "correct");
     console.log(answerChosen);
     answerChosen.classList.remove("incorrect", "correct");
+    enableBtns();
     getQuestion();
 }
 
