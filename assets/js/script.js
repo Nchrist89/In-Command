@@ -27,14 +27,16 @@ const answer1 = document.getElementById("answer-1");
 const answer2 = document.getElementById("answer-2");
 const answer3 = document.getElementById("answer-3");
 const answer4 = document.getElementById("answer-4");
+
 const answerBtn = document.querySelectorAll(".ans-btn"); //Nodelist
 const hackingBar = document.getElementById("hacking-progress");
 
 let answerChosen; // button element chosen.
-let currentQuestion;
+let currentQuestion; // stores the current question object.
 let correctAns; // stores the string of the answer.
 let correctElement; //the element of the correct button.
 let answerCounter = 0;
+let score = 0; // adds up total scored.
 
 function quizTimer(displayElement, ceaseTimer) {
     this.display = displayElement;
@@ -46,6 +48,7 @@ function quizTimer(displayElement, ceaseTimer) {
 //Constructs a timer to use for the quiz.
 quizTimer.prototype.start = function (duration) {
     this.timeRemaining = duration;
+    this.initialDuration = duration; //stores the set duration;
     this.updateDisplay();
 
     this.interval = setInterval(() => {
@@ -61,7 +64,13 @@ quizTimer.prototype.start = function (duration) {
 
 quizTimer.prototype.stop = function () {
     clearInterval(this.interval);
+    this.interval = null;
+    this.stoppedRemaining = this.timeRemaining; //stores remaining time
 };
+
+quizTimer.prototype.getStoppedRemaining = function() {
+    return this.stoppedRemaining;
+}
 
 quizTimer.prototype.updateDisplay = function () {
     const seconds = this.timeRemaining < 0 ? 0 : this.timeRemaining; //Prevent negative time remaining.
@@ -142,6 +151,8 @@ function assignCorrect() {
 function checkAnswer(e) {
     disableBtns();
     timer.stop();
+    let remaining = timer.getStoppedRemaining(); // stores time remaining.
+    console.log("Time remaining:", remaining);
     answerChosen = e.currentTarget;
     if (answerChosen.dataset.value === "correct") {
         answerCounter++;
@@ -212,7 +223,6 @@ function hackProgress() {
 
         hackingBar.appendChild(square);
     }
-
 }
 
 //resets dataset value and styling.
