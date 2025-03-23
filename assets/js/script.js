@@ -12,6 +12,8 @@ closeModal.addEventListener("click", () => {
     modal.close();
 });
 
+//Game functions and statements.
+
 let data;
 let counter = 0;
 
@@ -29,14 +31,18 @@ const answer3 = document.getElementById("answer-3");
 const answer4 = document.getElementById("answer-4");
 
 const answerBtn = document.querySelectorAll(".ans-btn"); //Nodelist
+
+// correct answer progress bar.
 const hackingBar = document.getElementById("hacking-progress");
 
 let answerChosen; // button element chosen.
 let currentQuestion; // stores the current question object.
 let correctAns; // stores the string of the answer.
 let correctElement; //the element of the correct button.
-let answerCounter = 0;
-let score = 0; // adds up total scored.
+let answerCounter = 0; // answer correct total.
+//let totalScore; // Total end score.
+
+let timeRem = 0; // adds up correct answer seconds remaining.
 
 function quizTimer(displayElement, ceaseTimer) {
     this.display = displayElement;
@@ -45,7 +51,10 @@ function quizTimer(displayElement, ceaseTimer) {
     this.timeRemaining = 0;
 }
 
-//Constructs a timer to use for the quiz.
+// Constructs a timer to use for the quiz.
+// instructions provided by Gemini AI.
+// written and changed by me.
+
 quizTimer.prototype.start = function (duration) {
     this.timeRemaining = duration;
     this.initialDuration = duration; //stores the set duration;
@@ -78,6 +87,7 @@ quizTimer.prototype.updateDisplay = function () {
 }
 
 // Fetch questions from open trivia API.
+// code taken from chatGPT.
 async function fetchQuestions() {
     try {
         const response = await fetch("https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple");
@@ -113,7 +123,6 @@ function answerDealer() {
     let allAns = [...incorrectStored, correctAns];
     //Sends to shuffle function which shuffles the answers
     shuffleAns(allAns);
-
     //inserts shuffled answers into answer boxes
     answer1.innerHTML = `${allAns[0]}`;
     answer2.innerHTML = `${allAns[1]}`;
@@ -127,6 +136,7 @@ function answerDealer() {
     enableBtns();
 }
 
+//Shuffles answers.
 function shuffleAns(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -147,6 +157,7 @@ function assignCorrect() {
         button.addEventListener("click", checkAnswer);
     };
 }
+
 //Checks to see if answer button clicked is the correct button.
 function checkAnswer(e) {
     disableBtns();
@@ -156,6 +167,7 @@ function checkAnswer(e) {
     answerChosen = e.currentTarget;
     if (answerChosen.dataset.value === "correct") {
         answerCounter++;
+        timeRem += remaining;
         changeStyle("correct", answerChosen);
         console.log("answer chosen is CORRECT!!");
 
@@ -163,7 +175,7 @@ function checkAnswer(e) {
         changeStyle("incorrect", answerChosen);
         console.log("answer chosen is incorrect!!");
     } else {
-        console.log("error check answer!");
+        console.log("error check answer end!");
     }
 };
 
@@ -174,7 +186,7 @@ function disableBtns() {
     });
 }
 
-//Enables answer buttons when and answers are placed.
+//Enables answer buttons when answers are placed.
 function enableBtns() {
     answerBtn.forEach(button => {
         button.disabled = false;
@@ -185,7 +197,6 @@ function enableBtns() {
 function handleTimeout() {
     disableBtns();
     answerChosen = null;
-    console.log(answerChosen);
     changeStyle("noAnswer", correctElement);
 }
 
@@ -194,19 +205,19 @@ function changeStyle(result, answerChosen) {
     console.log("changing style");
 
     if (result === "correct") {
-        //const correctStyle = document.getElementById(correctAns);
         answerChosen.classList.add("correct");
         hackProgress();
-        setTimeout(() => nextQuestion(), 5000);
+        // timeout cooldown after question un/answered.
+        setTimeout(() => nextQuestion(), 3000);
 
     } else if (result === "incorrect") {
         answerChosen.classList.add("incorrect");
-        setTimeout(() => nextQuestion(), 5000);
+        setTimeout(() => nextQuestion(), 3000);
 
     } else if (result === "noAnswer") {
         console.log("NO ANSWER!");
         correctElement.classList.add("no-answer");
-        setTimeout(() => nextQuestion(), 5000);
+        setTimeout(() => nextQuestion(), 3000);
 
     } else {
         console.log("error! styling function end!");
@@ -220,13 +231,13 @@ function hackProgress() {
     for (let i = 0; i < answerCounter; i++) {
         const square = document.createElement("i");
         square.classList.add("fa-solid", "fa-square");
-
         hackingBar.appendChild(square);
     }
 }
 
 //resets dataset value and styling.
 function nextQuestion() {
+    console.log(timeRem);
     console.log("NextQuestion");
     correctElement.removeAttribute("data-value", "correct");
 
@@ -246,10 +257,8 @@ function nextQuestion() {
         getQuestion();
 
     } else {
-        console.log("error end next question");
+        console.log("error, end next question");
     }
-    console.log(answerCounter);
-
 }
 
 next.addEventListener("click", function () {
