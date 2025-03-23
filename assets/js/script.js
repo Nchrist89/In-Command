@@ -28,12 +28,13 @@ const answer2 = document.getElementById("answer-2");
 const answer3 = document.getElementById("answer-3");
 const answer4 = document.getElementById("answer-4");
 const answerBtn = document.querySelectorAll(".ans-btn"); //Nodelist
+const hackingBar = document.getElementById("hacking-progress");
 
 let answerChosen; // button element chosen.
 let currentQuestion;
 let correctAns; // stores the string of the answer.
 let correctElement; //the element of the correct button.
-let answerID;
+let answerCounter = 0;
 
 function quizTimer(displayElement, ceaseTimer) {
     this.display = displayElement;
@@ -129,9 +130,7 @@ function assignCorrect() {
     for (let button of answerBtn) {
         if (button.innerText === correctAns) {
             button.setAttribute("data-value", "correct");
-            answerID = button.id;
-            console.log(answerID);
-            correctElement = document.getElementById(answerID);
+            correctElement = document.getElementById(button.id);
             console.log(correctElement);
         } else {
             button.setAttribute("data-value", "incorrect");
@@ -145,6 +144,7 @@ function checkAnswer(e) {
     timer.stop();
     answerChosen = e.currentTarget;
     if (answerChosen.dataset.value === "correct") {
+        answerCounter++;
         changeStyle("correct", answerChosen);
         console.log("answer chosen is CORRECT!!");
 
@@ -185,6 +185,7 @@ function changeStyle(result, answerChosen) {
     if (result === "correct") {
         //const correctStyle = document.getElementById(correctAns);
         answerChosen.classList.add("correct");
+        hackProgress();
         setTimeout(() => nextQuestion(), 5000);
 
     } else if (result === "incorrect") {
@@ -197,8 +198,21 @@ function changeStyle(result, answerChosen) {
         setTimeout(() => nextQuestion(), 5000);
 
     } else {
-        console.log("error! no styling");
+        console.log("error! styling function end!");
     }
+}
+
+//Increases when user chooses correct answer.
+function hackProgress() {
+    hackingBar.innerHTML = ""; //clears existing squares.
+
+    for (let i = 0; i < answerCounter; i++) {
+        const square = document.createElement("i");
+        square.classList.add("fa-solid", "fa-square");
+
+        hackingBar.appendChild(square);
+    }
+
 }
 
 //resets dataset value and styling.
@@ -224,6 +238,7 @@ function nextQuestion() {
     } else {
         console.log("error end next question");
     }
+    console.log(answerCounter);
 
 }
 
