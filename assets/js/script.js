@@ -1,12 +1,14 @@
-const modal = document.getElementById('modal');
-const openModal = document.getElementById('open-modal');
-const closeModal = document.getElementById('close-modal');
+// jshint esversion: 6
 
-openModal.addEventListener('click', () => {
+const modal = document.getElementById("modal");
+const openModal = document.getElementById("open-modal");
+const closeModal = document.getElementById("close-modal");
+
+openModal.addEventListener("click", () => {
     modal.showModal();
 });
 
-closeModal.addEventListener('click', () => {
+closeModal.addEventListener("click", () => {
     modal.close();
 });
 
@@ -25,12 +27,13 @@ const answer1 = document.getElementById("answer-1");
 const answer2 = document.getElementById("answer-2");
 const answer3 = document.getElementById("answer-3");
 const answer4 = document.getElementById("answer-4");
-const answerBtn = document.querySelectorAll(".ans-btn");
+const answerBtn = document.querySelectorAll(".ans-btn"); //Nodelist
 
-let answerChosen;
+let answerChosen; // button element chosen.
 let currentQuestion;
-let correctAns;
-let answerId;
+let correctAns; // stores the string of the answer.
+let correctElement; //the element of the correct button.
+let answerID;
 
 function quizTimer(displayElement, ceaseTimer) {
     this.display = displayElement;
@@ -71,23 +74,26 @@ async function fetchQuestions() {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        data = await response.json(); // Assign the data
-        getQuestion(); // Call getQuestion after data is fetched
+        data = await response.json(); // Assign the data to the data variable.
+        getQuestion(); // Call getQuestion after data is fetched.
     } catch (error) {
-        console.error('Error fetching questions:', error);
+        console.error("Error fetching questions:", error);
     }
 }
 
 //retrieve question function
 function getQuestion() {
-    if (counter <= 14) { //Checks current question index from the counter and proceeds if not reached 14 (question 15);
+    //Checks index from counter before proceeding.
+    if (counter <= 14) {
         currentQuestion = data.results[counter];
         const questionBox = document.getElementById("question-box");
+        // Adds the current question to the question box.
         questionBox.innerHTML = `${currentQuestion.question}`;
-        counter++;
+        counter++; //increases counter.
         questionNum.innerHTML = counter;
         answerDealer();
-        timer.start(10);
+    } else {
+        console.log("End of Game!");
     }
 }
 
@@ -95,7 +101,7 @@ function answerDealer() {
     correctAns = currentQuestion.correct_answer;
     let incorrectStored = currentQuestion.incorrect_answers;
     let allAns = [...incorrectStored, correctAns];
-    //Send to shuffle function which shuffles the answers
+    //Sends to shuffle function which shuffles the answers
     shuffleAns(allAns);
 
     //inserts shuffled answers into answer boxes
@@ -103,18 +109,18 @@ function answerDealer() {
     answer2.innerHTML = `${allAns[1]}`;
     answer3.innerHTML = `${allAns[2]}`;
     answer4.innerHTML = `${allAns[3]}`;
-    //assigns the data-value="correct"
+    //assigns the data-value="correct".
     assignCorrect();
+    //starts timer.
+    timer.start(10);
     //Enables the answer buttons to be clicked.
     enableBtns();
 }
 
-//Looked up how to shuffle answers with ChatGPT
-//mixes up the answers so the correct answer is always placed differently.
 function shuffleAns(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; //swap elements.
+        [array[i], array[j]] = [array[j], array[i]];
     }
 }
 
@@ -123,34 +129,38 @@ function assignCorrect() {
     for (let button of answerBtn) {
         if (button.innerText === correctAns) {
             button.setAttribute("data-value", "correct");
-            answerId = button.id
-            console.log(answerId);
+            answerID = button.id;
+            console.log(answerID);
+            correctElement = document.getElementById(answerID);
+            console.log(correctElement);
+        } else {
+            button.setAttribute("data-value", "incorrect");
         }
-        button.addEventListener('click', checkAnswer);
+        button.addEventListener("click", checkAnswer);
     };
-    console.log(correctAns);
 }
 //Checks to see if answer button clicked is the correct button.
 function checkAnswer(e) {
+    disableBtns();
     timer.stop();
     answerChosen = e.currentTarget;
-    disableBtns(answerBtn);
     if (answerChosen.dataset.value === "correct") {
         changeStyle("correct", answerChosen);
-        console.log("You answered CORRECT!");
-    } else {
+        console.log("answer chosen is CORRECT!!");
+
+    } else if (answerChosen.dataset.value === "incorrect") {
         changeStyle("incorrect", answerChosen);
         console.log("answer chosen is incorrect!!");
+    } else {
+        console.log("error check answer!");
     }
-    setTimeout(() => nextQuestion(), 5000);
 };
 
-// Disables answer buttons after answer has been chosen
+// Disables answer buttons after answer has been chosen(nodelist)
 function disableBtns() {
     answerBtn.forEach(button => {
         button.disabled = true;
     });
-    console.log(answerBtn);
 }
 
 //Enables answer buttons when and answers are placed.
@@ -160,56 +170,68 @@ function enableBtns() {
     });
 }
 
-//Timeout for timer event handle.
+//Timeout for timer event handler.
 function handleTimeout() {
-    changeStyle("noAnswer", answerId);
+    disableBtns();
+    answerChosen = null;
+    console.log(answerChosen);
+    changeStyle("noAnswer", correctElement);
 }
 
 //changes style of button to indicate if right or wrong answer.
 function changeStyle(result, answerChosen) {
-    console.log(answerChosen);
+    console.log("changing style");
+
     if (result === "correct") {
         //const correctStyle = document.getElementById(correctAns);
         answerChosen.classList.add("correct");
-        console.log(correctAns);
+        setTimeout(() => nextQuestion(), 5000);
+
     } else if (result === "incorrect") {
         answerChosen.classList.add("incorrect");
+        setTimeout(() => nextQuestion(), 5000);
+
     } else if (result === "noAnswer") {
         console.log("NO ANSWER!");
-        let showCorrect = document.getElementById(answerId);
-        showCorrect.classList.add("no-answer");
-        //Add cool down timer to show correct answer before moving to next question.
+        correctElement.classList.add("no-answer");
         setTimeout(() => nextQuestion(), 5000);
-    }
-}
 
-
-//resets the question timer, dataset value and styling.
-function nextQuestion() {
-    let correctAnsId = document.getElementById(answerId);
-    //if no answer is chosen, function will skip
-    if (!answerChosen) {
-        timer.stop();
-        correctAnsId.removeAttribute("data-value", "correct");
-        correctAnsId.classList.remove("no-answer");
-        getQuestion();
     } else {
-        timer.stop();
-        correctAnsId = document.getElementById(answerId);
-        correctAnsId.removeAttribute("data-value", "correct");
-        console.log(answerChosen);
-        answerChosen.classList.remove("incorrect", "correct");
+        console.log("error! no styling");
+    }
+}
+
+//resets dataset value and styling.
+function nextQuestion() {
+    console.log("NextQuestion");
+    correctElement.removeAttribute("data-value", "correct");
+
+    if (!answerChosen) {
+        console.log("no-answer");
+        correctElement.classList.remove("no-answer");
         getQuestion();
+
+    } else if (answerChosen.innerHTML === correctAns) {
+        console.log("correct Answer");
+        answerChosen.classList.remove("correct");
+        getQuestion();
+
+    } else if (answerChosen.innerHTML !== correctAns) {
+        console.log("incorrect Answer");
+        answerChosen.classList.remove("incorrect");
+        getQuestion();
+
+    } else {
+        console.log("error end next question");
     }
 
 }
 
-
-next.addEventListener('click', function () {
+next.addEventListener("click", function () {
     nextQuestion();
 });
 
-QGet.addEventListener('click', function () {
+QGet.addEventListener("click", function () {
     fetchQuestions();
 });
 

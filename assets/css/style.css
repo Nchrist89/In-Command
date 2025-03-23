@@ -230,7 +230,7 @@
 
 /* correct and incorrect answer button styling */
 .correct {
-    background-color: green;
+    background-color: yellow;
 }
 
 .incorrect {
@@ -238,7 +238,7 @@
 }
 
 .no-answer {
-    background-color: greenyellow;
+    background-color: blue;
 }
 
 /* Difficulty styles */
