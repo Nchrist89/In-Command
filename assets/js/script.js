@@ -40,9 +40,11 @@ let currentQuestion; // stores the current question object.
 let correctAns; // stores the string of the answer.
 let correctElement; //the element of the correct button.
 let answerCounter = 0; // answer correct total.
-//let totalScore; // Total end score.
 
-let timeRem = 0; // adds up correct answer seconds remaining.
+
+let totalScore = 0; // Total end score.
+let currentScore = 0;
+let totalTimeRem = 0; // adds up answer seconds remaining.
 
 function quizTimer(displayElement, ceaseTimer) {
     this.display = displayElement;
@@ -162,18 +164,23 @@ function assignCorrect() {
 function checkAnswer(e) {
     disableBtns();
     timer.stop();
-    let remaining = timer.getStoppedRemaining(); // stores time remaining.
-    console.log("Time remaining:", remaining);
+    let remainingTime = timer.getStoppedRemaining(); // stores time remaining.
+    console.log("Time remaining:", remainingTime);
     answerChosen = e.currentTarget;
     if (answerChosen.dataset.value === "correct") {
         answerCounter++;
-        timeRem += remaining;
+        currentScore += 100;
+        totalTimeRem += remainingTime;
         changeStyle("correct", answerChosen);
         console.log("answer chosen is CORRECT!!");
+        scoreUpdate(currentScore, totalTimeRem);
 
     } else if (answerChosen.dataset.value === "incorrect") {
+        currentScore += 50;
+        totalTimeRem += remainingTime;
         changeStyle("incorrect", answerChosen);
         console.log("answer chosen is incorrect!!");
+        scoreUpdate(currentScore, totalTimeRem);
     } else {
         console.log("error check answer end!");
     }
@@ -237,7 +244,6 @@ function hackProgress() {
 
 //resets dataset value and styling.
 function nextQuestion() {
-    console.log(timeRem);
     console.log("NextQuestion");
     correctElement.removeAttribute("data-value", "correct");
 
@@ -259,6 +265,15 @@ function nextQuestion() {
     } else {
         console.log("error, end next question");
     }
+}
+
+//updates user score.
+function scoreUpdate(score, totalTimeRem) {
+    let timeBonus = totalTimeRem * 10;
+    totalScore = score + timeBonus;
+    console.log("your total score is:", totalScore);
+    const scoreDisplay = document.getElementById("score");
+    scoreDisplay.innerText = totalScore;
 }
 
 next.addEventListener("click", function () {
