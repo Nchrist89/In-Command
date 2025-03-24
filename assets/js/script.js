@@ -46,6 +46,8 @@ let totalScore = 0; // Total end score.
 let currentScore = 0;
 let totalTimeRem = 0; // adds up answer seconds remaining.
 
+let alert = 0;
+
 function quizTimer(displayElement, ceaseTimer) {
     this.display = displayElement;
     this.ceaseTimer = ceaseTimer;
@@ -181,6 +183,7 @@ function checkAnswer(e) {
         changeStyle("incorrect", answerChosen);
         console.log("answer chosen is incorrect!!");
         scoreUpdate(currentScore, totalTimeRem);
+        alert++;
     } else {
         console.log("error check answer end!");
     }
@@ -228,6 +231,13 @@ function changeStyle(result, answerChosen) {
 
     } else {
         console.log("error! styling function end!");
+    }
+}
+
+function gotCaught() {
+    if (alert === 4) {
+        const guardAlert = document.getElementById("alert-guard");
+        guardAlert.classList.add("show-guard");
     }
 }
 
