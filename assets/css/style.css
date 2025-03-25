@@ -222,6 +222,10 @@
     justify-content: space-between;
 }
 
+.hide-guard {
+    display: none;
+}
+
 .show-guard {
     width: 500px;
     height: 700px;

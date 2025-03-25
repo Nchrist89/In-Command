@@ -237,9 +237,8 @@ function changeStyle(result, answerChosen) {
 
 function gotCaught() {
     if (alert === 4) {
-        const guardAlert = document.createElement("img");
-        guardAlert.src = "assets/images/silhouettefouredited";
-        guardAlert.classList.add("show-guard");
+        const guardImage = document.getElementById("alert-guard");
+        guardImage.classList.remove("hide-guard");
     }
     console.log("got caught", alert);
 }
