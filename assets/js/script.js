@@ -184,6 +184,7 @@ function checkAnswer(e) {
         console.log("answer chosen is incorrect!!");
         scoreUpdate(currentScore, totalTimeRem);
         alert++;
+        gotCaught();
     } else {
         console.log("error check answer end!");
     }
@@ -218,16 +219,16 @@ function changeStyle(result, answerChosen) {
         answerChosen.classList.add("correct");
         hackProgress();
         // timeout cooldown after question un/answered.
-        setTimeout(() => nextQuestion(), 3000);
+        setTimeout(() => nextQuestion(), 4000);
 
     } else if (result === "incorrect") {
         answerChosen.classList.add("incorrect");
-        setTimeout(() => nextQuestion(), 3000);
+        setTimeout(() => nextQuestion(), 4000);
 
     } else if (result === "noAnswer") {
         console.log("NO ANSWER!");
         correctElement.classList.add("no-answer");
-        setTimeout(() => nextQuestion(), 3000);
+        setTimeout(() => nextQuestion(), 4000);
 
     } else {
         console.log("error! styling function end!");
@@ -236,9 +237,11 @@ function changeStyle(result, answerChosen) {
 
 function gotCaught() {
     if (alert === 4) {
-        const guardAlert = document.getElementById("alert-guard");
+        const guardAlert = document.createElement("img");
+        guardAlert.src = "assets/images/silhouettefouredited";
         guardAlert.classList.add("show-guard");
     }
+    console.log("got caught", alert);
 }
 
 //Increases when user chooses correct answer.
@@ -255,11 +258,11 @@ function hackProgress() {
 //resets dataset value and styling.
 function nextQuestion() {
     console.log("NextQuestion");
-    correctElement.removeAttribute("data-value", "correct");
 
     if (!answerChosen) {
         console.log("no-answer");
         correctElement.classList.remove("no-answer");
+        correctElement.removeAttribute("data-value", "correct")
         getQuestion();
 
     } else if (answerChosen.innerHTML === correctAns) {

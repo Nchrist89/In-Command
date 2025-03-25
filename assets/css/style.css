@@ -163,16 +163,18 @@
 
 .quiz-gamehead {
     display: flex;
-    height: 25px;
+    height: 30px;
     font-family: "Press Start 2P", system-ui;
-    color: #FFF01F;
-    letter-spacing: 1px;
+    color: #d9cc11;
+    letter-spacing: 2px;
+    align-content: baseline;
 }
 
 .fa-square {
-    height: 10px;
-    width: 10px;
-    margin-right: 10px;
+    height: 15px;
+    width: 20px;
+    font-size: 25px;
+    margin-left: 15px;
 }
 
 #question-box {
@@ -180,7 +182,7 @@
     height: 35%;
     font-family: "Press Start 2P", system-ui;
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     color: #00FF00;
     line-height: 1.3em;
     padding: 5px;
@@ -194,7 +196,7 @@
 }
 
 .ans-btn {
-    border: 2px solid greenyellow;
+    border: 1px solid greenyellow;
     height: 28%;
     margin: 4px;
     background-color: black;
@@ -220,21 +222,34 @@
     justify-content: space-between;
 }
 
-.progress {
-    background-color: greenyellow;
-    width: 1%;
-    height: 1%;
+.show-guard {
+    width: 500px;
+    height: 700px;
+    z-index: 5;
+    position: absolute;
+    top: 25%;
+    left: 5%;
 }
 
 /* correct and incorrect answer button styling */
 .correct {
     background-color: yellow;
     color: black;
+    font-size: larger;
 }
 
 .incorrect {
-    background-color: red;
-    color: black;
+    animation: flash 1s infinite alternate;
+    color: yellow;
+    font-size: larger;
+}
+
+@keyframes flash {
+    from {
+        background-color: inherit;
+    } to {
+        background-color: rgb(130, 16, 16);
+    }
 }
 
 .no-answer {
