@@ -24,7 +24,7 @@
         <section id="title-screen">
             <div id=title-box>
                 <a id="title" href="index.html">
-                    <h1>In Command</h1>
+                    <img id="title-logo" src="assets/images/incommandlogo2.png" alt="The logo for In command - the quiz game.">
                 </a>
                 <!-- Main menu buttons -->
                 <div id="main-menu">
@@ -32,7 +32,6 @@
                         <a href="#"><button class="menu-btn">Play</button></a>
                         <button id="open-modal" class="menu-btn">How to play</button>
                         <a href="#"><button class="menu-btn">Leaderboard</button></a>
-                        <button id="invite" class="menu-btn">Invite friends</button>
                     </div>
                 </div>
 
@@ -71,11 +70,8 @@
         <!-- Game screen -->
         <section id="game">
             <div id="game-screen">
-                <!--
-                <video id="gameBG" src="assets/video/game-background4brightnowatermark.mp4" width="100%" height="100%"
-                    loop autoplay muted></video>
-                <audio src="assets/audio/RetroThunder2.mp3" autoplay loop></audio>
-                -->
+                <div id="logo"></div>
+                <audio id="song" src="assets/audio/RetroThunder2.mp3" autoplay loop></audio>
 
                 <div id="alert-guard" class="show-guard hide-guard">
                     <img id="guard" src="/assets/images/silhouettefivetwo.png" alt="A silhouette of a guard appears!">
@@ -118,6 +114,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
         <!-- Leaderboard section -->

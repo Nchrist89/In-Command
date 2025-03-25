@@ -17,6 +17,7 @@ closeModal.addEventListener("click", () => {
 let data;
 let counter = 0;
 
+const soundTrack = document.getElementById("song");
 const questionNum = document.getElementById("question-num");
 
 const next = document.getElementById("next-btn");
@@ -103,6 +104,7 @@ async function fetchQuestions() {
     } catch (error) {
         console.error("Error fetching questions:", error);
     }
+    soundTrack.currentTime = 0;
 }
 
 //retrieve question function
@@ -239,8 +241,9 @@ function gotCaught() {
     if (alert === 4) {
         const guardImage = document.getElementById("alert-guard");
         guardImage.classList.remove("hide-guard");
+        soundTrack.pause();
     }
-    console.log("got caught", alert);
+    console.log("got caught:", alert);
 }
 
 //Increases when user chooses correct answer.
