@@ -23,18 +23,20 @@
         <!-- Title screen -->
         <section id="title-screen">
             <div id="title-box">
-                <a id="title" href="index.html">
-                    <img id="title-logo" src="assets/images/incommandlogofinal.png" alt="The logo for In command - the quiz game.">
-                </a>
+                <div id="title-logo-box">
+                    <a id="title" href="index.html">
+                        <img id="title-logo" src="assets/images/incommandlogofinal.png"
+                            alt="The logo for In command - the quiz game.">
+                    </a>
+                </div>
 
                 <!-- Main menu buttons -->
-                <div id="main-menu">
-                    <div id="menu-buttons">
-                        <button class="menu-btn">Play</button>
-                        <button id="open-modal" class="menu-btn">How to play</button>
-                        <button class="menu-btn">Leaderboard</button>
-                    </div>
+                <div id="menu-buttons">
+                    <button class="menu-btn">Play</button>
+                    <button id="open-modal" class="menu-btn">How to play</button>
+                    <button class="menu-btn">Leaderboard</button>
                 </div>
+
 
                 <div id="intro-box">
                     <h3>Mission:</h3>
@@ -67,7 +69,7 @@
         <section id="game">
             <div id="game-screen">
                 <div id="logo"></div>
-                <audio id="song" src="assets/audio/RetroThunder2.mp3" autoplay loop></audio>
+                <audio id="song" src="assets/audio/RetroThunder2.mp3" autoplay loop muted></audio>
 
                 <div id="alert-guard" class="show-guard hide-guard">
                     <img id="guard" src="/assets/images/silhouettefivetwo.png" alt="A silhouette of a guard appears!">
@@ -75,7 +77,7 @@
                 <!-- Difficulty selection -->
                 <div id="game-area">
                     <div id="diff-box">
-                        <h2 class="diff-heading">Choose your difficulty</h2>
+                        <h3 class="diff-heading">Choose your difficulty</h3>
                         <p>Harder difficulty means more points</p>
 
                         <div>
@@ -85,8 +87,9 @@
                         </div>
                         <button class="rtn-menu">Main Menu</button>
                     </div>
-
+                    <!-- Quiz area -->
                     <div id="quiz-box">
+                        <h2>In command - quiz game</h2>
                         <!-- Hacking bar reflects correct question progress -->
                         <div class="quiz-gamehead">
                             <p>Hacking Terminal:</p>
