@@ -21,7 +21,7 @@
     <!-- Main content -->
     <main>
         <!-- Title screen -->
-        <section id="title-screen">
+        <section id="title-screen" class="display-flex">
             <div id="title-box">
                 <div id="title-logo-box">
                     <a id="title" href="index.html">
@@ -34,7 +34,7 @@
                 <div id="menu-buttons">
                     <button id="play-game" class="menu-btn">Play</button>
                     <button id="open-modal" class="menu-btn">How to play</button>
-                    <button id="leaderboard" class="menu-btn">Leaderboard</button>
+                    <button id="leaderboard-button" class="menu-btn">Leaderboard</button>
                 </div>
 
 
@@ -66,7 +66,7 @@
         </section>
 
         <!-- Game screen -->
-        <section id="game">
+        <section id="game" class="hide display-block">
             <div id="game-screen">
                 <div id="overlay"></div>
                 <div id="logo"></div>
@@ -107,10 +107,6 @@
                             <button class="ans-btn" id="answer-2"></button>
                             <button class="ans-btn" id="answer-3"></button>
                             <button class="ans-btn" id="answer-4"></button>
-                        </div>
-                        <div id="quiz-menu">
-                            <button id="Q-get">Fetch</button>
-                            <button id="next-btn">Next</button>
                         </div>
                     </div>
                 </div>

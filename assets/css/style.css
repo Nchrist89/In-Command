@@ -28,16 +28,6 @@
     --secondary-font: "VT323", monospace;
 }
 
-.rtn-menu {
-    width: 35%;
-    height: 10%;
-    background-color: #880808;
-    color: white;
-    font-family: var(--primary-font);
-    font-size: 1.3vw;
-    margin: 4%;
-}
-
 /* Title screen styles */
 
 #title-screen {
@@ -45,7 +35,6 @@
     background-image: url(../images/newtitleimg2.png);
     background-size: cover;
     background-position: center;
-    display: flex;
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -125,25 +114,23 @@
     margin-bottom: 3px;
 }
 
-#title-screen,
-#diff-box,
+
 #victory,
 #failure,
+#diff-box,
 #leaderboard {
     display: none;
 }
 
 /* Game section styles */
-/*#logo {
-    background-image: url("/assets/images/incommandlogo2.png");
-    background-position: bottom;
-    height: 230px;
-    width: 400px;
-    position: absolute;
-    top: 15px;
-    left: 0;
+
+.display-flex {
+    display: flex;
 }
-    */
+
+.display-block {
+    display: block;
+}
 
 
 #game-screen {

@@ -12,6 +12,11 @@ closeModal.addEventListener("click", () => {
     modal.close();
 });
 
+const playGame = document.getElementById("play-game");
+playGame.addEventListener("click", () => {
+    playQuizGame();
+});
+
 //Game functions and statements.
 
 let data;
@@ -93,6 +98,16 @@ quizTimer.prototype.updateDisplay = function () {
 
 // Fetch questions from open trivia API.
 // code taken from chatGPT.
+
+function playQuizGame() {
+    const titleScreen = document.getElementById("title-screen");
+    titleScreen.classList.remove("display-flex");
+    titleScreen.classList.add("hide");
+    const game = document.getElementById("game");
+    game.classList.add("display-block");
+    game.classList.remove("hide");
+    fetchQuestions();
+}
 
 async function fetchQuestions() {
     try {
