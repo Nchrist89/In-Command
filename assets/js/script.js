@@ -93,6 +93,7 @@ quizTimer.prototype.updateDisplay = function () {
 
 // Fetch questions from open trivia API.
 // code taken from chatGPT.
+
 async function fetchQuestions() {
     try {
         const response = await fetch("https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple");
@@ -238,7 +239,11 @@ function changeStyle(result, answerChosen) {
 }
 
 function gotCaught() {
-    if (alert === 4) {
+    if (alert === 2) {
+        const gamearea = document.getElementById("game-area");
+        gamearea.classList.add("hide");
+        const screen = document.getElementById("overlay");
+        screen.classList.add("overlay");
         const guardImage = document.getElementById("alert-guard");
         guardImage.classList.remove("hide-guard");
         soundTrack.pause();

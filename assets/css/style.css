@@ -1,6 +1,5 @@
 /* Google font import */
-/*@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,900&family=Cinzel:wght@400..900&family=Press+Start+2P&family=Special+Elite&family=VT323&display=swap');*/
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&family=VT323&display=swap');
 
 * {
     margin: 0;
@@ -8,11 +7,25 @@
     box-sizing: border-box;
 }
 
+/* Hex color palette */
+:root {
+    --mandy: #e54b51;
+    --ebony: #100711;
+    --buccaneer: #632b3c;
+    --cashmere: #e3b69e;
+    --cedar: #3d1325;
+    --river-bed: #454b61;
+    --regent-gray: #7b89a0;
+    --slate-gray: #6a768e;
+    --steel-gray: #262237;
+    --gravel: #49444b;
+}
+
 /* Global styles */
 
 :root {
     --primary-font: "Orbitron", sans-serif;
-    --secondary-font: "Special Elite"
+    --secondary-font: "VT323", monospace;
 }
 
 .rtn-menu {
@@ -25,7 +38,7 @@
     margin: 4%;
 }
 
-/* Title & Main menu styles */
+/* Title screen styles */
 
 #title-screen {
     background-color: black;
@@ -93,6 +106,8 @@
 
 }
 
+/* Menu styles */
+
 #menu-buttons {
     display: flex;
     flex-direction: column;
@@ -102,7 +117,7 @@
     padding: 5px;
     line-height: 1em;
     color: black;
-    background-color: #d82a41;
+    background-color: var(--mandy);
     border: 4px solid #37091c;
     font-family: "Press Start 2P", system-ui;
     letter-spacing: 1px;
@@ -110,8 +125,7 @@
     margin-bottom: 3px;
 }
 
-#game,
-#game-screen,
+#title-screen,
 #diff-box,
 #victory,
 #failure,
@@ -120,21 +134,16 @@
 }
 
 /* Game section styles */
-#logo {
+/*#logo {
     background-image: url("/assets/images/incommandlogo2.png");
-    background-size: cover;
     background-position: bottom;
     height: 230px;
-    width: 500px;
+    width: 400px;
     position: absolute;
     top: 15px;
     left: 0;
-    z-index: 4;
 }
-
-#game {
-    display: flex
-}
+    */
 
 
 #game-screen {
@@ -147,19 +156,23 @@
 }
 
 #game-area {
-    width: 50%;
-    height: 65%;
-    position: absolute;
-    top: 53%;
-    left: 51%;
-    transform: translate(-50%, -50%);
     background-color: black;
     border: 1px solid darkgreen;
     border-radius: 3%;
+    width: 90%;
+    height: 75%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #gameBG {
     object-fit: cover;
+}
+
+#quiz-header {
+    display: none;
 }
 
 .diff-heading {
@@ -170,56 +183,64 @@
     letter-spacing: 3px;
 }
 
+/* Quiz area styles */
+
+#game-header {
+    display: none;
+}
+
 #quiz-box {
-    width: 90%;
-    height: 85%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+    margin: 5px;
 }
 
 .quiz-gamehead {
     display: flex;
     height: 30px;
-    font-family: "Press Start 2P", system-ui;
+    font-family: var(--secondary-font);
+    font-size: 1.2rem;
     color: #d9cc11;
-    letter-spacing: 2px;
     align-content: baseline;
+    margin: 5px;
 }
 
 .fa-square {
-    height: 15px;
-    width: 20px;
-    font-size: 25px;
-    margin-left: 15px;
+    height: 10px;
+    width: 10px;
+    font-size: 15px;
 }
 
 #question-box {
     width: 100%;
-    height: 35%;
-    font-family: "Press Start 2P", system-ui;
-    font-weight: 400;
+    height: 30%;
+    font-family: var(--secondary-font);
+    font-size: 1.1rem;
     letter-spacing: 2px;
     color: #00FF00;
-    line-height: 1.3em;
+    line-height: 1.4em;
     padding: 5px;
-    margin: 10px;
+    margin: 5px;
 }
 
 #answer-btn-box {
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 40%;
 }
 
 .ans-btn {
     border: 1px solid greenyellow;
-    height: 28%;
-    margin: 4px;
+    height: 25%;
+    margin-bottom: 5px;
     background-color: black;
-    font-family: "Press Start 2P", system-ui;
+    font-family: var(--secondary-font);
+    font-size: 0.9rem;
+    justify-content: center;
     color: yellow;
+    width: 95%;
     letter-spacing: 2px;
 }
 
@@ -227,33 +248,51 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    height: 8%;
-    margin-top: 7px;
+    height: 6%;
+
 }
 
 #quiz-info {
-    font-family: "Press Start 2P", system-ui;
+    font-family: var(--secondary-font);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     color: #00FF00;
     justify-content: space-between;
+    font-size: 1.3rem;
+    margin: 10px;
 }
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+    z-index: 10;
+    background-color: #000000;
+}
+
+.hide {
+    display: none;
+}
+
+/* pop-up guard styles */
 
 .hide-guard {
     display: none;
 }
 
 #guard {
-    width: 600px;
-    height: 800px;
+    width: 400px;
+    height: 500px;
 }
 
 .show-guard {
-    z-index: 5;
+    z-index: 11;
     position: absolute;
-    top: 25%;
-    left: 5%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* correct and incorrect answer button styling */

@@ -32,9 +32,9 @@
 
                 <!-- Main menu buttons -->
                 <div id="menu-buttons">
-                    <button class="menu-btn">Play</button>
+                    <button id="play-game" class="menu-btn">Play</button>
                     <button id="open-modal" class="menu-btn">How to play</button>
-                    <button class="menu-btn">Leaderboard</button>
+                    <button id="leaderboard" class="menu-btn">Leaderboard</button>
                 </div>
 
 
@@ -68,6 +68,7 @@
         <!-- Game screen -->
         <section id="game">
             <div id="game-screen">
+                <div id="overlay"></div>
                 <div id="logo"></div>
                 <audio id="song" src="assets/audio/RetroThunder2.mp3" autoplay loop muted></audio>
 
@@ -89,16 +90,16 @@
                     </div>
                     <!-- Quiz area -->
                     <div id="quiz-box">
-                        <h2>In command - quiz game</h2>
+                        <h2 id="game-header">In command - quiz game</h2>
                         <!-- Hacking bar reflects correct question progress -->
                         <div class="quiz-gamehead">
-                            <p>Hacking Terminal:</p>
+                            <p>Hacking Terminal: </p>
                             <div id="hacking-progress"></div>
                         </div>
                         <p class="quiz-gamehead">Score: <span id="score"></span></p>
                         <div id="quiz-info">
                             <p>Question: <span id="question-num"></span></p>
-                            <p>T- <span id="countdown"></span></p>
+                            <p>Time -<span id="countdown"></span></p>
                         </div>
                         <div id="question-box"></div>
                         <div id="answer-btn-box">
