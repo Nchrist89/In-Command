@@ -386,10 +386,42 @@
     }
 }
 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    #quiz-box {
+        margin: 20px;
+    }
+
+    #quiz-info {
+        font-size: 1.5rem;
+    }
+
+    .quiz-gamehead {
+        font-size: 1.5rem;
+
+    }
+
+    #question-box {
+        font-size: 1.5rem;
+    }
+
+    .ans-btn {
+        font-size: 1.4rem;
+    }
+
+    .fa-square {
+        font-size: 25px;
+        margin-left: 25px;
+    }
+}
+
+
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     #intro-text {
         font-size: 1.2rem;
+        height: 350px;
     }
 
     .menu-btn {
@@ -397,13 +429,35 @@
         height: 50px;
         font-weight: bold;
     }
+
+    #quiz-box {
+        margin: 20px;
+    }
+
+    #quiz-info {
+        font-size: 1.7rem;
+    }
+
+    .quiz-gamehead {
+        font-size: 1.7rem;
+
+    }
+
+    #question-box {
+        font-size: 1.7rem;
+    }
+
+    .ans-btn {
+        font-size: 1.7rem;
+        margin-bottom: 10px;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1400px) {
 
     #title-logo {
-        width: 700px;
+        width: 800px;
         position: absolute;
         left: 10%;
     }

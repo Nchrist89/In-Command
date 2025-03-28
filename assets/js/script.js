@@ -111,7 +111,7 @@ function playQuizGame() {
 
 async function fetchQuestions() {
     try {
-        const response = await fetch("https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple");
+        const response = await fetch("https://opentdb.com/api.php?amount=15&category=18&difficulty=easy&type=multiple");
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
