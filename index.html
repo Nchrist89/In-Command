@@ -54,7 +54,8 @@
             <dialog id="modal">
                 <h3>How to play</h3>
                 <p>Choose your difficulty, higher difficulty means higher score.</p>
-                <p>Answer the questions in the quickest time possible to hack and take command of the NCM and disarm the nuclear
+                <p>Answer the questions in the quickest time possible to hack and take command of the NCM and disarm the
+                    nuclear
                     warhead.
                 </p>
                 <p>Each question has a timer of 15 seconds, the quicker you are the higher you score.</p>
@@ -151,14 +152,16 @@
         </section>
 
         <!-- End game victory section -->
-        <section id="victory">
-            <div id="success">
-                <h3 class="heading">Mission accomplished!</h3>
-                <p>You hacked the terminal and gained access to the NCM and deactivated the warhead! Well done!</p>
-                <p>Please enter your name below to save your score into our hall of fame leaderboard!</p>
-
-                <!-- Form input to save score -->
+        <section id="victory-screen">
+            <div id="victory">
+                <div id="success-text">
+                    <h3 class="heading">Mission accomplished!</h3>
+                    <p>You hacked the terminal and gained access to the NCM and deactivated the warhead! Well done!</p>
+                    <br>
+                    <p>Please enter your name below to save your score into our hall of fame leaderboard!</p>
+                </div>
             </div>
+            <!-- Form input to save score -->
             </div id="form-score">
             <label class="form-control" for="name-score" name="high_score">Enter name</label>
             <input class="form-control" id="name-score" name="high_score" type="text" required

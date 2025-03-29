@@ -136,7 +136,7 @@ function getQuestion() {
         questionNum.innerHTML = counter;
         answerDealer();
     } else {
-        console.log("End of Game!");
+        runEndGame();
     }
 }
 
