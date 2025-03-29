@@ -127,7 +127,9 @@ async function fetchQuestions() {
 //retrieve question function
 function getQuestion() {
     //Checks index from counter before proceeding.
-    if (counter <= 14) {
+    if (alert >= 4) {
+        !nextQuestion;
+    } else if (counter <= 14) {
         currentQuestion = data.results[counter];
         const questionBox = document.getElementById("question-box");
         // Adds the current question to the question box.
@@ -256,7 +258,7 @@ function changeStyle(result, answerChosen) {
 
 
 function gotCaught() {
-    if (alert === 2) {
+    if (alert === 4) {
         quizFailed = true;
         const gameScreen = document.getElementById("game-screen");
         gameScreen.classList.add("hide");
@@ -307,6 +309,13 @@ function nextQuestion() {
     } else {
         console.log("error, end next question");
     }
+}
+
+function runEndGame() {
+    const gameScreen = document.getElementById("game-screen");
+    gameScreen.classList.add("hide");
+    const victoryScreen = document.getElementById("victory-screen");
+    victoryScreen.classList.remove("hide");
 }
 
 //updates user score.

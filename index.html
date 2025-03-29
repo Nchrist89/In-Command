@@ -23,8 +23,8 @@
         <!-- Title screen -->
         <section id="title-screen" class="display-flex">
             <div id="title-box">
-                <div id="title-logo-box">
-                    <a id="title" href="index.html">
+                <div>
+                    <a href="index.html">
                         <img id="title-logo" src="assets/images/incommandlogofinal.png"
                             alt="The logo for In command - the quiz game.">
                     </a>
@@ -36,7 +36,6 @@
                     <button id="open-modal" class="menu-btn">How to play</button>
                     <button id="leaderboard-button" class="menu-btn">Leaderboard</button>
                 </div>
-
 
                 <div id="intro-box">
                     <h3>Mission:</h3>
@@ -69,7 +68,10 @@
         <!-- Game screen -->
         <section id="game">
             <div id="game-screen" class="hide">
-                <div id="logo"></div>
+                <a id="title" href="index.html">
+                    <img id="title-logo" src="assets/images/incommandlogofinal.png"
+                        alt="The logo for In command - the quiz game.">
+                </a>
                 <audio id="song" src="assets/audio/RetroThunder2.mp3" autoplay loop muted></audio>
 
                 <!-- Difficulty selection -->
@@ -152,7 +154,7 @@
         </section>
 
         <!-- End game victory section -->
-        <section id="victory-screen">
+        <section id="victory-screen" class="hide">
             <div id="victory">
                 <div id="success-text">
                     <h3 class="heading">Mission accomplished!</h3>
