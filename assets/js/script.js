@@ -46,6 +46,7 @@ let currentQuestion; // stores the current question object.
 let correctAns; // stores the string of the answer.
 let correctElement; //the element of the correct button.
 let answerCounter = 0; // answer correct total.
+let quizFailed = false;
 
 
 let totalScore = 0; // Total end score.
@@ -103,9 +104,9 @@ function playQuizGame() {
     const titleScreen = document.getElementById("title-screen");
     titleScreen.classList.remove("display-flex");
     titleScreen.classList.add("hide");
-    const game = document.getElementById("game");
-    game.classList.add("display-block");
-    game.classList.remove("hide");
+    const gameScreen = document.getElementById("game-screen");
+    gameScreen.classList.add("display-block");
+    gameScreen.classList.remove("hide");
     fetchQuestions();
 }
 
@@ -253,12 +254,16 @@ function changeStyle(result, answerChosen) {
     }
 }
 
+
 function gotCaught() {
     if (alert === 2) {
-        const gamearea = document.getElementById("game-area");
-        gamearea.classList.add("hide");
-        const screen = document.getElementById("overlay");
-        screen.classList.add("overlay");
+        quizFailed = true;
+        const gameScreen = document.getElementById("game-screen");
+        gameScreen.classList.add("hide");
+        gameScreen.classList.remove("display-block");
+        const failScreen = document.getElementById("failure");
+        failScreen.classList.remove("hide");
+        failScreen.classList.add("display-flex");
         const guardImage = document.getElementById("alert-guard");
         guardImage.classList.remove("hide-guard");
         soundTrack.pause();
@@ -280,8 +285,10 @@ function hackProgress() {
 //resets dataset value and styling.
 function nextQuestion() {
     console.log("NextQuestion");
+    if (quizFailed) {
+        console.log("quiz failed");
 
-    if (!answerChosen) {
+    } else if (!answerChosen) {
         console.log("no-answer");
         correctElement.classList.remove("no-answer");
         correctElement.removeAttribute("data-value", "correct")
@@ -310,12 +317,3 @@ function scoreUpdate(score, totalTimeRem) {
     const scoreDisplay = document.getElementById("score");
     scoreDisplay.innerText = totalScore;
 }
-
-next.addEventListener("click", function () {
-    nextQuestion();
-});
-
-QGet.addEventListener("click", function () {
-    fetchQuestions();
-});
-

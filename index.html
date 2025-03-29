@@ -54,27 +54,23 @@
             <dialog id="modal">
                 <h3>How to play</h3>
                 <p>Choose your difficulty, higher difficulty means higher score.</p>
-                <p>Answer the questions in the quickest time possible to take command of the NCM and disarm the nuclear
+                <p>Answer the questions in the quickest time possible to hack and take command of the NCM and disarm the nuclear
                     warhead.
                 </p>
                 <p>Each question has a timer of 15 seconds, the quicker you are the higher you score.</p>
+                <p>failing a question will flag an alert, 4 alerts and you fail!</p>
                 <p>Enter your alias at the end of the game to save your highscore!</p>
-                <p>Invite a fellow spy to challenge</p>
                 <p>Good luck</p>
                 <button id="close-modal">Understood!</button>
             </dialog>
         </section>
 
         <!-- Game screen -->
-        <section id="game" class="hide display-block">
-            <div id="game-screen">
-                <div id="overlay"></div>
+        <section id="game">
+            <div id="game-screen" class="hide">
                 <div id="logo"></div>
                 <audio id="song" src="assets/audio/RetroThunder2.mp3" autoplay loop muted></audio>
 
-                <div id="alert-guard" class="show-guard hide-guard">
-                    <img id="guard" src="/assets/images/silhouettefivetwo.png" alt="A silhouette of a guard appears!">
-                </div>
                 <!-- Difficulty selection -->
                 <div id="game-area">
                     <div id="diff-box">
@@ -135,15 +131,21 @@
         -->
 
         <!-- End game failure section -->
-        <section id="failure">
-            <div>
-                <h3 class="heading">Mission failed!</h3>
-                <p>You were caught!</p>
-                <p>Press the button below to play again or return to the main menu</p>
-                <div>
+        <section>
+            <div id="failure" class="hide">
+                <div id="fail-text">
+                    <h3>Mission failed!</h3>
+                    <p>You were caught!</p>
+                    <p>Press the button below to play again or return to the main menu</p>
+                </div>
+
+                <div id="alert-guard" class="show-guard hide-guard">
+                    <img id="guard" src="/assets/images/silhouettefivetwo.png" alt="A silhouette of a guard appears!">
+                </div>
+
+                <div id="fail-menu">
                     <button class="btn">Play again</button>
                     <button class="btn">Main Menu</button>
-
                 </div>
             </div>
         </section>
