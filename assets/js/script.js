@@ -306,7 +306,13 @@ function hackProgress() {
 function nextQuestion() {
     console.log("NextQuestion");
 
-    if (answerChosen.innerHTML === correctAns) {
+    if (!answerChosen) {
+        console.log("no-answer");
+        correctElement.classList.remove("no-answer");
+        correctElement.removeAttribute("data-value", "correct")
+        getQuestion();
+
+    } else if (answerChosen.innerHTML === correctAns) {
         console.log("correct Answer");
         answerChosen.classList.remove("correct");
         getQuestion();
@@ -314,12 +320,6 @@ function nextQuestion() {
     } else if (answerChosen.innerHTML !== correctAns) {
         console.log("incorrect Answer");
         answerChosen.classList.remove("incorrect");
-        getQuestion();
-
-    } else if (!answerChosen) {
-        console.log("no-answer");
-        correctElement.classList.remove("no-answer");
-        correctElement.removeAttribute("data-value", "correct")
         getQuestion();
 
     } else {
