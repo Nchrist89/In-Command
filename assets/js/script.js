@@ -128,7 +128,11 @@ async function fetchQuestions() {
 function getQuestion() {
     //Checks index from counter before proceeding.
     if (alert >= 4) {
-        !nextQuestion;
+        console.log(quizFailed);
+        gotCaught();
+    } else if (answerCounter === 10) {
+        console.log("You were quick enough to hack the system!");
+        runEndGame();
     } else if (counter <= 14) {
         currentQuestion = data.results[counter];
         const questionBox = document.getElementById("question-box");
@@ -137,8 +141,11 @@ function getQuestion() {
         counter++; //increases counter.
         questionNum.innerHTML = counter;
         answerDealer();
+        console.log(answerCounter);
     } else {
-        runEndGame();
+        quizFailed = true;
+        console.log("quiz failed get question");
+        gotCaught();
     }
 }
 
@@ -260,6 +267,7 @@ function changeStyle(result, answerChosen) {
 function gotCaught() {
     if (alert === 4) {
         quizFailed = true;
+        console.log("got caught 4 times!");
         const gameScreen = document.getElementById("game-screen");
         gameScreen.classList.add("hide");
         gameScreen.classList.remove("display-block");
@@ -269,8 +277,17 @@ function gotCaught() {
         const guardImage = document.getElementById("alert-guard");
         guardImage.classList.remove("hide-guard");
         soundTrack.pause();
+    } else if (quizFailed === true) {
+        console.log("You were not quick enough to hack the system.");
+        gameScreen.classList.add("hide");
+        gameScreen.classList.remove("display-block");
+        failScreen.classList.remove("hide");
+        failScreen.classList.add("display-flex");
+        guardImage.classList.remove("hide-guard");
+        soundTrack.pause();
+    } else {
+        console.log("nothing");
     }
-    console.log("got caught:", alert);
 }
 
 //Increases when user chooses correct answer.
@@ -287,16 +304,8 @@ function hackProgress() {
 //resets dataset value and styling.
 function nextQuestion() {
     console.log("NextQuestion");
-    if (quizFailed) {
-        console.log("quiz failed");
 
-    } else if (!answerChosen) {
-        console.log("no-answer");
-        correctElement.classList.remove("no-answer");
-        correctElement.removeAttribute("data-value", "correct")
-        getQuestion();
-
-    } else if (answerChosen.innerHTML === correctAns) {
+    if (answerChosen.innerHTML === correctAns) {
         console.log("correct Answer");
         answerChosen.classList.remove("correct");
         getQuestion();
@@ -306,10 +315,18 @@ function nextQuestion() {
         answerChosen.classList.remove("incorrect");
         getQuestion();
 
+    } else if (!answerChosen) {
+        console.log("no-answer");
+        correctElement.classList.remove("no-answer");
+        correctElement.removeAttribute("data-value", "correct")
+        getQuestion();
+
     } else {
-        console.log("error, end next question");
+        quizFailed = true;
+        gotCaught();
     }
 }
+
 
 function runEndGame() {
     const gameScreen = document.getElementById("game-screen");
@@ -318,7 +335,7 @@ function runEndGame() {
     victoryScreen.classList.remove("hide");
 }
 
-//updates user score.
+//updates total score with bonus time remaining.
 function scoreUpdate(score, totalTimeRem) {
     let timeBonus = totalTimeRem * 10;
     totalScore = score + timeBonus;
