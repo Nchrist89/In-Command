@@ -336,6 +336,12 @@ function runEndGame() {
     gameScreen.classList.add("hide");
     const victoryScreen = document.getElementById("victory-screen");
     victoryScreen.classList.remove("hide");
+    const playerName = prompt("Enter your name:");
+    if (playerName) {
+        saveHighScore(playerName, totalScore);
+        showHighScore(); //updates the leaderboard
+        setTimeout(() => viewScoreBoard(), 10000);
+    }
 }
 
 //updates total score with bonus time remaining.
@@ -351,11 +357,11 @@ const HIGH_SCORE_KEY = 'highScores';
 const MAX_HIGH_SCORES = 10;
 
 // Saves the users highscore to local storage
-function saveHighScore(playerName, newHighscore) {
+function saveHighScore(playerName, totalScore) {
     const highScoresList = localStorage.getItem(HIGH_SCORE_KEY);
     let highScores = highScoresList ? JSON.parse(highScoresList) : [];
 
-    const newHighScore = { name: playerName, score: newHighscore };
+    const newHighScore = { name: playerName, score: totalScore };
 
     highScores.push(newHighScore); // Add the new score
     highScores.sort((a, b) => b.score - a.score); //sort the list ascending
@@ -391,4 +397,13 @@ function showHighScore() {
     } else {
         console.error("highScoreElement not found");
     }
+}
+
+function viewScoreBoard() {
+    const victoryScreen = document.getElementById("victory-screen");
+    victoryScreen.classList.add("hide");
+    const leaderBoardScreen = document.getElementById=("leader-board");
+    leaderBoardScreen.classList.remove("hide");
+    showHighScore();
+
 }
