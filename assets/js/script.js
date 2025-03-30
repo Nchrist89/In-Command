@@ -369,3 +369,26 @@ function retrieveHighScores() {
     const highScoreList = localStorage.getItem(HIGH_SCORE_KEY);
     return highScoreList ? JSON.parse(highScoreList) : [];
 }
+
+function showHighScore() {
+    const highScores = retrieveHighScores();
+    const highScoreElement = document.getElementById("score-board");
+
+    if (highScoreElement) {
+        highScoreElement.innerHTML = "";
+        if (highScores.length === 0) {
+            highScoreElement.textContent = "No high scores yet!";
+            return;
+        }
+
+        const ul = document.createElement("ul");
+        highScores.forEach((entry, index) => {
+            const li = document.createElement("li");
+            li.textContent = `${entry.name}: ${entry.score}`;
+            ul.appendChild(li);
+        });
+        highScoreElement.appendChild(ul);
+    } else {
+        console.error("highScoreElement not found");
+    }
+}
