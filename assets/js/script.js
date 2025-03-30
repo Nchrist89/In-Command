@@ -112,7 +112,7 @@ function playQuizGame() {
 
 async function fetchQuestions() {
     try {
-        const response = await fetch("https://opentdb.com/api.php?amount=15&category=18&difficulty=easy&type=multiple");
+        const response = await fetch("https://opentdb.com/api.php?amount=15&category=10&difficulty=medium&type=multiple");
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -126,6 +126,7 @@ async function fetchQuestions() {
 
 //retrieve question function
 function getQuestion() {
+    console.log("books for michelle, remove"); // remove books quiz!!!!!
     //Checks index from counter before proceeding.
     if (alert >= 4) {
         console.log(quizFailed);
