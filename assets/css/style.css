@@ -136,7 +136,8 @@ dialog::backdrop {
     font-size: 0.7em;
     margin-bottom: 3px;
 }
-
+/* screenhide */
+#title-screen,
 #diff-box,
 #leader-board {
     display: none;
@@ -285,14 +286,21 @@ dialog::backdrop {
 
 /* victory section styles */
 
-#victory {
+#victory-screen {
     width: 100vw;
     height: 100vh;
     background-image: url("../images/warhead.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+#victory {
     align-content: center;
+    align-self: center;
     text-align: center;
+
 }
 
 #success-text {
@@ -303,8 +311,14 @@ dialog::backdrop {
     line-height: 1.3em;
     letter-spacing: 1px;
     width: 90%;
+    max-width: 700px;
     padding: 5px;
     margin: 10px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid black;
 }
 
 #success-text > h3 {
@@ -580,10 +594,16 @@ dialog::backdrop {
         max-width: 350px;
         left: 20%;
     }
+
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+
+    #success-text {
+        font-size: 1.5rem;
+        padding: 25px;
+    }
 
 }
 

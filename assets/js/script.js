@@ -327,7 +327,6 @@ function nextQuestion() {
     }
 }
 
-
 function runEndGame() {
     const gameScreen = document.getElementById("game-screen");
     gameScreen.classList.add("hide");
