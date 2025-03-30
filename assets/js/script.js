@@ -128,7 +128,7 @@ async function fetchQuestions() {
 function getQuestion() {
     console.log("books for michelle, remove"); // remove books quiz!!!!!
     //Checks index from counter before proceeding.
-    if (alert >= 4) {
+    if (alert >= 5) {
         console.log(quizFailed);
         gotCaught();
     } else if (answerCounter === 10) {
@@ -164,7 +164,7 @@ function answerDealer() {
     //assigns the data-value="correct".
     assignCorrect();
     //starts timer.
-    timer.start(10);
+    timer.start(15);
     //Enables the answer buttons to be clicked.
     enableBtns();
 }
