@@ -279,7 +279,7 @@ function hackProgress() {
 
     for (let i = 0; i < answerCounter; i++) {
         const square = document.createElement("i");
-        square.classList.add("fa-solid", "fa-square");
+        square.classList.add("fa-solid", "fa-square-full");
         hackingBar.appendChild(square);
     }
 }
