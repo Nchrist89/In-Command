@@ -55,6 +55,9 @@ let totalTimeRem = 0; // adds up answer seconds remaining.
 
 let alert = 0;
 
+// High score and leaderboard
+
+
 function quizTimer(displayElement, ceaseTimer) {
     this.display = displayElement;
     this.ceaseTimer = ceaseTimer;
@@ -342,4 +345,22 @@ function scoreUpdate(score, totalTimeRem) {
     console.log("your total score is:", totalScore);
     const scoreDisplay = document.getElementById("score");
     scoreDisplay.innerText = totalScore;
+}
+
+const HIGH_SCORE_KEY = 'highScores';
+const MAX_HIGH_SCORES = 10;
+
+// Saves the users highscore to local storage
+function saveHighScore(playerName, newHighscore) {
+    const highScoresList = localStorage.getItem(HIGH_SCORE_KEY);
+    let highScores = highScoresList ? JSON.parse(highScoresList) : [];
+
+    const newHighScore = { name: playerName, score: newHighscore };
+
+    highScores.push(newHighScore); // Add the new score
+    highScores.sort((a, b) => b.score - a.score); //sort the list ascending
+
+    highScores = highScores.slice(0, MAX_HIGH_SCORES); // ensures highscore list maxes at 10.
+
+    localStorage.setItem(HIGH_SCORE_KEY, JSON.stringify(highScores)); //saves the updated list to local storage
 }
