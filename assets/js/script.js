@@ -364,3 +364,8 @@ function saveHighScore(playerName, newHighscore) {
 
     localStorage.setItem(HIGH_SCORE_KEY, JSON.stringify(highScores)); //saves the updated list to local storage
 }
+
+function retrieveHighScores() {
+    const highScoreList = localStorage.getItem(HIGH_SCORE_KEY);
+    return highScoreList ? JSON.parse(highScoreList) : [];
+}
