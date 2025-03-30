@@ -117,7 +117,7 @@ async function fetchQuestions() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         data = await response.json(); // Assign the data to the data variable.
-        getQuestion(); // Call getQuestion after data is fetched.
+        setTimeout(() => getQuestion(), 1000); // Call getQuestion after data is fetched with minor time delay.
     } catch (error) {
         console.error("Error fetching questions:", error);
     }

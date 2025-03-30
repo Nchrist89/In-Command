@@ -137,9 +137,8 @@ dialog::backdrop {
     margin-bottom: 3px;
 }
 
-
-#diff-box,
-#leaderboard {
+#title-screen,
+#diff-box {
     display: none;
 }
 
@@ -414,6 +413,44 @@ dialog::backdrop {
     font-family: "Press Start 2P", system-ui;
     justify-content: space-between;
     letter-spacing: 2px;
+}
+
+#leader-board {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../images/leaderboard16.jpg");
+    background-size: 180%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: black;
+    overflow: hidden;
+}
+
+#score-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 39%;
+    left: 33%;
+    text-align: center;
+    font-family: var(--primary-font);
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: black;
+
+}
+
+#score-board > ul {
+    list-style-type: none;
+}
+
+#leaderBoard-text {
+    text-align: center;
+    font-family: var(--primary-font);
+    background-color: black;
+    color: white;
+    padding: 10px;
 }
 
 /* Small devices (portrait tablets and large phones, 620px and up) */
