@@ -66,10 +66,8 @@ dialog::backdrop {
 #title-logo {
     position: absolute;
     top: 5%;
-    left: 2%;
     height: fit-content;
     width: 90%;
-    justify-content: center;
 }
 
 #title-box {
@@ -137,9 +135,7 @@ dialog::backdrop {
     margin-bottom: 3px;
 }
 /* screenhide */
-
-#diff-box,
-#leader-board {
+#diff-box {
     display: none;
 }
 
@@ -223,7 +219,7 @@ dialog::backdrop {
     margin: 5px;
 }
 
-.fa-square {
+.fa-square-full {
     height: 10px;
     width: 7px;
     font-size: 15px;
@@ -442,7 +438,7 @@ dialog::backdrop {
 #leader-board {
     height: 100vh;
     width: 100vw;
-    background: black url("../images/leaderboard16.jpg") top / 200% no-repeat;
+    background: black url("../images/leaderboard16.jpg") center / 200% no-repeat;
     overflow: hidden;
 }
 
@@ -452,13 +448,12 @@ dialog::backdrop {
     justify-content: center;
     position: absolute;
     top: 43%;
-    left: 33%;
+    left: 20%;
     text-align: center;
     font-family: var(--primary-font);
     font-weight: bold;
     font-size: 1.5rem;
     color: black;
-
 }
 
 #score-board > ul {
@@ -520,6 +515,10 @@ dialog::backdrop {
         height: fit-content;
         max-width: 300px;
         justify-content: center;
+    }
+
+    #leader-board {
+    background: black url("../images/leaderboard16.jpg") center / 200% no-repeat;
     }
 }
 

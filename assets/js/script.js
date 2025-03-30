@@ -57,6 +57,9 @@ let alert = 0;
 
 // High score and leaderboard
 
+const HIGH_SCORE_KEY = 'highScores';
+const MAX_HIGH_SCORES = 10;
+
 
 function quizTimer(displayElement, ceaseTimer) {
     this.display = displayElement;
@@ -124,6 +127,8 @@ async function fetchQuestions() {
     } catch (error) {
         console.error("Error fetching questions:", error);
     }
+    playCounter++;
+    localStorage.setItem(playCountKey, playCounter);
     soundTrack.currentTime = 0;
 }
 
@@ -134,7 +139,7 @@ function getQuestion() {
     if (alert >= 5) {
         console.log(quizFailed);
         gotCaught();
-    } else if (answerCounter === 10) {
+    } else if (answerCounter === 5) {
         console.log("You were quick enough to hack the system!");
         runEndGame();
     } else if (counter <= 14) {
@@ -353,9 +358,6 @@ function scoreUpdate(score, totalTimeRem) {
     scoreDisplay.innerText = totalScore;
 }
 
-const HIGH_SCORE_KEY = 'highScores';
-const MAX_HIGH_SCORES = 10;
-
 // Saves the users highscore to local storage
 function saveHighScore(playerName, totalScore) {
     const highScoresList = localStorage.getItem(HIGH_SCORE_KEY);
@@ -402,8 +404,19 @@ function showHighScore() {
 function viewScoreBoard() {
     const victoryScreen = document.getElementById("victory-screen");
     victoryScreen.classList.add("hide");
-    const leaderBoardScreen = document.getElementById=("leader-board");
+    const leaderBoardScreen = document.getElementById("leader-board");
     leaderBoardScreen.classList.remove("hide");
     showHighScore();
+}
 
+const playCountKey = "quizPlayCount"; //key to store the playcount in local storage.
+
+//Get the current play count from local storage
+let playCounter = localStorage.getItem(playCountKey);
+
+//initialize to zero if does not exist
+if (playCounter === null) {
+    playCounter = 0;
+} else {
+    playCounter = parseInt(playCounter);
 }
