@@ -12,58 +12,80 @@ closeModal.addEventListener("click", () => {
     modal.close();
 });
 
+//Screen hide and display
+const screenIds = {
+    victoryScreen: "victory-screen",
+    leaderBoardScreen: "leader-board",
+    titleScreen: "title-screen",
+    failureScreen: "failure",
+    gameScreen: "game-screen",
+    diffBox: "diff-box"
+};
+
+//adds class screenId element.
+function addClass(screenId, className) {
+    const element = document.getElementById(screenId);
+    if (element) {
+        element.classList.add(className);
+    }
+}
+
+//removes class from screenId element.
+function removeClass(screenId, className) {
+    const element = document.getElementById(screenId);
+    if (element) {
+        element.classList.remove(className);
+    }
+}
+
 //starts quiz when play button is clicked
 const playGame = document.getElementById("play-game");
 playGame.addEventListener("click", () => {
     playQuizGame();
 });
 
-//clicking play again on fail-screen restarts quiz
-const playAgainButton = document.getElementById("play-again");
-if (playAgainButton) {
-    playAgainButton.addEventListener("click", () => {
+//clicking main menu button returns user to main menu.
+const mainMenuButton = document.getElementById("main-menu");
+    mainMenuButton.addEventListener("click", () => {
         window.location.reload();
-        setTimeout(() => playQuizGame(), 5000);
     });
-}
+
 
 //click leaderboard button shows leaderboard screen
 const leaderBoardButton = document.getElementById("leaderboard-button");
 leaderBoardButton.addEventListener("click", () => {
-    const titleScreen = document.getElementById("title-screen");
-    titleScreen.classList.add("hide");
-    const leaderBoardScreen = document.getElementById("leader-board");
-    leaderBoardScreen.classList.remove("hide");
+    addClass(screenIds.titleScreen, "hide");
+    removeClass(screenIds.leaderBoardScreen, "hide");
     showHighScore();
-    setTimeout(() => titleScreen.classList.remove("hide"), 5000);
-    setTimeout(() => leaderBoardScreen.classList.add("hide"), 5000);
+    setTimeout(() => removeClass(screenIds.titleScreen, "hide"), 5000);
+    setTimeout(() => addClass(screenIds.leaderBoardScreen, "hide"), 5000);
 })
 
-
-//Game functions and statements.
-
+//Data and question number counter variable
 let data;
 let counter = 0;
 
+//Sound track variable
 const soundTrack = document.getElementById("song");
+
+//Question number element
 const questionNum = document.getElementById("question-num");
 
-const next = document.getElementById("next-btn");
-const QGet = document.getElementById("Q-get");
-
+//Timer variables
 const timerDisplay = document.getElementById("countdown");
 const timer = new quizTimer(timerDisplay, handleTimeout);
 
+//Answer Button elements
 const answer1 = document.getElementById("answer-1");
 const answer2 = document.getElementById("answer-2");
 const answer3 = document.getElementById("answer-3");
 const answer4 = document.getElementById("answer-4");
-
 const answerBtn = document.querySelectorAll(".ans-btn"); //Nodelist
 
-// correct answer progress bar.
+// correct answer progress bar variable.
 const hackingBar = document.getElementById("hacking-progress");
 
+//answer and correct element variables
 let answerChosen; // button element chosen.
 let currentQuestion; // stores the current question object.
 let correctAns; // stores the string of the answer.
@@ -71,29 +93,27 @@ let correctElement; //the element of the correct button.
 let answerCounter = 0; // answer correct total.
 let quizFailed = false;
 
-
+//Score variables
 let totalScore = 0; // Total end score.
 let currentScore = 0;
 let totalTimeRem = 0; // adds up answer seconds remaining.
 
+//Alert variable
 let alert = 0;
 
-// High score and leaderboard
-
+// High score and leaderboard variables
 const HIGH_SCORE_KEY = 'highScores';
 const MAX_HIGH_SCORES = 10;
 
-
+// Constructs a timer to use for the quiz.
+// instructions provided by Gemini AI.
+// written and changed by me and added to by me.
 function quizTimer(displayElement, ceaseTimer) {
     this.display = displayElement;
     this.ceaseTimer = ceaseTimer;
     this.interval = null;
     this.timeRemaining = 0;
 }
-
-// Constructs a timer to use for the quiz.
-// instructions provided by Gemini AI.
-// written and changed by me.
 
 quizTimer.prototype.start = function (duration) {
     this.timeRemaining = duration;
@@ -128,17 +148,6 @@ quizTimer.prototype.updateDisplay = function () {
 
 // Fetch questions from open trivia API.
 // code taken from chatGPT.
-
-function playQuizGame() {
-    const titleScreen = document.getElementById("title-screen");
-    titleScreen.classList.remove("display-flex");
-    titleScreen.classList.add("hide");
-    const gameScreen = document.getElementById("game-screen");
-    gameScreen.classList.add("display-block");
-    gameScreen.classList.remove("hide");
-    fetchQuestions();
-}
-
 async function fetchQuestions() {
     try {
         const response = await fetch("https://opentdb.com/api.php?amount=15&category=10&difficulty=medium&type=multiple");
@@ -160,9 +169,11 @@ function getQuestion() {
     if (alert >= 5) {
         console.log(quizFailed);
         gotCaught();
+        //if answer counter reaches 10, the user is victorious and game ends.
     } else if (answerCounter === 10) {
         console.log("You were quick enough to hack the system!");
         runEndGame();
+        //if counter has not reached 14, retrieve another question.
     } else if (counter <= 14) {
         currentQuestion = data.results[counter];
         const questionBox = document.getElementById("question-box");
@@ -174,11 +185,12 @@ function getQuestion() {
         console.log(answerCounter);
     } else {
         quizFailed = true;
-        console.log("quiz failed get question");
+        console.log("quiz failed at getQuestion.");
         gotCaught();
     }
 }
 
+//Deals answers to answer button elements.
 function answerDealer() {
     correctAns = currentQuestion.correct_answer;
     let incorrectStored = currentQuestion.incorrect_answers;
@@ -198,7 +210,7 @@ function answerDealer() {
     enableBtns();
 }
 
-//Shuffles answers.
+//Shuffles answers prior to dealing them.
 function shuffleAns(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -265,6 +277,8 @@ function enableBtns() {
 //Timeout for timer event handler.
 function handleTimeout() {
     disableBtns();
+    alert++;
+    gotCaught();
     answerChosen = null;
     changeStyle("noAnswer", correctElement);
 }
@@ -293,28 +307,25 @@ function changeStyle(result, answerChosen) {
     }
 }
 
-
+//Runs if the user gets 5 questions wrong.
 function gotCaught() {
-    if (alert === 4) {
+    if (alert === 5) {
         quizFailed = true;
         console.log("got caught 4 times!");
-        const gameScreen = document.getElementById("game-screen");
-        gameScreen.classList.add("hide");
-        gameScreen.classList.remove("display-block");
-        const failScreen = document.getElementById("failure");
-        failScreen.classList.remove("hide");
-        failScreen.classList.add("display-flex");
+        addClass(screenIds.gameScreen, "hide");
+        removeClass(screenIds.gameScreen, "display-block");
+        removeClass(screenIds.failureScreen, "hide");
+        addClass(screenIds.failureScreen, "display-flex");
         soundTrack.pause();
     } else if (quizFailed === true) {
         console.log("You were not quick enough to hack the system.");
-        gameScreen.classList.add("hide");
-        gameScreen.classList.remove("display-block");
-        failScreen.classList.remove("hide");
-        failScreen.classList.add("display-flex");
-        guardImage.classList.remove("hide-guard");
+        addClass(screenIds.gameScreen, "hide");
+        removeClass(screenIds.gameScreen, "display-block");
+        removeClass(screenIds.failureScreen, "hide");
+        addClass(screenIds.failureScreen, "display-flex");
         soundTrack.pause();
     } else {
-        console.log("nothing");
+        console.log("Go to Next Question");
     }
 }
 
@@ -350,19 +361,21 @@ function nextQuestion() {
         answerChosen.classList.remove("incorrect");
         getQuestion();
 
+    } else {
+        console.log("Next question error!");
     }
 }
 
 function runEndGame() {
-    const gameScreen = document.getElementById("game-screen");
-    gameScreen.classList.add("hide");
-    const victoryScreen = document.getElementById("victory-screen");
-    victoryScreen.classList.remove("hide");
+    addClass(screenIds.gameScreen, "hide");
+    removeClass(screenIds.victoryScreen, "hide");
     const playerName = prompt("Enter your name:");
     if (playerName) {
         saveHighScore(playerName, totalScore);
         showHighScore(); //updates the leaderboard
         setTimeout(() => viewScoreBoard(), 10000);
+    } else {
+        console.log("no name provided.");
     }
 }
 
@@ -376,24 +389,28 @@ function scoreUpdate(score, totalTimeRem) {
 }
 
 // Saves the users highscore to local storage
+// had to get help from Gemini on how to use local storage.
+//code written and any variables used apart from variables with an underscore.
 function saveHighScore(playerName, totalScore) {
     const highScoresList = localStorage.getItem(HIGH_SCORE_KEY);
     let highScores = highScoresList ? JSON.parse(highScoresList) : [];
-
     const newHighScore = { name: playerName, score: totalScore };
-
     highScores.push(newHighScore); // Add the new score
     highScores.sort((a, b) => b.score - a.score); //sort the list ascending
-
     highScores = highScores.slice(0, MAX_HIGH_SCORES); // ensures highscore list maxes at 10.
 
-    localStorage.setItem(HIGH_SCORE_KEY, JSON.stringify(highScores)); //saves the updated list to local storage
+    //saves the updated list to local storage
+    localStorage.setItem(HIGH_SCORE_KEY, JSON.stringify(highScores));
 }
 
+//retrieves the highscores from local storage.
 function retrieveHighScores() {
     const highScoreList = localStorage.getItem(HIGH_SCORE_KEY);
     return highScoreList ? JSON.parse(highScoreList) : [];
 }
+
+//displays the highscores in a unordered list
+//on the leaderboard screen.
 
 function showHighScore() {
     const highScores = retrieveHighScores();
@@ -418,11 +435,10 @@ function showHighScore() {
     }
 }
 
+//shows leaderboard after quiz completion victory screen.
 function viewScoreBoard() {
-    const victoryScreen = document.getElementById("victory-screen");
-    victoryScreen.classList.add("hide");
-    const leaderBoardScreen = document.getElementById("leader-board");
-    leaderBoardScreen.classList.remove("hide");
+    addClass(screenIds.victoryScreen, "hide");
+    removeClass(screenIds.leaderBoardScreen, "hide");
     showHighScore();
 }
 
