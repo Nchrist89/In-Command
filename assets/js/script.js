@@ -21,7 +21,7 @@ const screenIds = {
     titleScreen: "title-screen",
     failureScreen: "failure",
     gameScreen: "game-screen",
-    diffBox: "diff-box"
+    diffScreen: "difficulty-screen"
 };
 
 //adds class screenId element.
@@ -63,12 +63,17 @@ leaderBoardButton.addEventListener("click", () => {
     setTimeout(() => addClass(screenIds.leaderBoardScreen, "hide"), 5000);
 })
 
+const easyQuiz = "https://opentdb.com/api.php?amount=15&category=10&difficulty=medium&type=multiple"
+const mediumQuiz = "https://opentdb.com/api.php?amount=15&category=10&difficulty=medium&type=multiple"
+const hardQuiz = "https://opentdb.com/api.php?amount=15&category=10&difficulty=hard&type=multiple"
+
 //Data and question number counter variable
 let data;
 let counter = 0;
+let apiAddress;
 
 //Sound track variable
-const soundTrack = document.getElementById("song");
+const soundTrack = document.getElementById("song"); //audio element
 
 //Question number element
 const questionNum = document.getElementById("question-num");
@@ -148,11 +153,20 @@ quizTimer.prototype.updateDisplay = function () {
     this.display.textContent = seconds < 10 ? "0" + seconds : seconds;
 }
 
+//Starts the quiz by switching screens then fetching questions.
+function playQuizGame() {
+    removeClass(screenIds.titleScreen, "display-flex");
+    addClass(screenIds.titleScreen, "hide");
+    addClass(screenIds.gameScreen, "display-block");
+    removeClass(screenIds.gameScreen, "hide");
+    fetchQuestions();
+}
+
 // Fetch questions from open trivia API.
 // code taken from chatGPT.
 async function fetchQuestions() {
     try {
-        const response = await fetch("https://opentdb.com/api.php?amount=15&category=10&difficulty=medium&type=multiple");
+        const response = await fetch(apiAddress);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -226,7 +240,7 @@ function assignCorrect() {
         if (button.innerText === correctAns) {
             button.setAttribute("data-value", "correct");
             correctElement = document.getElementById(button.id);
-            console.log(correctElement);
+            console.log(button.id);
         } else {
             //otherwise it will assign the data-value of incorrect.
             button.setAttribute("data-value", "incorrect");

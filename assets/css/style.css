@@ -137,7 +137,11 @@ dialog::backdrop {
 }
 
 /* screenhide */
-#diff-box {
+#title-screen,
+#leader-board,
+#victory,
+#failure,
+#game-screen {
     display: none;
 }
 
@@ -194,7 +198,7 @@ dialog::backdrop {
 
 .diff-heading {
     font-family: var(--primary-font);
-    font-size: 2vw;
+    font-size: 1rem;
     color: white;
     margin: 10%;
     letter-spacing: 3px;
@@ -223,11 +227,13 @@ dialog::backdrop {
     margin: 5px;
 }
 
+#hacking-progress {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
 .fa-square-full {
-    height: 10px;
-    width: 15px;
-    font-size: 15px;
-    margin-right: 10px;
+    font-size: 12px;
 }
 
 #question-box {
@@ -395,39 +401,55 @@ dialog::backdrop {
 
 /* Difficulty styles */
 
+#difficulty-screen {
+    background-color: var(--regent-gray);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
 #diff-box {
     border: 5px solid silver;
     background-color: var(--ebony);
-    position: absolute;
-    top: 47%;
-    left: 47%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 80%;
+    min-width: 200px;
+    width: 250px;
+    height: 350px;
     text-align: center;
-    margin: 3%;
+}
+
+#difficulty-btn-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #diff-box p {
     display: flex;
     justify-content: center;
-    margin: 10%;
+    margin-bottom: 15px;
     color: white;
     font-family: var(--secondary-font);
-    font-size: 1.2vw;
+    font-size: 1rem;
     letter-spacing: 1px;
 }
 
+#diff-rtn-menu {
+    margin-top: 15px;
+}
+
 .diff-btn {
-    font-size: 0.8vw;
-    width: 25%;
+    font-size: 0.7rem;
+    width: 50%;
     height: 25%;
-    padding: 1.3%;
-    margin: 2%;
+    padding: 5px;
+    margin: 5px;
     background-color: var(--cashmere);
     border: 4px solid #6B3D35;
     font-family: "Press Start 2P", system-ui;
-    justify-content: space-between;
     letter-spacing: 2px;
 }
 
