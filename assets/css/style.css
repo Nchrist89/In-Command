@@ -135,10 +135,7 @@ dialog::backdrop {
     margin-bottom: 3px;
 }
 /* screenhide */
-#diff-box,
-#title-screen,
-#game-screen,
-#victory {
+#diff-box {
     display: none;
 }
 
