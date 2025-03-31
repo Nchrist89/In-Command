@@ -191,12 +191,10 @@ async function fetchQuestions() {
     } catch (error) {
         console.error("Error fetching questions:", error);
     }
-    soundTrack.currentTime = 0;
 }
 
 //retrieve question function
 function getQuestion() {
-    console.log(apiAddress);
     console.log("books for michelle, remove"); // remove books quiz!!!!!
     //Checks index from counter before proceeding.
     if (alert >= 5) {
