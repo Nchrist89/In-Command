@@ -550,21 +550,11 @@ dialog::backdrop {
         margin: 20px;
     }
 
-    #quiz-info {
-        font-size: 1.5rem;
-    }
-
-    .quiz-gamehead {
-        font-size: 1.5rem;
-
-    }
-
-    #question-box {
-        font-size: 1.5rem;
-    }
-
+    #quiz-info,
+    #question-box,
+    .quiz-gamehead,
     .ans-btn {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
 
     .fa-square {
@@ -622,6 +612,21 @@ dialog::backdrop {
         font-size: larger;
     }
 
+    /* difficulty section */
+    #diff-box {
+        border: 5px solid silver;
+        background-color: var(--ebony);
+        width: 350px;
+        height: 400px;
+        text-align: center;
+    }
+
+    #diff-box p {
+        margin-bottom: 30px;
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+    }
+
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -677,6 +682,19 @@ dialog::backdrop {
     #guard {
         width: 52%;
     }
+
+    /* difficulty section */
+
+    #diff-box {
+        width: 450px;
+        height: 450px;
+    }
+
+    #difficulty-btn-box {
+        height: 150px;
+        font-size: larger;
+    }
+
 }
 
 
