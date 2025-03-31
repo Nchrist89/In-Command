@@ -23,9 +23,21 @@ const playAgainButton = document.getElementById("play-again");
 if (playAgainButton) {
     playAgainButton.addEventListener("click", () => {
         window.location.reload();
-        playQuizGame();
+        setTimeout(() => playQuizGame(), 5000);
     });
 }
+
+//click leaderboard button shows leaderboard screen
+const leaderBoardButton = document.getElementById("leaderboard-button");
+leaderBoardButton.addEventListener("click", () => {
+    const titleScreen = document.getElementById("title-screen");
+    titleScreen.classList.add("hide");
+    const leaderBoardScreen = document.getElementById("leader-board");
+    leaderBoardScreen.classList.remove("hide");
+    showHighScore();
+    setTimeout(() => titleScreen.classList.remove("hide"), 5000);
+    setTimeout(() => leaderBoardScreen.classList.add("hide"), 5000);
+})
 
 
 //Game functions and statements.
@@ -148,7 +160,7 @@ function getQuestion() {
     if (alert >= 5) {
         console.log(quizFailed);
         gotCaught();
-    } else if (answerCounter === 5) {
+    } else if (answerCounter === 10) {
         console.log("You were quick enough to hack the system!");
         runEndGame();
     } else if (counter <= 14) {

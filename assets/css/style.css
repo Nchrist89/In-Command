@@ -223,8 +223,9 @@ dialog::backdrop {
 
 .fa-square-full {
     height: 10px;
-    width: 7px;
+    width: 15px;
     font-size: 15px;
+    margin-right: 10px;
 }
 
 #question-box {
@@ -434,11 +435,14 @@ dialog::backdrop {
     letter-spacing: 2px;
 }
 
+/* Leaderboard section styles */
+
 #leader-board {
     height: 100vh;
     width: 100vw;
     background: black url("../images/leaderboard16.jpg") center / 200% no-repeat;
     overflow: hidden;
+    z-index: 20;
 }
 
 #score-board {
