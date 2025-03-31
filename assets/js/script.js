@@ -1,5 +1,7 @@
 // jshint esversion: 6
 
+
+//Modal which contains the how to play instructions at title screen.
 const modal = document.getElementById("modal");
 const openModal = document.getElementById("open-modal");
 const closeModal = document.getElementById("close-modal");
@@ -226,6 +228,7 @@ function assignCorrect() {
             correctElement = document.getElementById(button.id);
             console.log(correctElement);
         } else {
+            //otherwise it will assign the data-value of incorrect.
             button.setAttribute("data-value", "incorrect");
         }
         button.addEventListener("click", checkAnswer);
@@ -239,6 +242,8 @@ function checkAnswer(e) {
     let remainingTime = timer.getStoppedRemaining(); // stores time remaining.
     console.log("Time remaining:", remainingTime);
     answerChosen = e.currentTarget;
+
+    //Handles the correct answer event.
     if (answerChosen.dataset.value === "correct") {
         answerCounter++;
         currentScore += 100;
@@ -247,6 +252,7 @@ function checkAnswer(e) {
         console.log("answer chosen is CORRECT!!");
         scoreUpdate(currentScore, totalTimeRem);
 
+        //Handles the incorrect answer event or unanswered.
     } else if (answerChosen.dataset.value === "incorrect") {
         currentScore += 50;
         totalTimeRem += remainingTime;
@@ -274,7 +280,7 @@ function enableBtns() {
     });
 }
 
-//Timeout for timer event handler.
+//timer reaches zero event handler.
 function handleTimeout() {
     disableBtns();
     alert++;
@@ -286,17 +292,19 @@ function handleTimeout() {
 //changes style of button to indicate if right or wrong answer.
 function changeStyle(result, answerChosen) {
     console.log("changing style");
-
+    //correct answer styling
     if (result === "correct") {
         answerChosen.classList.add("correct");
         hackProgress();
         // timeout cooldown after question un/answered.
         setTimeout(() => nextQuestion(), 4000);
 
+        //incorrect answer styling.
     } else if (result === "incorrect") {
         answerChosen.classList.add("incorrect");
         setTimeout(() => nextQuestion(), 4000);
 
+        //no answer chosen styling.
     } else if (result === "noAnswer") {
         console.log("NO ANSWER!");
         correctElement.classList.add("no-answer");
@@ -309,6 +317,7 @@ function changeStyle(result, answerChosen) {
 
 //Runs if the user gets 5 questions wrong.
 function gotCaught() {
+    //if wrong answer 5 times.
     if (alert === 5) {
         quizFailed = true;
         console.log("got caught 4 times!");
@@ -317,6 +326,7 @@ function gotCaught() {
         removeClass(screenIds.failureScreen, "hide");
         addClass(screenIds.failureScreen, "display-flex");
         soundTrack.pause();
+        //if quiz has been failed.
     } else if (quizFailed === true) {
         console.log("You were not quick enough to hack the system.");
         addClass(screenIds.gameScreen, "hide");
@@ -345,17 +355,18 @@ function nextQuestion() {
     console.log("NextQuestion");
     if (quizFailed) {
         console.log("You failed to hack the system!");
+        // if no answer is chosen.
     } else if (!answerChosen) {
         console.log("no-answer");
         correctElement.classList.remove("no-answer");
         correctElement.removeAttribute("data-value", "correct")
         getQuestion();
-
+        //if answer is correct.
     } else if (answerChosen.innerHTML === correctAns) {
         console.log("correct Answer");
         answerChosen.classList.remove("correct");
         getQuestion();
-
+        //if answer is incorrect.
     } else if (answerChosen.innerHTML !== correctAns) {
         console.log("incorrect Answer");
         answerChosen.classList.remove("incorrect");
@@ -366,9 +377,11 @@ function nextQuestion() {
     }
 }
 
+//runs the victory screen endgame.
 function runEndGame() {
     addClass(screenIds.gameScreen, "hide");
     removeClass(screenIds.victoryScreen, "hide");
+    // player enters name, score added to highscores.
     const playerName = prompt("Enter your name:");
     if (playerName) {
         saveHighScore(playerName, totalScore);
@@ -416,6 +429,7 @@ function showHighScore() {
     const highScores = retrieveHighScores();
     const highScoreElement = document.getElementById("score-board");
 
+    //checks highscore, if zero creates it.
     if (highScoreElement) {
         highScoreElement.innerHTML = "";
         if (highScores.length === 0) {
@@ -423,6 +437,7 @@ function showHighScore() {
             return;
         }
 
+        //creates unordered list
         const ul = document.createElement("ul");
         highScores.forEach((entry, index) => {
             const li = document.createElement("li");
