@@ -43,7 +43,7 @@ function removeClass(screenId, className) {
 //starts quiz when play button is clicked
 const playGame = document.getElementById("play-game");
 playGame.addEventListener("click", () => {
-    playQuizGame();
+    chooseDifficulty();
 });
 
 //clicking main menu button returns user to main menu.
@@ -153,12 +153,28 @@ quizTimer.prototype.updateDisplay = function () {
     this.display.textContent = seconds < 10 ? "0" + seconds : seconds;
 }
 
-//Starts the quiz by switching screens then fetching questions.
-function playQuizGame() {
+function chooseDifficulty() {
     removeClass(screenIds.titleScreen, "display-flex");
     addClass(screenIds.titleScreen, "hide");
-    addClass(screenIds.gameScreen, "display-block");
+    removeClass(screenIds.diffScreen, "hide");
+    addClass(screenIds.diffScreen, "display-flex");
+}
+
+const easyOption = document.getElementById("easy-diff");
+easyOption.addEventListener("click", playQuizGame);
+const mediumOption = document.getElementById("medium-diff");
+mediumOption.addEventListener("click", playQuizGame);
+const hardOption = document.getElementById("hard-diff");
+hardOption.addEventListener("click", playQuizGame);
+
+
+//Starts the quiz by switching screens then fetching questions.
+function playQuizGame() {
+    addClass(screenIds.diffScreen, "hide");
+    removeClass(screenIds.diffScreen, "display-flex");
+    console.log("initiate quiz");
     removeClass(screenIds.gameScreen, "hide");
+    addClass(screenIds.gameScreen, "display-block");
     fetchQuestions();
 }
 
@@ -180,6 +196,7 @@ async function fetchQuestions() {
 
 //retrieve question function
 function getQuestion() {
+    console.log(apiAddress);
     console.log("books for michelle, remove"); // remove books quiz!!!!!
     //Checks index from counter before proceeding.
     if (alert >= 5) {

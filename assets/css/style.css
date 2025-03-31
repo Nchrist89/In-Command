@@ -137,13 +137,8 @@ dialog::backdrop {
 }
 
 /* screenhide */
-#title-screen,
-#leader-board,
-#victory,
-#failure,
-#game-screen {
-    display: none;
-}
+
+
 
 
 
@@ -405,7 +400,6 @@ dialog::backdrop {
     background-color: var(--regent-gray);
     width: 100vw;
     height: 100vh;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -428,8 +422,6 @@ dialog::backdrop {
 }
 
 #diff-box p {
-    display: flex;
-    justify-content: center;
     margin-bottom: 15px;
     color: white;
     font-family: var(--secondary-font);
