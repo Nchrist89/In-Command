@@ -21,6 +21,7 @@ const playAgainButton = document.getElementById("play-again");
 if (playAgainButton) {
     playAgainButton.addEventListener("click", () => {
         window.location.reload();
+        playQuizGame();
     });
 }
 
@@ -289,8 +290,6 @@ function gotCaught() {
         const failScreen = document.getElementById("failure");
         failScreen.classList.remove("hide");
         failScreen.classList.add("display-flex");
-        const guardImage = document.getElementById("alert-guard");
-        guardImage.classList.remove("hide-guard");
         soundTrack.pause();
     } else if (quizFailed === true) {
         console.log("You were not quick enough to hack the system.");

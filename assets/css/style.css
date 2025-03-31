@@ -135,9 +135,14 @@ dialog::backdrop {
     margin-bottom: 3px;
 }
 /* screenhide */
-#diff-box {
+#diff-box,
+#title-screen,
+#game-screen,
+#victory {
     display: none;
 }
+
+
 
 /* Game section styles */
 
@@ -336,11 +341,14 @@ dialog::backdrop {
 
 #fail-text > h3 {
     font-size: 1.3rem;
+    padding-top: 20px;
 }
 
 #fail-text {
-    margin: 25px;
+    width: 100%;
+    height: fit-content;
     background-color: var(--regent-gray);
+    margin-bottom: 25px;
 }
 
 #fail-text > p {
@@ -350,20 +358,14 @@ dialog::backdrop {
     letter-spacing: 1px;
 }
 
-.hide-guard {
-    display: none;
-}
 
 #guard {
-    width: 250px;
-    height: 300px;
-}
-
-.show-guard {
     position: absolute;
-    top: 63%;
+    top: 68%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 80%;
+    height: 60%;
 }
 
 /* correct and incorrect answer button styling */
