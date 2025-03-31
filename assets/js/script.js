@@ -12,11 +12,13 @@ closeModal.addEventListener("click", () => {
     modal.close();
 });
 
+//starts quiz when play button is clicked
 const playGame = document.getElementById("play-game");
 playGame.addEventListener("click", () => {
     playQuizGame();
 });
 
+//clicking play again on fail-screen restarts quiz
 const playAgainButton = document.getElementById("play-again");
 if (playAgainButton) {
     playAgainButton.addEventListener("click", () => {

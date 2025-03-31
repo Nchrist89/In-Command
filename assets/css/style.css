@@ -552,6 +552,11 @@ dialog::backdrop {
         font-size: 15px;
         margin-left: 10px;
     }
+
+    /* Failure screen media queries */
+    #guard {
+        height: 75%;
+    }
 }
 
 
@@ -594,6 +599,15 @@ dialog::backdrop {
     #game-logo {
         max-width: 350px;
         left: 20%;
+    }
+
+    /* Failure screen media queries */
+    #guard {
+        width: 65%;
+    }
+
+    #fail-text {
+        font-size: larger;
     }
 
 }
@@ -641,9 +655,15 @@ dialog::backdrop {
         width: 50%;
     }
 
+    /* Game screen media queries */
     #game-logo {
         max-width: 450px;
         left: 17%;
+    }
+
+    /* Fail screen media queries*/
+    #guard {
+        width: 52%;
     }
 }
 
