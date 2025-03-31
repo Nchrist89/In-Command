@@ -17,6 +17,14 @@ playGame.addEventListener("click", () => {
     playQuizGame();
 });
 
+const playAgainButton = document.getElementById("play-again");
+if (playAgainButton) {
+    playAgainButton.addEventListener("click", () => {
+        window.location.reload();
+    });
+}
+
+
 //Game functions and statements.
 
 let data;
@@ -127,8 +135,6 @@ async function fetchQuestions() {
     } catch (error) {
         console.error("Error fetching questions:", error);
     }
-    playCounter++;
-    localStorage.setItem(playCountKey, playCounter);
     soundTrack.currentTime = 0;
 }
 
@@ -313,8 +319,9 @@ function hackProgress() {
 //resets dataset value and styling.
 function nextQuestion() {
     console.log("NextQuestion");
-
-    if (!answerChosen) {
+    if (quizFailed) {
+        console.log("You failed to hack the system!");
+    } else if (!answerChosen) {
         console.log("no-answer");
         correctElement.classList.remove("no-answer");
         correctElement.removeAttribute("data-value", "correct")
@@ -330,9 +337,6 @@ function nextQuestion() {
         answerChosen.classList.remove("incorrect");
         getQuestion();
 
-    } else {
-        quizFailed = true;
-        gotCaught();
     }
 }
 
@@ -409,14 +413,5 @@ function viewScoreBoard() {
     showHighScore();
 }
 
-const playCountKey = "quizPlayCount"; //key to store the playcount in local storage.
 
-//Get the current play count from local storage
-let playCounter = localStorage.getItem(playCountKey);
 
-//initialize to zero if does not exist
-if (playCounter === null) {
-    playCounter = 0;
-} else {
-    playCounter = parseInt(playCounter);
-}
