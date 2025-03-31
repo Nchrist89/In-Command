@@ -66,6 +66,7 @@ dialog::backdrop {
 #title-logo {
     position: absolute;
     top: 5%;
+    left: 5%;
     height: fit-content;
     width: 90%;
 }
@@ -132,8 +133,9 @@ dialog::backdrop {
     font-family: "Press Start 2P", system-ui;
     letter-spacing: 1px;
     font-size: 0.7em;
-    margin-bottom: 3px;
+    margin: 3px;
 }
+
 /* screenhide */
 #diff-box {
     display: none;
