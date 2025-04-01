@@ -559,7 +559,7 @@ dialog::backdrop {
 @media only screen and (min-width: 992px) {
     #intro-text {
         font-size: 1.2rem;
-        height: 350px;
+        height: 250px;
     }
 
     .menu-btn {
@@ -623,6 +623,11 @@ dialog::backdrop {
         padding: 25px;
     }
 
+    #intro-text {
+        font-size: 1rem;
+        height: 240px;
+    }
+
 }
 
 
@@ -630,9 +635,9 @@ dialog::backdrop {
 @media only screen and (min-width: 1400px) {
 
     #title-logo {
-        width: 800px;
+        width: 600px;
         position: absolute;
-        left: 10%;
+        left: 9%;
     }
 
     #menu-buttons {
@@ -641,13 +646,13 @@ dialog::backdrop {
         text-align: center;
         position: absolute;
         top: 34%;
-        left: 18%;
-        margin-bottom: 15px;
+        left: 23%;
+        margin-bottom: 10px;
     }
 
     .menu-btn {
         margin-bottom: 15px;
-        width: 300px;
+        width: 170px;
     }
 
     #title-screen {
@@ -656,6 +661,7 @@ dialog::backdrop {
 
     #intro-text {
         width: 50%;
+        font-size: 1rem;
     }
 
     /* Game screen media queries */
@@ -682,6 +688,7 @@ dialog::backdrop {
     }
 
 }
+
 
 
 
