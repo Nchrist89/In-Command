@@ -14,43 +14,6 @@ closeModal.addEventListener("click", () => {
     modal.close();
 });
 
-//Screen hide and display
-const screenIds = {
-    victoryScreen: "victory-screen",
-    leaderBoardScreen: "leader-board",
-    titleScreen: "title-screen",
-    failureScreen: "failure",
-    gameScreen: "game-screen",
-    diffScreen: "difficulty-screen"
-};
-
-//adds class screenId element.
-function addClass(screenId, className) {
-    const element = document.getElementById(screenId);
-    if (element) {
-        element.classList.add(className);
-    }
-}
-
-//removes class from screenId element.
-function removeClass(screenId, className) {
-    const element = document.getElementById(screenId);
-    if (element) {
-        element.classList.remove(className);
-    }
-}
-
-
-//click leaderboard button shows leaderboard screen
-const leaderBoardButton = document.getElementById("leaderboard-button");
-leaderBoardButton.addEventListener("click", () => {
-    addClass(screenIds.titleScreen, "hide");
-    removeClass(screenIds.leaderBoardScreen, "hide");
-    showHighScore();
-    setTimeout(() => removeClass(screenIds.titleScreen, "hide"), 5000);
-    setTimeout(() => addClass(screenIds.leaderBoardScreen, "hide"), 5000);
-})
-
 const easyQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=easy&type=multiple"
 const mediumQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=medium&type=multiple"
 const hardQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=hard&type=multiple"
@@ -141,29 +104,73 @@ quizTimer.prototype.updateDisplay = function () {
     this.display.textContent = seconds < 10 ? "0" + seconds : seconds;
 }
 
+//Screen hide and display
+const screenIds = {
+    victoryScreen: "victory-screen",
+    leaderBoardScreen: "leader-board",
+    titleScreen: "title-screen",
+    failureScreen: "failure",
+    gameScreen: "game-screen",
+    diffScreen: "difficulty-screen"
+};
+
+//adds class screenId element.
+function addClass(screenId, className) {
+    const element = document.getElementById(screenId);
+    if (element) {
+        element.classList.add(className);
+    }
+}
+
+//removes class from screenId element.
+function removeClass(screenId, className) {
+    const element = document.getElementById(screenId);
+    if (element) {
+        element.classList.remove(className);
+    }
+}
+
+const easyOption = document.getElementById("easy-diff"); // id of the button element
+const mediumOption = document.getElementById("medium-diff"); // id of the button element
+const hardOption = document.getElementById("hard-diff"); // id of the button element
+
+const difficultyButtons = document.querySelectorAll("[data-difficulty]");
+
+const difficulties = [
+    { name: "easy", bonus: 1000},
+    { name: "medium", bonus: 1250},
+    { name: "hard", bonus: 1500}
+];
+
+//Handles the event when user selects difficulty.
+function difficultyHandler(event) {
+    const selectedDifficultyName = event.target.dataset.difficulty;
+    const selectedDifficulty = difficulties.find(diff => diff.name === selectedDifficultyName);
+    if (selectedDifficulty) {
+        currentScore += selectedDifficulty.bonus;
+        console.log(`${selectedDifficulty.name} selected, bonus of ${selectedDifficulty.bonus}. Your starting score is ${currentScore}`);
+        playQuizGame();
+    } else {
+        console.log(`${selectedDifficulty.name} not found!`);
+    }
+}
+
+difficultyButtons.forEach(button => {
+    button.addEventListener("click", difficultyHandler);
+});
+
+//displays difficulty screen when play button is clicked
+const playGame = document.getElementById("play-game");
+playGame.addEventListener("click", () => {
+    chooseDifficulty();
+});
+
 function chooseDifficulty() {
-    const easyOption = document.getElementById("easy-diff"); // id of the button element
-    const mediumOption = document.getElementById("medium-diff"); // id of the button element
-    const hardOption = document.getElementById("hard-diff"); // id of the button element
     removeClass(screenIds.titleScreen, "display-flex");
     addClass(screenIds.titleScreen, "hide");
     removeClass(screenIds.diffScreen, "hide");
     addClass(screenIds.diffScreen, "display-flex");
-    easyOption.addEventListener("click", diffBonusHandler(1000));
-    mediumOption.addEventListener("click", diffBonusHandler(1250));
-    hardOption.addEventListener("click", diffBonusHandler(1500));
 }
-
-
-
-function diffBonusHandler(bonus) {
-    return function(event) {
-        console.log("Your difficulty bonus is:", bonus);
-        currentScore += bonus;
-        playQuizGame();
-    }
-}
-
 
 
 //Starts the quiz by switching screens then fetching questions.
@@ -184,8 +191,8 @@ async function fetchQuestions() {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        data = await response.json(); // Assign the data to the data variable.
-        setTimeout(() => getQuestion(), 1000); // Call getQuestion after data is fetched with minor time delay.
+        data = await response.json(); //Assign the data to the data variable.
+        setTimeout(() => getQuestion(), 1000); //data is fetched with minor time delay.
     } catch (error) {
         console.error("Error fetching questions:", error);
     }
@@ -430,7 +437,7 @@ function scoreUpdate(score, totalTimeRem) {
 
 // Saves the users highscore to local storage
 // had to get help from Gemini on how to use local storage.
-//code written and any variables used apart from variables with an underscore.
+//code written by me not copied and edited where possible.
 function saveHighScore(playerName, totalScore) {
     const highScoresList = localStorage.getItem(HIGH_SCORE_KEY);
     let highScores = highScoresList ? JSON.parse(highScoresList) : [];
@@ -477,17 +484,21 @@ function showHighScore() {
     }
 }
 
-//shows leaderboard after quiz completion victory screen.
+//shows leaderboard after quiz completion. Victory screen.
 function viewScoreBoard() {
     addClass(screenIds.victoryScreen, "hide");
     removeClass(screenIds.leaderBoardScreen, "hide");
     showHighScore();
 }
 
-//starts quiz when play button is clicked
-const playGame = document.getElementById("play-game");
-playGame.addEventListener("click", () => {
-    chooseDifficulty();
+//click leaderboard button shows leaderboard screen
+const leaderBoardButton = document.getElementById("leaderboard-button");
+leaderBoardButton.addEventListener("click", () => {
+    addClass(screenIds.titleScreen, "hide");
+    removeClass(screenIds.leaderBoardScreen, "hide");
+    showHighScore();
+    setTimeout(() => removeClass(screenIds.titleScreen, "hide"), 5000);
+    setTimeout(() => addClass(screenIds.leaderBoardScreen, "hide"), 5000);
 });
 
 //clicking main menu button returns user to main menu.
