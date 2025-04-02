@@ -48,9 +48,19 @@ playGame.addEventListener("click", () => {
 
 //clicking main menu button returns user to main menu.
 const mainMenuButton = document.getElementById("main-menu");
+const notFoundButton = document.getElementById("not-found-btn");
+    notFoundButton.addEventListener("click", () => {
+        window.location.reload();
+    })
     mainMenuButton.addEventListener("click", () => {
         window.location.reload();
     });
+
+const playAgain = document.getElementById("play-again");
+    playAgain.addEventListener("click", () => {
+        window.location.reload();
+        setTimeout(() => chooseDifficulty(), 5000);
+    })
 
 
 //click leaderboard button shows leaderboard screen

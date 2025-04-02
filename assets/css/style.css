@@ -478,30 +478,42 @@ dialog::backdrop {
 /* 404 page - Area not found */
 
 #page-not-found {
+    display: flex;
     background-color: var(--ebony);
 }
 
 #area-not-found {
-    border: 5px solid var(--cashmere);
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-image: url(../images/area-not-found2.jpg);
     background-size: cover;
     background-position: center;
-    height: 70vh;
-    width: 80vw;
+    height: 100vh;
+    width: 100vw;
 
 }
 
-#area-not-found > div {
+#not-found-text {
     font-family: var(--primary-font);
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     position: absolute;
-    width: 20%;
-    left: 67%;
-    top: 25%;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    color: var(--ebony);
+    text-align: center;
+    background-color: var(--regent-gray);
+    border: 5px solid var(--cashmere);
+}
+
+#not-found-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
 
 /* Extra small devices (phones, 620px and down) */
@@ -509,8 +521,8 @@ dialog::backdrop {
     #game-logo {
         max-width: 250px;
     }
-}
 
+}
 
 /* Small devices (portrait tablets and large phones, 620px and up) */
 @media only screen and (min-width: 620px) {
@@ -536,6 +548,7 @@ dialog::backdrop {
     .menu-btn {
         width: 150px;
         height: 50px;
+        line-height: 1.2em;
     }
 
     #intro-text {
