@@ -475,6 +475,35 @@ dialog::backdrop {
     padding: 10px;
 }
 
+/* 404 page - Area not found */
+
+#page-not-found {
+    background-color: var(--ebony);
+}
+
+#area-not-found {
+    border: 5px solid var(--cashmere);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(../images/area-not-found2.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    width: 80vw;
+
+}
+
+#area-not-found > div {
+    font-family: var(--primary-font);
+    font-size: 1.5rem;
+    position: absolute;
+    width: 20%;
+    left: 67%;
+    top: 25%;
+}
+
 /* Extra small devices (phones, 620px and down) */
 @media only screen and (max-width: 619px) {
     #game-logo {
