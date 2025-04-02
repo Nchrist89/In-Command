@@ -40,28 +40,6 @@ function removeClass(screenId, className) {
     }
 }
 
-//starts quiz when play button is clicked
-const playGame = document.getElementById("play-game");
-playGame.addEventListener("click", () => {
-    chooseDifficulty();
-});
-
-//clicking main menu button returns user to main menu.
-const mainMenuButton = document.getElementById("main-menu");
-const notFoundButton = document.getElementById("not-found-btn");
-    notFoundButton.addEventListener("click", () => {
-        window.location.reload();
-    })
-    mainMenuButton.addEventListener("click", () => {
-        window.location.reload();
-    });
-
-const playAgain = document.getElementById("play-again");
-    playAgain.addEventListener("click", () => {
-        window.location.reload();
-        setTimeout(() => chooseDifficulty(), 5000);
-    })
-
 
 //click leaderboard button shows leaderboard screen
 const leaderBoardButton = document.getElementById("leaderboard-button");
@@ -73,9 +51,9 @@ leaderBoardButton.addEventListener("click", () => {
     setTimeout(() => addClass(screenIds.leaderBoardScreen, "hide"), 5000);
 })
 
-const easyQuiz = "https://opentdb.com/api.php?amount=15&category=10&difficulty=medium&type=multiple"
-const mediumQuiz = "https://opentdb.com/api.php?amount=15&category=10&difficulty=medium&type=multiple"
-const hardQuiz = "https://opentdb.com/api.php?amount=15&category=10&difficulty=hard&type=multiple"
+const easyQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=easy&type=multiple"
+const mediumQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=medium&type=multiple"
+const hardQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=hard&type=multiple"
 
 //Data and question number counter variable
 let data;
@@ -164,18 +142,28 @@ quizTimer.prototype.updateDisplay = function () {
 }
 
 function chooseDifficulty() {
+    const easyOption = document.getElementById("easy-diff"); // id of the button element
+    const mediumOption = document.getElementById("medium-diff"); // id of the button element
+    const hardOption = document.getElementById("hard-diff"); // id of the button element
     removeClass(screenIds.titleScreen, "display-flex");
     addClass(screenIds.titleScreen, "hide");
     removeClass(screenIds.diffScreen, "hide");
     addClass(screenIds.diffScreen, "display-flex");
+    easyOption.addEventListener("click", diffBonusHandler(1000));
+    mediumOption.addEventListener("click", diffBonusHandler(1250));
+    hardOption.addEventListener("click", diffBonusHandler(1500));
 }
 
-const easyOption = document.getElementById("easy-diff");
-easyOption.addEventListener("click", playQuizGame);
-const mediumOption = document.getElementById("medium-diff");
-mediumOption.addEventListener("click", playQuizGame);
-const hardOption = document.getElementById("hard-diff");
-hardOption.addEventListener("click", playQuizGame);
+
+
+function diffBonusHandler(bonus) {
+    return function(event) {
+        console.log("Your difficulty bonus is:", bonus);
+        currentScore += bonus;
+        playQuizGame();
+    }
+}
+
 
 
 //Starts the quiz by switching screens then fetching questions.
@@ -495,6 +483,28 @@ function viewScoreBoard() {
     removeClass(screenIds.leaderBoardScreen, "hide");
     showHighScore();
 }
+
+//starts quiz when play button is clicked
+const playGame = document.getElementById("play-game");
+playGame.addEventListener("click", () => {
+    chooseDifficulty();
+});
+
+//clicking main menu button returns user to main menu.
+const mainMenuButton = document.getElementById("main-menu");
+//const notFoundButton = document.getElementById("not-found-btn");
+    //notFoundButton.addEventListener("click", () => {
+    //    window.location.reload();
+    //});
+    mainMenuButton.addEventListener("click", () => {
+        window.location.reload();
+    });
+
+const playAgain = document.getElementById("play-again");
+    playAgain.addEventListener("click", () => {
+        window.location.reload();
+        setTimeout(() => chooseDifficulty(), 5000);
+    });
 
 
 
