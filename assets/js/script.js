@@ -18,6 +18,8 @@ const easyQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=e
 const mediumQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=medium&type=multiple"
 const hardQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=hard&type=multiple"
 
+let difficultyChosenBonus = 0;
+
 //Data and question number counter variable
 let data;
 let counter = 0;
@@ -49,7 +51,10 @@ let currentQuestion; // stores the current question object.
 let correctAns; // stores the string of the answer.
 let correctElement; //the element of the correct button.
 let answerCounter = 0; // answer correct total.
+
 let quizFailed = false;
+let playOnceMore = false;
+
 
 //Score variables
 let totalScore = 0; // Total end score.
@@ -130,12 +135,6 @@ function removeClass(screenId, className) {
     }
 }
 
-const easyOption = document.getElementById("easy-diff"); // id of the button element
-const mediumOption = document.getElementById("medium-diff"); // id of the button element
-const hardOption = document.getElementById("hard-diff"); // id of the button element
-
-const difficultyButtons = document.querySelectorAll("[data-difficulty]");
-
 const difficulties = [
     { name: "easy", bonus: 1000},
     { name: "medium", bonus: 1250},
@@ -147,7 +146,9 @@ function difficultyHandler(event) {
     const selectedDifficultyName = event.target.dataset.difficulty;
     const selectedDifficulty = difficulties.find(diff => diff.name === selectedDifficultyName);
     if (selectedDifficulty) {
+        difficultyChosenBonus = selectedDifficulty.bonus;
         currentScore += selectedDifficulty.bonus;
+        console.log(selectedDifficulty.name);
         console.log(`${selectedDifficulty.name} selected, bonus of ${selectedDifficulty.bonus}. Your starting score is ${currentScore}`);
         playQuizGame();
     } else {
@@ -155,15 +156,11 @@ function difficultyHandler(event) {
     }
 }
 
-difficultyButtons.forEach(button => {
-    button.addEventListener("click", difficultyHandler);
-});
-
-//displays difficulty screen when play button is clicked
-const playGame = document.getElementById("play-game");
-playGame.addEventListener("click", () => {
-    chooseDifficulty();
-});
+function handleReplay() {
+    console.log("replay game!");
+    playOnceMore = true;
+    playQuizGame();
+}
 
 function chooseDifficulty() {
     removeClass(screenIds.titleScreen, "display-flex");
@@ -172,16 +169,42 @@ function chooseDifficulty() {
     addClass(screenIds.diffScreen, "display-flex");
 }
 
+function returnMenu() {
+    window.location.reload();
+}
+
 
 //Starts the quiz by switching screens then fetching questions.
 function playQuizGame() {
-    addClass(screenIds.diffScreen, "hide");
-    removeClass(screenIds.diffScreen, "display-flex");
-    console.log("initiate quiz");
-    removeClass(screenIds.gameScreen, "hide");
-    addClass(screenIds.gameScreen, "display-block");
+    if (playOnceMore) {
+        totalScore = 0;
+        totalTimeRem = 0;
+        alert = 0;
+        answerCounter = 0;
+        quizFailed = false;
+        counter = 0;
+        const scoreDisplay = document.getElementById("score");
+        scoreDisplay.innerHTML = 0;
+        currentQuestion.innerHTML = "";
+        answer1.innerHTML = "";
+        answer2.innerHTML = "";
+        answer3.innerHTML = "";
+        answer4.innerHTML = "";
+        hackingBar.innerHTML = "";
+        currentQuestion = data.results[counter];
+        addClass(screenIds.failureScreen, "hide");
+        removeClass(screenIds.gameScreen, "hide");
+        currentScore = difficultyChosenBonus;
+    } else {
+        addClass(screenIds.diffScreen, "hide");
+        removeClass(screenIds.diffScreen, "display-flex");
+        console.log("initiate quiz");
+        removeClass(screenIds.gameScreen, "hide");
+        addClass(screenIds.gameScreen, "display-block");
+    }
     fetchQuestions();
 }
+
 
 // Fetch questions from open trivia API.
 // code taken from chatGPT.
@@ -192,10 +215,10 @@ async function fetchQuestions() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         data = await response.json(); //Assign the data to the data variable.
-        setTimeout(() => getQuestion(), 1000); //data is fetched with minor time delay.
     } catch (error) {
         console.error("Error fetching questions:", error);
     }
+    getQuestion();
 }
 
 //retrieve question function
@@ -388,6 +411,8 @@ function hackProgress() {
 function nextQuestion() {
     console.log("NextQuestion");
     if (quizFailed) {
+        correctElement.classList.remove("no-answer");
+        answerChosen.classList.remove("incorrect");
         console.log("You failed to hack the system!");
         // if no answer is chosen.
     } else if (!answerChosen) {
@@ -407,7 +432,7 @@ function nextQuestion() {
         getQuestion();
 
     } else {
-        console.log("Next question error!");
+        console.log("next question end");
     }
 }
 
@@ -502,20 +527,28 @@ leaderBoardButton.addEventListener("click", () => {
 });
 
 //clicking main menu button returns user to main menu.
-const mainMenuButton = document.getElementById("main-menu");
-//const notFoundButton = document.getElementById("not-found-btn");
-    //notFoundButton.addEventListener("click", () => {
-    //    window.location.reload();
-    //});
-    mainMenuButton.addEventListener("click", () => {
-        window.location.reload();
-    });
+const mainMenuButton = document.querySelectorAll(".rtn-menu-btn");
+mainMenuButton.forEach(button => {
+    button.addEventListener("click", returnMenu)
+});
 
-const playAgain = document.getElementById("play-again");
-    playAgain.addEventListener("click", () => {
-        window.location.reload();
-        setTimeout(() => chooseDifficulty(), 5000);
-    });
+//Send to handle the quiz being replayed.
+const playAgainButtons = document.querySelectorAll(".replay-btn");
+playAgainButtons.forEach(button => {
+    button.addEventListener("click", handleReplay);
+});
 
 
+
+//waits for click and sends to difficulty handler.
+const difficultyButtons = document.querySelectorAll("[data-difficulty]");
+difficultyButtons.forEach(button => {
+    button.addEventListener("click", difficultyHandler);
+});
+
+//displays difficulty screen when play button is clicked
+const playGame = document.getElementById("play-game");
+playGame.addEventListener("click", () => {
+    chooseDifficulty();
+});
 

@@ -314,6 +314,11 @@ dialog::backdrop {
 
 }
 
+.replay-btn {
+    background-color: var(--cashmere);
+    border: 4px solid #6B3D35;
+}
+
 /* failure & pop-up guard styles */
 
 #failure {
@@ -472,7 +477,7 @@ dialog::backdrop {
     text-align: center;
     font-family: var(--primary-font);
     background-color: var(--ebony);
-    color: var(--buccaneer);
+    color: var(--regent-gray);
     padding: 10px;
 }
 
@@ -493,7 +498,6 @@ dialog::backdrop {
     background-position: center;
     height: 100vh;
     width: 100vw;
-
 }
 
 #not-found-text {
@@ -546,7 +550,7 @@ dialog::backdrop {
     }
 
     .menu-btn {
-        width: 150px;
+        width: 170px;
         line-height: 1.2em;
         font-weight: bold;
         height: 40px;
@@ -555,7 +559,6 @@ dialog::backdrop {
 
     #intro-text {
         font-size: 1rem;
-        overflow-y: hidden;
     }
 
     #intro-box > h3 {
@@ -595,6 +598,7 @@ dialog::backdrop {
     /* Failure screen media queries */
     #guard {
         height: 75%;
+        width: 50%;
     }
 
     .menu-btn {
@@ -633,7 +637,7 @@ dialog::backdrop {
 
     /* Failure screen media queries */
     #guard {
-        width: 65%;
+        width: 60%;
     }
 
     #fail-text {
