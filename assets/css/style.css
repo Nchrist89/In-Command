@@ -495,6 +495,17 @@ dialog::backdrop {
     color: var(--cashmere);
 }
 
+#scoreboard-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50%;
+    width: 50%;
+    background-color: var(--ebony);
+    border: 4px solid var(--crimson);
+}
+
 #score-board > ul {
     list-style-type: none;
 }
