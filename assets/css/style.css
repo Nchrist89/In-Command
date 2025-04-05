@@ -10,6 +10,7 @@
 /* Hex color palette */
 :root {
     --mandy: #e54b51;
+    --crimson: #B22222;
     --ebony: #100711;
     --buccaneer: #632b3c;
     --cashmere: #e3b69e;
@@ -106,6 +107,17 @@ dialog::backdrop {
 
 }
 
+/* Hides the scrollbar from being visible on chrome, Safari and Opera */
+#intro-text::-webkit-scrollbar {
+    display: none;
+  }
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#intro-text {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 #title-img-box {
     background-size: cover;
     margin-left: auto;
@@ -127,9 +139,10 @@ dialog::backdrop {
 .menu-btn {
     padding: 5px;
     line-height: 1em;
-    color: var(--ebony);
-    background-color: var(--mandy);
-    border: 3px solid var(--gravel);
+    color: var(--cashmere);
+    text-shadow: 2px 2px 2px black;
+    background-color: var(--crimson);
+    border: 3px solid var(--ebony);
     font-family: "Press Start 2P", system-ui;
     letter-spacing: 3px;
     font-size: 0.7em;
@@ -175,10 +188,6 @@ dialog::backdrop {
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-#gameBG {
-    object-fit: cover;
 }
 
 #quiz-header {
@@ -282,9 +291,6 @@ dialog::backdrop {
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--ebony);
-}
-
-#victory {
     align-content: center;
     align-self: center;
     text-align: center;
@@ -292,7 +298,7 @@ dialog::backdrop {
 }
 
 #success-text {
-    background-color: rgba(130, 127, 127, 0.7);
+    background-color:var(--regent-gray);
     color: var(--ebony);
     font-family: var(--primary-font);
     font-size: 1.1rem;
@@ -300,18 +306,35 @@ dialog::backdrop {
     letter-spacing: 1px;
     width: 90%;
     max-width: 700px;
-    padding: 5px;
+    padding: 10px;
     margin: 10px auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 5px solid black;
+    border: 5px solid var(--gravel);
 }
 
 #success-text > h3 {
-    margin: 10px 0;
+    margin: 20px 0;
+}
 
+#victory-menu {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+}
+
+.victory-btn {
+    color: black;
+    background-color: var(--crimson);
+    border: 3px solid var(--gravel);
+    font-family: "Press Start 2P", system-ui;
+    letter-spacing: 3px;
+    font-size: 0.7em;
+    padding: 10px;
+    margin: 4px;
+    width: 200px;
 }
 
 .replay-btn {
@@ -321,7 +344,7 @@ dialog::backdrop {
 
 /* failure & pop-up guard styles */
 
-#failure {
+#failure-screen {
     background-color: var(--ebony);
     width: 100vw;
     height: 100vh;
@@ -350,7 +373,6 @@ dialog::backdrop {
     letter-spacing: 1px;
 }
 
-
 #guard {
     position: absolute;
     top: 68%;
@@ -358,6 +380,13 @@ dialog::backdrop {
     transform: translate(-50%, -50%);
     width: 80%;
     height: 60%;
+}
+
+#title-screen,
+#game-screen,
+#failure-screen,
+#victory-screen {
+    display: none;
 }
 
 /* correct and incorrect answer button styling */
@@ -389,14 +418,13 @@ dialog::backdrop {
 
 .diff-heading {
     font-family: var(--primary-font);
-    font-size: 1rem;
-    color: white;
+    color: var(--ebony);
     margin: 10%;
     letter-spacing: 3px;
 }
 
 #difficulty-screen {
-    background-color: var(--regent-gray);
+    background-color: var(--ebony);
     width: 100vw;
     height: 100vh;
     flex-direction: column;
@@ -406,8 +434,8 @@ dialog::backdrop {
 }
 
 #diff-box {
-    border: 5px solid silver;
-    background-color: var(--ebony);
+    border: 5px solid ;
+    background-color: var(--regent-gray);
     min-width: 200px;
     width: 250px;
     height: 350px;
@@ -422,9 +450,9 @@ dialog::backdrop {
 
 #diff-box p {
     margin-bottom: 15px;
-    color: white;
-    font-family: var(--secondary-font);
-    font-size: 1rem;
+    font-size: smaller;
+    color: var(--ebony);
+    font-family: var(--primary-font);
     letter-spacing: 1px;
 }
 
@@ -450,9 +478,6 @@ dialog::backdrop {
 #leader-board {
     height: 100vh;
     width: 100vw;
-    background: var(--ebony) url("../images/leaderboard16.jpg") center / 200% no-repeat;
-    overflow: hidden;
-    z-index: 20;
 }
 
 #score-board {
@@ -476,8 +501,8 @@ dialog::backdrop {
 #leaderBoard-text {
     text-align: center;
     font-family: var(--primary-font);
-    background-color: var(--ebony);
-    color: var(--regent-gray);
+    background-color: var(--regent-gray);
+    color: var(--ebony);
     padding: 10px;
 }
 
@@ -523,7 +548,7 @@ dialog::backdrop {
 /* Extra small devices (phones, 620px and down) */
 @media only screen and (max-width: 619px) {
     #game-logo {
-        max-width: 250px;
+        max-width: 330px;
     }
 
 }
@@ -550,9 +575,8 @@ dialog::backdrop {
     }
 
     .menu-btn {
-        width: 170px;
+        width: 180px;
         line-height: 1.2em;
-        font-weight: bold;
         height: 40px;
 
     }
@@ -567,7 +591,7 @@ dialog::backdrop {
     /* Game screen media queries */
     #game-logo {
         height: fit-content;
-        max-width: 300px;
+        max-width: 350px;
         justify-content: center;
     }
 
@@ -646,29 +670,27 @@ dialog::backdrop {
 
     /* difficulty section */
 
+    .diff-heading {
+        font-size: 1.5rem;
+    }
+
     #diff-rtn-menu {
         margin-top: 35px;
         font-size: 1rem;
     }
 
     #diff-box {
-        border: 5px solid silver;
-        background-color: var(--ebony);
         width: 350px;
         height: 450px;
         text-align: center;
     }
 
     #diff-box p {
+        padding: 15px;
+        font-size: 1.2rem;
         margin-bottom: 30px;
-        font-size: 1.4rem;
         letter-spacing: 2px;
     }
-
-    #diff-box > h3 {
-        font-size: larger;
-    }
-
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -682,6 +704,14 @@ dialog::backdrop {
     #intro-text {
         font-size: 1rem;
         height: 240px;
+    }
+
+    #diff-box {
+        height: 500px;
+    }
+
+    .victory-btn {
+        width: 240px;
     }
 
 }
@@ -708,7 +738,6 @@ dialog::backdrop {
 
     .menu-btn {
         margin-bottom: 15px;
-        width: 170px;
     }
 
     #title-screen {
@@ -732,16 +761,17 @@ dialog::backdrop {
     }
 
     /* difficulty section */
-
     #diff-box {
-        width: 450px;
-        height: 450px;
+        height: 550px;
+        width: 400px;
     }
 
-    #difficulty-btn-box {
-        height: 150px;
-        font-size: larger;
+    .diff-btn {
+        height: 50px;
+        font-size: 0.8rem;
     }
+
+
 
 }
 
