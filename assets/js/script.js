@@ -55,6 +55,9 @@ let answerCounter = 0; // answer correct total.
 let quizFailed = false;
 let playOnceMore = false;
 
+let userName = document.getElementById("username");
+let playerName = userName.innerHTML;
+
 
 //Score variables
 let totalScore = 0; // Total end score.
@@ -438,15 +441,6 @@ function nextQuestion() {
 function runEndGame() {
     addClass(screenIds.gameScreen, "hide");
     removeClass(screenIds.victoryScreen, "hide");
-    // player enters name, score added to highscores.
-    const playerName = prompt("Enter your name:");
-    if (playerName) {
-        saveHighScore(playerName, totalScore);
-        showHighScore(); //updates the leaderboard
-        setTimeout(() => viewScoreBoard(), 15000);
-    } else {
-        console.log("no name provided.");
-    }
 }
 
 //updates total score with bonus time remaining.
@@ -458,19 +452,47 @@ function scoreUpdate(score, totalTimeRem) {
     scoreDisplay.innerText = totalScore;
 }
 
+//When name is input into field, this function runs.
+function submitScore() {
+    const playerNameInput = document.getElementById("username"); // Changed to "username"
+    const playerName = playerNameInput.value.trim();
+    const nameInputContainer = document.getElementById("name-input-container"); // Assuming you still have this ID
+
+    if (playerName) {
+        saveHighScore(playerName, totalScore);
+        showHighScore(); // Updates the leaderboard
+
+        // Hide the input form after submission
+        if (nameInputContainer) {
+            addClass(nameInputContainer, "hide");
+        }
+        viewScoreBoard();
+    } else {
+        console.log("No name provided.");
+        // Optionally provide feedback to the user that the name is required
+        alert("Please enter your name to save your score.");
+    }
+}
+
 // Saves the users highscore to local storage
 // had to get help from Gemini on how to use local storage.
 //code written by me not copied and edited where possible.
 function saveHighScore(playerName, totalScore) {
-    const highScoresList = localStorage.getItem(HIGH_SCORE_KEY);
-    let highScores = highScoresList ? JSON.parse(highScoresList) : [];
-    const newHighScore = { name: playerName, score: totalScore };
-    highScores.push(newHighScore); // Add the new score
-    highScores.sort((a, b) => b.score - a.score); //sort the list ascending
-    highScores = highScores.slice(0, MAX_HIGH_SCORES); // ensures highscore list maxes at 10.
-
-    //saves the updated list to local storage
-    localStorage.setItem(HIGH_SCORE_KEY, JSON.stringify(highScores));
+    if (playerName && playerName.trim() !== "") { // Added trim and check for empty string
+        const highScoresList = localStorage.getItem(HIGH_SCORE_KEY);
+        let highScores = highScoresList ? JSON.parse(highScoresList) : [];
+        const newHighScore = { name: playerName.trim(), score: totalScore }; // Trim the name before saving
+        highScores.push(newHighScore);
+        highScores.sort((a, b) => b.score - a.score);
+        highScores = highScores.slice(0, MAX_HIGH_SCORES);
+        localStorage.setItem(HIGH_SCORE_KEY, JSON.stringify(highScores)); // Save to local storage
+        showHighScore(); // Only update leaderboard if a score was saved
+    } else {
+        console.log("No valid name provided, high score not saved.");
+        // Optionally, you could still call showHighScore() here if you want to ensure
+        // the leaderboard is displayed even if no new score was saved.
+        // However, it might be better to handle this in the submitScore() function.
+    }
 }
 
 //retrieves the highscores from local storage.
