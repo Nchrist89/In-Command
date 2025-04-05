@@ -147,7 +147,7 @@
 
                 <div>
                     <button class="menu-btn rtn-menu-btn">Main Menu</button>
-                    <button class="menu-btn replay-btn">Play again</button>
+                    <button class="menu-btn" id="replay-btn">Play again</button>
                 </div>
             </div>
         </section>
@@ -157,16 +157,12 @@
             <div id="victory-screen" class="hide">
                 <div id="success-text">
                     <h3 class="heading">Mission accomplished!</h3>
-                    <p>You hacked the terminal and gained access to the NCM and deactivated the warhead! Well done!</p>
-                    <br>
-                    <p>With your efforts, the people of the country have been saved!</p>
-                    <p>Please enter your name below to save your score into our hall of fame leaderboard!</p>
-                    <p>You wll shortly redirect to the leaderboard section</p>
-                    <br>
+                    <p>You hacked the terminal and deactivated the warhead! Well done!</p>
+                    <p>Please enter your name below to save your score on the leaderboard</p>
                     <div id="name-input-container">
                         <label for="username">Enter name</label>
                         <input id="username" type="text" placeholder="Your name here">
-                        <button onclick="submitScore()">Save score</button>
+                        <button id="saveScore" onclick="submitScore()">Save score</button>
                     </div>
                     <br>
                     <button class="menu-btn rtn-menu-btn">Main Menu</button>

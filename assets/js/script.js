@@ -42,6 +42,9 @@ const answer3 = document.getElementById("answer-3");
 const answer4 = document.getElementById("answer-4");
 const answerBtn = document.querySelectorAll(".ans-btn"); //Nodelist
 
+const playAgainButton = document.getElementById("replay-btn");
+
+
 // correct answer progress bar variable.
 const hackingBar = document.getElementById("hacking-progress");
 
@@ -186,6 +189,8 @@ function playQuizGame() {
         answerCounter = 0;
         quizFailed = false;
         counter = 0;
+        correctElement.classList.remove("no-answer");
+        answerChosen.classList.remove("incorrect");
         const scoreDisplay = document.getElementById("score");
         scoreDisplay.innerHTML = 0;
         currentQuestion.innerHTML = "";
@@ -310,6 +315,7 @@ function checkAnswer(e) {
         console.log("answer chosen is CORRECT!!");
         scoreUpdate(currentScore, totalTimeRem);
 
+
         //Handles the incorrect answer event or unanswered.
     } else if (answerChosen.dataset.value === "incorrect") {
         currentScore += 50;
@@ -318,7 +324,7 @@ function checkAnswer(e) {
         console.log("answer chosen is incorrect!!");
         scoreUpdate(currentScore, totalTimeRem);
         alert++;
-        gotCaught();
+        setTimeout(() => gotCaught(), 5000);
     } else {
         console.log("error check answer end!");
     }
@@ -355,18 +361,18 @@ function changeStyle(result, answerChosen) {
         answerChosen.classList.add("correct");
         hackProgress();
         // timeout cooldown after question un/answered.
-        setTimeout(() => nextQuestion(), 4000);
+        setTimeout(() => nextQuestion(), 5100);
 
         //incorrect answer styling.
     } else if (result === "incorrect") {
         answerChosen.classList.add("incorrect");
-        setTimeout(() => nextQuestion(), 4000);
+        setTimeout(() => nextQuestion(), 5100);
 
         //no answer chosen styling.
     } else if (result === "noAnswer") {
         console.log("NO ANSWER!");
         correctElement.classList.add("no-answer");
-        setTimeout(() => nextQuestion(), 4000);
+        setTimeout(() => nextQuestion(), 5100);
 
     } else {
         console.log("error! styling function end!");
@@ -384,6 +390,7 @@ function gotCaught() {
         removeClass(screenIds.failureScreen, "hide");
         addClass(screenIds.failureScreen, "display-flex");
         soundTrack.pause();
+
         //if quiz has been failed.
     } else if (quizFailed === true) {
         console.log("You were not quick enough to hack the system.");
@@ -553,10 +560,8 @@ mainMenuButton.forEach(button => {
 });
 
 //Send to handle the quiz being replayed.
-const playAgainButtons = document.querySelectorAll(".replay-btn");
-playAgainButtons.forEach(button => {
-    button.addEventListener("click", handleReplay);
-});
+playAgainButton.addEventListener("click", handleReplay);
+
 
 
 

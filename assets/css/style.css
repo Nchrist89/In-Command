@@ -213,13 +213,14 @@ dialog::backdrop {
     font-family: var(--secondary-font);
     font-size: 1.4rem;
     color: #d9cc11;
-    align-content: baseline;
     margin: 5px;
+    align-items: baseline;
 }
 
 #hacking-progress {
     display: flex;
     flex-wrap: nowrap;
+    color: greenyellow;
 }
 
 .fa-square-full {
@@ -234,7 +235,7 @@ dialog::backdrop {
     letter-spacing: 2px;
     color: greenyellow;
     line-height: 1.4em;
-    padding: 5px;
+    padding: 10px;
     margin: 5px;
 }
 
@@ -251,7 +252,7 @@ dialog::backdrop {
     margin-bottom: 5px;
     background-color: black;
     font-family: var(--secondary-font);
-    font-size: 1.2rem;
+    font-size: 1rem;
     justify-content: center;
     color: yellow;
     width: 95%;
@@ -297,12 +298,22 @@ dialog::backdrop {
 
 }
 
+#success-text > p {
+    margin: 10px;
+}
+
+#saveScore {
+    background-color: green;
+    padding: 5px;
+    margin-top: 10px;
+    color: white;
+}
+
 #success-text {
     background-color:var(--regent-gray);
     color: var(--ebony);
     font-family: var(--primary-font);
-    font-size: 1.1rem;
-    line-height: 1.3em;
+    font-size: 1rem;
     letter-spacing: 1px;
     width: 90%;
     max-width: 700px;
@@ -337,7 +348,7 @@ dialog::backdrop {
     width: 200px;
 }
 
-.replay-btn {
+#replay-btn {
     background-color: var(--cashmere);
     border: 4px solid #6B3D35;
     color: var(--ebony);
@@ -429,7 +440,7 @@ dialog::backdrop {
 }
 
 #diff-box {
-    border: 5px solid var(--river-bed);
+    border: 4px solid var(--steel-gray);
     background-color: var(--regent-gray);
     min-width: 200px;
     width: 250px;
@@ -449,6 +460,7 @@ dialog::backdrop {
     color: var(--ebony);
     font-family: var(--primary-font);
     letter-spacing: 1px;
+    padding: 10px;
 }
 
 .diff-btn {
@@ -476,6 +488,8 @@ dialog::backdrop {
     background: url(../images/medals.jpg);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 
@@ -485,25 +499,24 @@ dialog::backdrop {
     background-color: var(--ebony);
     flex-direction: column;
     justify-content: center;
-    position: absolute;
-    top: 43%;
-    left: 20%;
     text-align: center;
     font-family: var(--primary-font);
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    padding: 10px;
     color: var(--cashmere);
 }
 
 #scoreboard-box {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 50%;
-    width: 50%;
+    height: 65%;
+    width: 80%;
+    max-width: 400px;
     background-color: var(--ebony);
-    border: 4px solid var(--crimson);
+    border: 4px solid var(--steel-gray);
 }
 
 #score-board > ul {
@@ -649,6 +662,7 @@ dialog::backdrop {
         width: 150px;
         height: 50px;
     }
+
 }
 
 
@@ -666,7 +680,7 @@ dialog::backdrop {
     #quiz-info,
     #question-box,
     .quiz-gamehead {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
     }
 
     .ans-btn {
@@ -748,12 +762,14 @@ dialog::backdrop {
         font-size: 1.3rem;
     }
 
-    #leader-board {
-        background-size: cover;
-    }
-
     #diff-box {
         height: 550px;
+    }
+
+    #quiz-info,
+    #question-box,
+    .quiz-gamehead {
+        font-size: 2rem;
     }
 
 }
