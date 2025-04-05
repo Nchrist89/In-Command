@@ -480,6 +480,11 @@ dialog::backdrop {
     width: 100vw;
 }
 
+#leader-board > img {
+    position: absolute;
+    left: -400px;
+}
+
 #score-board {
     display: flex;
     flex-direction: column;
@@ -593,10 +598,6 @@ dialog::backdrop {
         height: fit-content;
         max-width: 350px;
         justify-content: center;
-    }
-
-    #leader-board {
-    background: var(--ebony) url("../images/leaderboard16.jpg") center / 200% no-repeat;
     }
 }
 
