@@ -114,7 +114,7 @@ const screenIds = {
     victoryScreen: "victory-screen",
     leaderBoardScreen: "leader-board",
     titleScreen: "title-screen",
-    failureScreen: "failure",
+    failureScreen: "failure-screen",
     gameScreen: "game-screen",
     diffScreen: "difficulty-screen"
 };
@@ -224,16 +224,9 @@ async function fetchQuestions() {
 //retrieve question function
 function getQuestion() {
     console.log("books for michelle, remove"); // remove books quiz!!!!!
-    //Checks index from counter before proceeding.
-    if (alert >= 5) {
-        console.log(quizFailed);
-        gotCaught();
         //if answer counter reaches 10, the user is victorious and game ends.
-    } else if (answerCounter === 10) {
-        console.log("You were quick enough to hack the system!");
-        runEndGame();
         //if counter has not reached 14, retrieve another question.
-    } else if (counter <= 14) {
+    if (counter <= 14) {
         currentQuestion = data.results[counter];
         const questionBox = document.getElementById("question-box");
         // Adds the current question to the question box.
@@ -301,7 +294,12 @@ function checkAnswer(e) {
     answerChosen = e.currentTarget;
 
     //Handles the correct answer event.
-    if (answerChosen.dataset.value === "correct") {
+
+    if (answerCounter === 3) {
+        console.log("You were quick enough to hack the system!");
+        runEndGame();
+
+    } else if (answerChosen.dataset.value === "correct") {
         answerCounter++;
         currentScore += 100;
         totalTimeRem += remainingTime;
@@ -375,7 +373,7 @@ function changeStyle(result, answerChosen) {
 //Runs if the user gets 5 questions wrong.
 function gotCaught() {
     //if wrong answer 5 times.
-    if (alert === 5) {
+    if (alert === 2) {
         quizFailed = true;
         console.log("got caught 4 times!");
         addClass(screenIds.gameScreen, "hide");
@@ -445,7 +443,7 @@ function runEndGame() {
     if (playerName) {
         saveHighScore(playerName, totalScore);
         showHighScore(); //updates the leaderboard
-        setTimeout(() => viewScoreBoard(), 10000);
+        setTimeout(() => viewScoreBoard(), 15000);
     } else {
         console.log("no name provided.");
     }
