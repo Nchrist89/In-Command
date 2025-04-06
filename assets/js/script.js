@@ -193,15 +193,9 @@ function playQuizGame() {
         answerCounter = 0;
         quizFailed = false;
         counter = 0;
-        correctElement.classList.remove("no-answer");
-        answerChosen.classList.remove("incorrect");
         const scoreDisplay = document.getElementById("score");
         scoreDisplay.innerHTML = 0;
         currentQuestion.innerHTML = "";
-        answer1.innerHTML = "";
-        answer2.innerHTML = "";
-        answer3.innerHTML = "";
-        answer4.innerHTML = "";
         hackingBar.innerHTML = "";
         currentQuestion = data.results[counter];
         addClass(screenIds.failureScreen, "hide");
@@ -228,6 +222,7 @@ async function fetchQuestions() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         data = await response.json(); //Assign the data to the data variable.
+        console.log(data);
     } catch (error) {
         console.error("Error fetching questions:", error);
     }
@@ -287,9 +282,12 @@ function assignCorrect() {
             button.setAttribute("data-value", "correct");
             correctElement = document.getElementById(button.id);
             console.log(button.id);
+            console.log(button.innerHTML);
+            console.log(data.results[counter]);
         } else {
             //otherwise it will assign the data-value of incorrect.
             button.setAttribute("data-value", "incorrect");
+            console.log(answerBtn);
         }
         button.addEventListener("click", checkAnswer);
     }

@@ -46,6 +46,7 @@
 #modal > p {
     margin: 5px;
     letter-spacing: 1px;
+    line-height: 1.2rem;
 }
 
 dialog::backdrop {
@@ -131,6 +132,7 @@ dialog::backdrop {
 
 /* Menu styles */
 
+
 #menu-buttons {
     display: flex;
     flex-direction: column;
@@ -139,13 +141,13 @@ dialog::backdrop {
 .menu-btn {
     padding: 5px;
     line-height: 1em;
-    color: white;
+    color: whitesmoke;
     text-shadow: 2px 2px 2px black;
-    background-color: var(--crimson);
+    background-color: #741818;
     border: 3px solid var(--ebony);
     font-family: "Press Start 2P", system-ui;
     letter-spacing: 3px;
-    font-size: 0.7em;
+    font-size: 0.5em;
     margin: 4px;
 }
 
@@ -572,6 +574,10 @@ dialog::backdrop {
         max-width: 330px;
     }
 
+    .fa-square {
+        font-size: 15px;
+        width: 15px;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 620px and up) */
@@ -617,6 +623,108 @@ dialog::backdrop {
     }
 }
 
+@media only screen and (orientation: landscape) and (max-width: 767px) {
+    /* Title screen media queries */
+    #intro-text {
+        height: 100px;
+        font-size: 0.7rem;
+    }
+
+    #intro-box > h3 {
+        font-size: 1rem;
+    }
+
+    #title-logo {
+        width: 250px;
+        left: 20px;
+    }
+
+    .menu-btn {
+        margin-top: 10px;
+        height: 30px;
+        width: 170px;
+    }
+
+    /* Difficulty screen media queries */
+    #diff-box {
+        height: 90%;
+        width: 60%;
+    }
+
+    .diff-heading {
+        margin: 3%;
+    }
+
+    /* Game screen media queries */
+    #game-logo {
+        width: 200px;
+        left: 50%;
+
+    }
+
+    .quiz-gamehead {
+        font-size: 1rem;
+    }
+
+    #answer-btn-box {
+        flex-direction: row;
+    }
+
+    .ans-btn {
+        height: 45px;
+        margin: 5px;
+        font-size: 0.8rem;
+    }
+
+    #question-box {
+        margin: 5px;
+        font-size: 1rem;
+        padding: 2px;
+
+    }
+
+    .fa-square {
+        font-size: 15px;
+        width: 35px;
+    }
+
+    #quiz-info {
+        font-size: 1.2rem;
+        margin: 7px;
+    }
+
+    /* Failure screen media queries */
+    #fail-text {
+        height: 60px;
+    }
+
+    #guard {
+        width: 150px;
+        top: 70%;
+    }
+
+    /* Victory screen media queries */
+    #success-text {
+        font-size: 0.8rem;
+    }
+
+    #saveScore {
+        height: 25px;
+    }
+
+    /* Leaderboard screen media queries */
+    #leaderBoard-text {
+        font-size: 1rem;
+        height: 70px;
+        padding: 10px;
+    }
+
+    #scoreboard-box {
+        top: 60%;
+        height: 150px;
+    }
+}
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 
@@ -632,8 +740,8 @@ dialog::backdrop {
     }
 
     .fa-square {
-        font-size: 15px;
-        margin-left: 10px;
+        font-size: 20px;
+        width: 20px;
     }
 
     /* Failure screen media queries */
@@ -677,6 +785,11 @@ dialog::backdrop {
     #question-box,
     .quiz-gamehead {
         font-size: 1.8rem;
+    }
+
+    .fa-square {
+        font-size: 25px;
+        width: 25px;
     }
 
     .ans-btn {
@@ -777,7 +890,7 @@ dialog::backdrop {
     #title-logo {
         width: 600px;
         position: absolute;
-        left: 9%;
+        left: 13%;
     }
 
     #menu-buttons {
@@ -791,6 +904,8 @@ dialog::backdrop {
     }
 
     .menu-btn {
+        width: 250px;
+        font-size: 0.7rem;
         margin-bottom: 15px;
     }
 
