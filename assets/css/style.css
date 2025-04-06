@@ -645,7 +645,110 @@ dialog::backdrop {
     .menu-btn {
         margin-top: 10px;
         height: 30px;
-        width: 170px;
+        width: 200px;
+    }
+
+    /* Difficulty screen media queries */
+    #diff-box {
+        height: 90%;
+        width: 60%;
+    }
+
+    .diff-heading {
+        margin: 3%;
+    }
+
+    /* Game screen media queries */
+    #game-logo {
+        width: 200px;
+        left: 50%;
+
+    }
+
+    .quiz-gamehead {
+        font-size: 1rem;
+    }
+
+    #answer-btn-box {
+        flex-direction: row;
+    }
+
+    .ans-btn {
+        height: 45px;
+        margin: 5px;
+        font-size: 0.8rem;
+    }
+
+    #question-box {
+        margin: 5px;
+        font-size: 1rem;
+        padding: 2px;
+
+    }
+
+    .fa-square {
+        font-size: 15px;
+        width: 35px;
+    }
+
+    #quiz-info {
+        font-size: 1.2rem;
+        margin: 7px;
+    }
+
+    /* Failure screen media queries */
+    #fail-text {
+        height: 60px;
+    }
+
+    #guard {
+        width: 150px;
+        top: 70%;
+    }
+
+    /* Victory screen media queries */
+    #success-text {
+        font-size: 0.8rem;
+    }
+
+    #saveScore {
+        height: 25px;
+    }
+
+    /* Leaderboard screen media queries */
+    #leaderBoard-text {
+        font-size: 1rem;
+        height: 70px;
+        padding: 10px;
+    }
+
+    #scoreboard-box {
+        top: 60%;
+        height: 150px;
+    }
+}
+
+/* Large mobile landscape */
+@media only screen and (orientation: landscape) and (max-width: 1000px) {
+    /* Title screen media queries */
+    #intro-text {
+        height: 100px;
+        font-size: 0.7rem;
+    }
+
+    #intro-box > h3 {
+        font-size: 1rem;
+    }
+
+    #title-logo {
+        width: 250px;
+        left: 20px;
+    }
+
+    .menu-btn {
+        margin-top: 10px;
+        height: 30px;
+        width: 200px;
     }
 
     /* Difficulty screen media queries */
