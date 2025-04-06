@@ -1,5 +1,14 @@
 // jshint esversion: 6
 
+//Two warnings
+//67	Redefinition of 'alert'.
+//215	'async functions' is only available in ES8 (use 'esversion: 8').
+//Four unused variables
+//17	easyQuiz
+//18	mediumQuiz
+//19	hardQuiz
+//459	submitScore
+
 
 //Modal which contains the how to play instructions at title screen.
 const modal = document.getElementById("modal");
@@ -14,9 +23,9 @@ closeModal.addEventListener("click", () => {
     modal.close();
 });
 
-const easyQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=easy&type=multiple"
-const mediumQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=medium&type=multiple"
-const hardQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=hard&type=multiple"
+const easyQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=easy&type=multiple";
+const mediumQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=medium&type=multiple";
+const hardQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=hard&type=multiple";
 
 let difficultyChosenBonus = 0;
 
@@ -57,10 +66,6 @@ let answerCounter = 0; // answer correct total.
 
 let quizFailed = false;
 let playOnceMore = false;
-
-let userName = document.getElementById("username");
-let playerName = userName.innerHTML;
-
 
 //Score variables
 let totalScore = 0; // Total end score.
@@ -108,12 +113,12 @@ quizTimer.prototype.stop = function () {
 
 quizTimer.prototype.getStoppedRemaining = function() {
     return this.stoppedRemaining;
-}
+};
 
 quizTimer.prototype.updateDisplay = function () {
     const seconds = this.timeRemaining < 0 ? 0 : this.timeRemaining; //Prevent negative time remaining.
     this.display.textContent = seconds < 10 ? "0" + seconds : seconds;
-}
+};
 
 //Screen hide and display
 const screenIds = {
@@ -154,7 +159,6 @@ function difficultyHandler(event) {
     if (selectedDifficulty) {
         difficultyChosenBonus = selectedDifficulty.bonus;
         currentScore += selectedDifficulty.bonus;
-        console.log(selectedDifficulty.name);
         console.log(`${selectedDifficulty.name} selected, bonus of ${selectedDifficulty.bonus}. Your starting score is ${currentScore}`);
         playQuizGame();
     } else {
@@ -203,6 +207,7 @@ function playQuizGame() {
         addClass(screenIds.failureScreen, "hide");
         removeClass(screenIds.gameScreen, "hide");
         currentScore = difficultyChosenBonus;
+        console.log("Quiz reset");
     } else {
         addClass(screenIds.diffScreen, "hide");
         removeClass(screenIds.diffScreen, "display-flex");
@@ -231,9 +236,6 @@ async function fetchQuestions() {
 
 //retrieve question function
 function getQuestion() {
-    console.log("books for michelle, remove"); // remove books quiz!!!!!
-        //if answer counter reaches 10, the user is victorious and game ends.
-        //if counter has not reached 14, retrieve another question.
     if (counter <= 14) {
         currentQuestion = data.results[counter];
         const questionBox = document.getElementById("question-box");
@@ -290,7 +292,7 @@ function assignCorrect() {
             button.setAttribute("data-value", "incorrect");
         }
         button.addEventListener("click", checkAnswer);
-    };
+    }
 }
 
 //Checks to see if answer button clicked is the correct button.
@@ -303,7 +305,7 @@ function checkAnswer(e) {
 
     //Handles the correct answer event.
 
-    if (answerCounter === 3) {
+    if (answerCounter === 10) {
         console.log("You were quick enough to hack the system!");
         runEndGame();
 
@@ -328,7 +330,7 @@ function checkAnswer(e) {
     } else {
         console.log("error check answer end!");
     }
-};
+}
 
 // Disables answer buttons after answer has been chosen(nodelist)
 function disableBtns() {
@@ -382,7 +384,7 @@ function changeStyle(result, answerChosen) {
 //Runs if the user gets 5 questions wrong.
 function gotCaught() {
     //if wrong answer 5 times.
-    if (alert === 2) {
+    if (alert === 4) {
         quizFailed = true;
         console.log("got caught 4 times!");
         addClass(screenIds.gameScreen, "hide");
@@ -410,7 +412,7 @@ function hackProgress() {
 
     for (let i = 0; i < answerCounter; i++) {
         const square = document.createElement("i");
-        square.classList.add("fa-solid", "fa-square-full");
+        square.classList.add("fa-solid", "fa-square");
         hackingBar.appendChild(square);
     }
 }
@@ -426,7 +428,7 @@ function nextQuestion() {
     } else if (!answerChosen) {
         console.log("no-answer");
         correctElement.classList.remove("no-answer");
-        correctElement.removeAttribute("data-value", "correct")
+        correctElement.removeAttribute("data-value", "correct");
         getQuestion();
         //if answer is correct.
     } else if (answerChosen.innerHTML === correctAns) {
@@ -448,11 +450,14 @@ function nextQuestion() {
 function runEndGame() {
     addClass(screenIds.gameScreen, "hide");
     removeClass(screenIds.victoryScreen, "hide");
+    const endScore = document.getElementById("end-score");
+    endScore.innerHTML = totalScore;
 }
 
 //updates total score with bonus time remaining.
 function scoreUpdate(score, totalTimeRem) {
     let timeBonus = totalTimeRem * 10;
+    console.log(`you gained a Timebonus of ${timeBonus}`);
     totalScore = score + timeBonus;
     console.log("your total score is:", totalScore);
     const scoreDisplay = document.getElementById("score");
@@ -556,7 +561,7 @@ leaderBoardButton.addEventListener("click", () => {
 //clicking main menu button returns user to main menu.
 const mainMenuButton = document.querySelectorAll(".rtn-menu-btn");
 mainMenuButton.forEach(button => {
-    button.addEventListener("click", returnMenu)
+    button.addEventListener("click", returnMenu);
 });
 
 //Send to handle the quiz being replayed.
@@ -576,4 +581,3 @@ const playGame = document.getElementById("play-game");
 playGame.addEventListener("click", () => {
     chooseDifficulty();
 });
-

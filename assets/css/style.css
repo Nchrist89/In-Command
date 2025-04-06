@@ -223,10 +223,6 @@ dialog::backdrop {
     color: greenyellow;
 }
 
-.fa-square-full {
-    font-size: 12px;
-}
-
 #question-box {
     width: 100%;
     height: 30%;
