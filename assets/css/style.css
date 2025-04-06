@@ -147,7 +147,7 @@ dialog::backdrop {
     border: 3px solid var(--ebony);
     font-family: "Press Start 2P", system-ui;
     letter-spacing: 3px;
-    font-size: 0.5em;
+    font-size: 0.8rem;
     margin: 4px;
 }
 
@@ -386,11 +386,10 @@ dialog::backdrop {
 
 #guard {
     position: absolute;
-    top: 68%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
-    height: 60%;
 }
 
 /* correct and incorrect answer button styling */
@@ -578,6 +577,10 @@ dialog::backdrop {
         font-size: 15px;
         width: 15px;
     }
+
+    .menu-btn {
+        height: 30px;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 620px and up) */
@@ -746,8 +749,9 @@ dialog::backdrop {
 
     /* Failure screen media queries */
     #guard {
-        height: 75%;
+        height: 60%;
         width: 50%;
+        top: 72%;
     }
 
     .menu-btn {
@@ -804,9 +808,6 @@ dialog::backdrop {
     }
 
     /* Failure screen media queries */
-    #guard {
-        width: 60%;
-    }
 
     #fail-text {
         font-size: larger;
@@ -905,7 +906,6 @@ dialog::backdrop {
 
     .menu-btn {
         width: 250px;
-        font-size: 0.7rem;
         margin-bottom: 15px;
     }
 
