@@ -130,7 +130,7 @@ const screenIds = {
     diffScreen: "difficulty-screen"
 };
 
-//adds class screenId element.
+//adds class screenId element. Used to add classes to particular screen sections.
 function addClass(screenId, className) {
     const element = document.getElementById(screenId);
     if (element) {
@@ -138,7 +138,7 @@ function addClass(screenId, className) {
     }
 }
 
-//removes class from screenId element.
+//remove class screenId element. Used to remove classes to particular screen sections.
 function removeClass(screenId, className) {
     const element = document.getElementById(screenId);
     if (element) {
@@ -146,6 +146,7 @@ function removeClass(screenId, className) {
     }
 }
 
+//advice to use data to manage difficulty selection by mentor, code by me.
 const difficulties = [
     { name: "easy", bonus: 1000},
     { name: "medium", bonus: 1250},
@@ -166,12 +167,14 @@ function difficultyHandler(event) {
     }
 }
 
+//Handles if the user has selected to reply game.
 function handleReplay() {
     console.log("replay game!");
     playOnceMore = true;
     playQuizGame();
 }
 
+//runs when the user selects difficulty.
 function chooseDifficulty() {
     removeClass(screenIds.titleScreen, "display-flex");
     addClass(screenIds.titleScreen, "hide");
@@ -179,6 +182,7 @@ function chooseDifficulty() {
     addClass(screenIds.diffScreen, "display-flex");
 }
 
+//auto reloads to return user back to main title-screen.
 function returnMenu() {
     window.location.reload();
 }
@@ -186,6 +190,7 @@ function returnMenu() {
 
 //Starts the quiz by switching screens then fetching questions.
 function playQuizGame() {
+    //if player selects replay, variables will be reset.
     if (playOnceMore) {
         totalScore = 0;
         totalTimeRem = 0;
@@ -195,7 +200,6 @@ function playQuizGame() {
         counter = 0;
         const scoreDisplay = document.getElementById("score");
         scoreDisplay.innerHTML = 0;
-        currentQuestion.innerHTML = "";
         hackingBar.innerHTML = "";
         currentQuestion = data.results[counter];
         addClass(screenIds.failureScreen, "hide");
@@ -203,6 +207,7 @@ function playQuizGame() {
         currentScore = difficultyChosenBonus;
         console.log("Quiz reset");
     } else {
+        //runs when a new game has begun
         addClass(screenIds.diffScreen, "hide");
         removeClass(screenIds.diffScreen, "display-flex");
         console.log("initiate quiz");
@@ -239,7 +244,6 @@ function getQuestion() {
         counter++; //increases counter.
         questionNum.innerHTML = counter;
         answerDealer();
-        console.log(answerCounter);
     } else {
         quizFailed = true;
         console.log("quiz failed at getQuestion.");
