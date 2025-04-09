@@ -199,6 +199,17 @@ dialog::backdrop {
 
 /* Quiz area styles */
 
+#score-alert {
+    display: flex;
+    justify-content: space-between;
+}
+
+#alerts {
+    color: rgb(168, 26, 26);
+    font-family: var(--secondary-font);
+    font-size: 1.4rem;
+}
+
 #game-header {
     display: none;
 }
@@ -708,6 +719,7 @@ dialog::backdrop {
 
     }
 
+    #alerts,
     .quiz-gamehead {
         font-size: 1.2rem;
     }
@@ -838,6 +850,7 @@ dialog::backdrop {
         border-radius: 0;
     }
 
+    #alerts,
     #quiz-info,
     .quiz-gamehead {
         font-size: 1.5rem;
@@ -972,6 +985,7 @@ dialog::backdrop {
         margin: 20px;
     }
 
+    #alerts,
     #quiz-info,
     #question-box,
     .quiz-gamehead {
@@ -1052,6 +1066,7 @@ dialog::backdrop {
         padding: 35px;
     }
 
+    #alerts,
     #quiz-info,
     #question-box,
     .quiz-gamehead {
