@@ -9,17 +9,18 @@
 
 /* Hex color palette */
 :root {
-    --mandy: #e54b51;
-    --crimson: #B22222;
+    --falu-red: #741818;
     --ebony: #100711;
-    --buccaneer: #632b3c;
     --cashmere: #e3b69e;
-    --cedar: #3d1325;
-    --river-bed: #454b61;
+    --met-copper: #6B3D35;
     --regent-gray: #7b89a0;
-    --slate-gray: #6a768e;
     --steel-gray: #262237;
     --gravel: #49444b;
+    --green: #008000;
+    --bright-green: #00FF00;
+    --green-yellow: #ADFF2F;
+    --bird-flower: #D0C117;
+    --bright-yellow: #FFFF00;
 }
 
 /* Global styles */
@@ -141,9 +142,9 @@ dialog::backdrop {
 .menu-btn {
     padding: 5px;
     line-height: 1em;
-    color: whitesmoke;
+    color: var(--bright-yellow);
     text-shadow: 2px 2px 2px black;
-    background-color: #741818;
+    background-color: var(--green);
     border: 3px solid var(--ebony);
     font-family: "Press Start 2P", system-ui;
     letter-spacing: 3px;
@@ -182,7 +183,7 @@ dialog::backdrop {
 
 #game-area {
     background-color: black;
-    border: 4px solid green;
+    border: 4px solid var(--green);
     border-radius: 3%;
     width: 90%;
     height: 75%;
@@ -214,7 +215,7 @@ dialog::backdrop {
     height: 30px;
     font-family: var(--secondary-font);
     font-size: 1.4rem;
-    color: #d9cc11;
+    color: var(--bright-yellow);
     margin: 5px;
     align-items: baseline;
 }
@@ -222,7 +223,7 @@ dialog::backdrop {
 #hacking-progress {
     display: flex;
     flex-wrap: nowrap;
-    color: greenyellow;
+    color: var(--green-yellow);
 }
 
 #question-box {
@@ -231,7 +232,7 @@ dialog::backdrop {
     font-family: var(--secondary-font);
     font-size: 1.1rem;
     letter-spacing: 2px;
-    color: greenyellow;
+    color: var(--green-yellow);
     line-height: 1.4em;
     padding: 10px;
     margin: 5px;
@@ -245,14 +246,14 @@ dialog::backdrop {
 }
 
 .ans-btn {
-    border: 1px solid green;
+    border: 1px solid var(--green);
     height: 25%;
     margin-bottom: 5px;
     background-color: black;
     font-family: var(--secondary-font);
     font-size: 1rem;
     justify-content: center;
-    color: yellow;
+    color: var(--bright-yellow);
     width: 95%;
     letter-spacing: 2px;
 }
@@ -270,7 +271,7 @@ dialog::backdrop {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    color: #00FF00;
+    color: var(--bright-green);
     justify-content: space-between;
     font-size: 1.3rem;
     margin: 10px;
@@ -301,7 +302,7 @@ dialog::backdrop {
 }
 
 #saveScore {
-    background-color: green;
+    background-color: var(--green);
     padding: 5px;
     margin-top: 10px;
     color: white;
@@ -347,6 +348,15 @@ dialog::backdrop {
 }
 
 #replay-btn {
+    padding: 5px;
+    line-height: 1em;
+    height: 35px;
+    color: whitesmoke;
+    font-family: "Press Start 2P", system-ui;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    margin: 4px;
+    width: 240px;
     background-color: var(--cashmere);
     border: 4px solid #6B3D35;
     color: var(--ebony);
@@ -360,13 +370,15 @@ dialog::backdrop {
     line-height: 1em;
     color: whitesmoke;
     text-shadow: 2px 2px 2px black;
-    background-color: #741818;
+    background-color: var(--falu-red);
     border: 3px solid var(--ebony);
     font-family: "Press Start 2P", system-ui;
     letter-spacing: 3px;
     font-size: 0.8rem;
-    margin: 4px;
-    width: 240px;
+    padding: 10px;
+    margin: 10px;
+    width: 50%;
+    max-width: 350px;
 }
 
 #failure-screen {
@@ -408,14 +420,14 @@ dialog::backdrop {
 
 /* correct and incorrect answer button styling */
 .correct {
-    background-color: greenyellow;
+    background-color: var(--green-yellow);
     color: black;
     font-size: larger;
 }
 
 .incorrect {
     animation: flash 1s infinite alternate;
-    color: yellow;
+    color: var(--bright-yellow);
     font-size: larger;
 }
 
@@ -436,7 +448,7 @@ dialog::backdrop {
 .diff-heading {
     font-family: var(--primary-font);
     color: var(--ebony);
-    margin: 10%;
+    margin: 3%;
     letter-spacing: 3px;
 }
 
@@ -452,6 +464,9 @@ dialog::backdrop {
 
 #diff-box {
     border: 4px solid var(--steel-gray);
+    width: 70%;
+    height: 50%;
+    padding: 10px;
     background-color: var(--regent-gray);
     text-align: center;
 }
@@ -473,19 +488,15 @@ dialog::backdrop {
 
 .diff-btn {
     font-size: 0.7rem;
-    width: 55%;
-    height: 30%;
+    width: 70%;
+    height: 33%;
     padding: 5px;
+    color: var(--bright-yellow);
     margin: 5px;
-    background-color: var(--cashmere);
-    border: 4px solid #6B3D35;
+    background-color: var(--green);
+    border: 4px solid var(--bright-green);
     font-family: "Press Start 2P", system-ui;
     letter-spacing: 2px;
-}
-
-#diff-rtn-menu {
-    width: 80%;
-    margin-top: 20px;
 }
 
 /* Leaderboard section styles */
@@ -499,8 +510,6 @@ dialog::backdrop {
     background-size: cover;
 
 }
-
-
 
 #score-board {
     display: flex;
@@ -590,7 +599,7 @@ dialog::backdrop {
     }
 
     .menu-btn {
-        height: 25px;
+        height: 30px;
     }
 }
 
@@ -880,7 +889,7 @@ dialog::backdrop {
     }
 
     #diff-box {
-        height: 450px;
+        height: fit-content;
     }
 
     .diff-btn {
@@ -937,8 +946,7 @@ dialog::backdrop {
     }
 
     #diff-box {
-        width: 350px;
-        height: 450px;
+        width: fit-content;
         text-align: center;
     }
 
@@ -972,10 +980,6 @@ dialog::backdrop {
         height: 240px;
     }
 
-    #diff-box {
-        height: 500px;
-    }
-
     .victory-btn {
         width: 240px;
     }
@@ -985,7 +989,6 @@ dialog::backdrop {
     }
 
     #diff-box {
-        height: 550px;
         padding: 35px;
     }
 
@@ -1037,6 +1040,12 @@ dialog::backdrop {
         left: 17%;
     }
 
+    #quiz-info,
+    #question-box,
+    .quiz-gamehead {
+        font-size: 2.3rem;
+    }
+
     /* Fail screen media queries*/
     #guard {
         width: 52%;
@@ -1044,8 +1053,7 @@ dialog::backdrop {
 
     /* difficulty section */
     #diff-box {
-        height: 550px;
-        width: 400px;
+        width: 40%;
     }
 
     .diff-btn {
