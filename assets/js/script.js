@@ -307,7 +307,7 @@ function checkAnswer(e) {
 
     //Handles the correct answer event.
 
-    if (answerCounter === 10) {
+    if (answerCounter === 3) {
         console.log("You were quick enough to hack the system!");
         runEndGame();
 
@@ -386,7 +386,7 @@ function changeStyle(result, answerChosen) {
 //Runs if the user gets 5 questions wrong.
 function gotCaught() {
     //if wrong answer 5 times.
-    if (alert === 4) {
+    if (alert === 2) {
         quizFailed = true;
         console.log("got caught 4 times!");
         addClass(screenIds.gameScreen, "hide");
