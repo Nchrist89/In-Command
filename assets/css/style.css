@@ -316,7 +316,8 @@ dialog::backdrop {
     background-color: var(--green);
     padding: 5px;
     margin-top: 10px;
-    color: white;
+    color: yellow;
+    border: 2px solid greenyellow;
 }
 
 #success-text {
@@ -346,6 +347,10 @@ dialog::backdrop {
     left: 50%;
 }
 
+#saveScore {
+    font-family: "Press Start 2P", system-ui;
+}
+
 .victory-btn {
     color: black;
     background-color: var(--crimson);
@@ -371,6 +376,7 @@ dialog::backdrop {
     border: 4px solid var(--bright-green);
     color: var(--bright-yellow);
     text-shadow: none;
+    width: 250px;
 }
 
 /* failure & pop-up guard styles */
@@ -385,6 +391,7 @@ dialog::backdrop {
     letter-spacing: 3px;
     font-size: 0.8rem;
     padding: 5px;
+    width: 250px;
 }
 
 #failure-screen {
@@ -589,13 +596,6 @@ dialog::backdrop {
     text-align: center;
     background-color: var(--regent-gray);
     border: 5px solid var(--cashmere);
-}
-
-#not-found-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 /* Extra small devices (phones, 620px and down) */

@@ -198,6 +198,8 @@ function playQuizGame() {
         answerCounter = 0;
         quizFailed = false;
         counter = 0;
+        const alertDisplay = document.getElementById("alert-display");
+        alertDisplay.innerHTML = alert;
         const scoreDisplay = document.getElementById("score");
         scoreDisplay.innerHTML = 0;
         hackingBar.innerHTML = "";
