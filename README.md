@@ -8,11 +8,17 @@ In command is a fast paced quiz game designed for a range of devices. The aim of
 
 ## Introduction
 
-In command has been the second website and first game I have created using Javascript. I had so much fun in building it and have learnt so much and about my love for Javascript. The end result of the project isn't exactly what I had originally planned but it's turned out even better after a decision mid-way to change the feel of the project. It originally felt very dull and I wanted it to have a more 80's style Bladerunner vibe to it which would also work with the idea that I originally had planned and the outcome I am extremely happy with.
+![In Command Logo](assets\docs\readme-images\design\incommandlogofinal.png)
 
-I have given the link to many family and friends, all of which have enjoyed the game quite a lot and expressed their frustration at the difficulty but also the want to succeed and be victorious meaning it has been quite addictive and given the game some replayability which has kept a few entertained.
+In command has been the second website and first game I have created using Javascript. I had so much fun in building it and have learnt so much from this project and about my love for Javascript. The end result of the project isn't exactly what I had originally planned but it's turned out even better after a decision mid-way to change the feel of the project. It originally felt very dull and I wanted it to have a more 80's style Bladerunner vibe to it which would also work with the idea that I originally had planned and the outcome I am extremely happy with.
 
-I was let down at the end when I realized in order to make an actual leaderboard I would need to create a server which could store the scores so unfortunately I have had to settle with local storage but other than that I am happy with it and will look to improve and add to it in the future.
+The logo and all images were all designed by AI with prompts which took quite a long time to get just right and were also edited by me. The only thing I have not solely created was the soundtrack and this was from a youtube video which I had to rip the soundtrack from using Audacity software.
+
+I have given the link to many family and friends, all of which have enjoyed the game quite a lot and expressed their frustration at the difficulty but also the want to succeed and be victorious meaning it has been quite addictive and given the game some replayability which has kept quite a few of them entertained whilst letting me know of any issues.
+
+I was let down at the end when I realized in order to make an actual functioning leaderboard. I would need to create a server which could store the scores, so unfortunately I have had to settle with local storage but other than that, I am happy with it. I will look forward to improve and add to it in the future.
+
+The game itself should be the user hacking the machine and the hacking part is substituted with a quiz which in a way is the difficulty in the hacking of the computer. I done it this way to enable me to have a reason for the quiz failure and different victory outcomes. This allowed me to create a basis for the story behind it.
 
 ## CONTENTS
 
@@ -123,36 +129,43 @@ The leaderboard screen has changed but I was unable to get the edited image I cr
 
 * The user has 3 difficulty options to choose from, each giving them a higher starting bonus score.
 
-**Sections**
+### Sections / screens (In place of pages)
 
   The website / game has several sections (screens) which are -
 
 * Title screen (main home page) is what first welcomes the user.
+  * I am really happy with how this turned out. I put a lot of effort into making it right. The buttons are not ideal and the colours I wanted were not accessibility friendly so I have had to change them last minute.
 
-  ![Title screen](assets\docs\readme-images\design\screens\titlescreen.png)
+  ![Title screen](assets\docs\readme-images\design\screens\resposive-title-screen.png)
 
 * Difficulty selection screen which opens when the user selects the play option.
+  * This is a basic difficulty selection screen. The button colour is not idea but I had them match the title screen.
 
-  ![Difficulty screen](assets\docs\readme-images\design\screens\difficulty.png)
+  ![Difficulty screen](assets\docs\readme-images\design\screens\responsive-difficulty-screen.png)
 
 * Game screen which opens after difficulty is selected.
+  * The game screen was originally planned to have a background video play and the quiz game was displayed on an old computer monitor but this caused much frustration and would not have been ideal for user experience and therefore it was scrapped. The final outcome is much better, brighter and cleaner.
 
-  ![Game screen](assets\docs\readme-images\design\screens\game-screen.png)
+  ![Game screen](assets\docs\readme-images\design\screens\responsive-gamescreen.png)
 
 * Failure screen which appears when the alerts counter reaches 5.
+  * I originally had the guard pop-up on screen over the top of the quiz game but mid way through the project this was made into it's own screen section.
 
-  ![Failure screen](assets\docs\readme-images\design\screens\game-screen.png)
+  ![Failure screen](assets\docs\readme-images\design\screens\failure-screen.png)
 
 * Victory screen which appears should the user complete the 15 questions or answer 10 correctly without failing.
+  * The victory screen I decided on was a picture of a nuclear missile ready to be fired. A text box appears which shows you your final total score.
 
   ![Victory screen](assets\docs\readme-images\design\screens\victory-screen.png)
 
 * Leaderboard screen which can be accessed through the main title screen (home) or by completing the game after the victory screen.
+  * The leaderboard screen I decided not to put to much time into seeing as I would only be able to make it available for local storage scores. In the future updates I will make a proper leaderboard which can store the scores on an SQL server which I look to learn and implement into this project in the coming months.
 
-  ![Leaderboard screen](assets\docs\readme-images\design\screens\leaderboard-screen.png)
+  ![Leaderboard screen](assets\docs\readme-images\design\screens\responsive-leaderboard.png)
 
 * How to play modal which is not a screen but should be included here as an option.
-  ![How to play modal](assets\docs\readme-images\design\screens\how-to-play-modal.png)
+
+  ![How to play modal](assets\docs\readme-images\design\screens\responsive-how-to-play.png)
 
 ### Accessibility
 
@@ -185,13 +198,13 @@ Font Awesome - For the iconography used on the website.
 
 Google Dev Tools - To troubleshoot and test all features on the website. Check and resolve issues with the responsivity on the website across devices.
 
-[Prome AI](https://www.promeai.pro/ai-image-generation) - Used for generating the images used in the final project.
+[Prome AI](https://www.promeai.pro/ai-image-generation) - Used for generating the images used in the final project and the In Command logo.
 
-[Tiny Wow (highly recommend)](https://tinywow.com/) - To batch resize multiple images and to convert to WebP format for reduced file size.
+[Tiny Wow (highly recommend)](https://tinywow.com/) - To batch resize multiple images and convert to WebP format for reduced file size.
 
-[Image Colour Picker](https://imagecolorpicker.com/user/palettes) - Used for generating the palette which has been used throughout the project. Not all the colours were used in the final cut.
+[Image Colour Picker](https://imagecolorpicker.com) - Used for generating the In command palette but not all colours were used in the final project. The quiz/ game palette Is not.
 
-[Gimp](https://www.gimp.org/) - Used for modifying and editing images used on the website.
+[Gimp](https://www.gimp.org/) - Used for modifying and editing images used on the website and the in command logo.
 
 [Favicon.io](https://favicon.io/) - To create favicon.
 
@@ -206,7 +219,7 @@ Google Dev Tools - To troubleshoot and test all features on the website. Check a
 Github Pages was used to deploy the live website. The instructions to achieve this are below:
 
 1. Log in (or sign up) to Github.
-2. Find the repository for this project, Palms-Peaks-P1
+2. Find the repository for this project, Nchrist89/In-Command
 3. Click on the Settings link.
 4. Click on the Pages link in the left hand side navigation bar.
 5. In the Source section, choose main from the drop down and select branch menu. Select Root from the drop down select folder menu.
@@ -219,7 +232,7 @@ Github Pages was used to deploy the live website. The instructions to achieve th
 To fork the Palms-Peaks-P1 repository:
 
 1. Log in (or sign up) to Github.
-2. Go to the repository for this project, Nchrist89/Palms-Peaks-P1.
+2. Go to the repository for this project, Nchrist89/In-Command.
 3. Click the Fork button in the top right corner.
 
 #### How to Clone
@@ -227,7 +240,7 @@ To fork the Palms-Peaks-P1 repository:
 To clone the Palms-Peaks-P1 repository:
 
 1. Log in (or sign up) to Github.
-2. Go to the repository for this project, Nchrist89/Palms-Peaks-P1.
+2. Go to the repository for this project, Nchrist89/In-Command.
 3. Click on the Code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type 'git clone' in the terminal and then paste the link you copied in step 3. Press Enter.
@@ -236,11 +249,17 @@ To clone the Palms-Peaks-P1 repository:
 
 ### Code used
 
-All code is mine apart from certain functions but I have also completely changed them and adapted them to my project, I have as best as I can noted what parts are with assistance from AI in my comments. Again the leaderboard functions and code was all completed by AI to include the local storage leaderboard scores.
+* All HTML and CSS code is owned by me and written by myself.
+
+* There is quite a bit of code which I had help completing and correcting using AI but the majority of the code has been either rewritten and added to.
+
+* Some parts of Javascript where noted in my comments has been corrected by AI but was written by me, only once I exhausted myself and frustration would I then ask chatGPT for assistance why my code may be incorrect.
+
+* The main 2 parts of code which I can say is completely provided by AI other than the changed variables is the API fetch function which I had issues with and the entire leaderboard javascript code. I didn't want to have to get too involved with the leaderboard code with once I realized the end result would be to have a local storage leaderboard. In later updates I wish to have a full working leaderboard and server which is when I will redo the leaderboard code.
 
 ### Content
 
-Content for the website has solely been created by myself, some content where indicted in my comments have been corrected with Gemini AI and sometimes also validation for code has been confirmed with SiderAI but I have written and changes most of the code apart from the entire leaderboard update code which has been a complete copy over because I could not get it working properly.
+Content for the website has solely been created by myself, some content where indicted in my comments have been corrected with ChatGPT, Gemini AI and sometimes also validation for code has been confirmed with SiderAI but I have written most of the code apart from the entire leaderboard update code which has been a complete copy over because I could not get it working properly and was reluctant to put effort into it as it is currently only a local storage leaderboard.
 
 ### Media
 
@@ -249,4 +268,9 @@ Content for the website has solely been created by myself, some content where in
 * Each image on the website has been created by providing AI with prompts to produce the desired image needed for my content. I have a premium account with PromeAI so the images created using it are legally owned by myself.
 
 ### Acknowledgements
+
+* My mentor Jubril Akolade for assistance helping provide guidance and knowledge. helpful hints along the journey.
+* My tutor Rachel Furlong for Tutoring sessions weekly and guidance. Q&A's.
+* My father Ian Christie for suggesting the name 'In Command'.
+* Kevin Powell for all the tips and tricks he has provided in his youtube videos.
 

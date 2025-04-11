@@ -89,7 +89,7 @@ dialog::backdrop {
     margin: 2%;
 }
 
-#intro-box > h3 {
+#intro-box > h2 {
     font-family: var(--primary-font);
     font-weight: 400;
     color: white;
@@ -459,7 +459,7 @@ dialog::backdrop {
     background-color: blue;
 }
 
-/* Difficulty styles */
+/* Difficulty box styles */
 
 .diff-heading {
     font-family: var(--primary-font);
@@ -615,6 +615,11 @@ dialog::backdrop {
     .menu-btn {
         height: 30px;
     }
+
+    .rtn-menu-btn {
+        width: 80%;
+        padding: 5px;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 620px and up) */
@@ -649,7 +654,7 @@ dialog::backdrop {
         font-size: 1rem;
     }
 
-    #intro-box > h3 {
+    #intro-box > h2 {
         font-size: 1.3rem;
     }
 
@@ -674,7 +679,7 @@ dialog::backdrop {
         font-size: 0.7rem;
     }
 
-    #intro-box > h3 {
+    #intro-box > h2 {
         font-size: 1rem;
     }
 
@@ -811,7 +816,7 @@ dialog::backdrop {
         font-size: 0.7rem;
     }
 
-    #intro-box > h3 {
+    #intro-box > h2 {
         font-size: 1rem;
     }
 
@@ -979,11 +984,13 @@ dialog::backdrop {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+    /* title screen media queries */
     #intro-text {
         font-size: 1rem;
         height: 250px;
     }
 
+    /* Game-screen media queries */
     #quiz-box {
         margin: 20px;
     }
@@ -1005,7 +1012,6 @@ dialog::backdrop {
         margin-bottom: 10px;
     }
 
-    /* Game-screen media queries */
     #game-logo {
         max-width: 350px;
         left: 20%;
@@ -1158,7 +1164,7 @@ dialog::backdrop {
     }
 
 
-    #intro-box > h3 {
+    #intro-box > h2 {
         font-size: 1.9rem;
     }
 
