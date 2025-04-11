@@ -23,12 +23,24 @@
     --bright-yellow: #FFFF00;
 }
 
-/* Global styles */
-
+/* Fonts */
 :root {
     --primary-font: "Orbitron", sans-serif;
     --secondary-font: "VT323", monospace;
     --third-font: "Press Start 2P", system-ui;
+}
+
+/* hide and display screens styles. */
+.display-flex {
+    display: flex;
+}
+
+.display-block {
+    display: block;
+}
+
+.hide {
+    display: none;
 }
 
 /* how to play modal styles */
@@ -107,18 +119,6 @@ dialog::backdrop {
     background-color: var(--regent-gray);
     height: 200px;
     overflow-y: scroll;
-
-}
-
-/* Hides the scrollbar from being visible on chrome, Safari and Opera */
-#intro-text::-webkit-scrollbar {
-    display: none;
-  }
-
-/* Hide scrollbar for IE, Edge and Firefox */
-#intro-text {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
 }
 
 #title-img-box {
@@ -129,12 +129,9 @@ dialog::backdrop {
 #title-img {
     width: 95%;
     height: 80vh;
-
 }
 
 /* Menu styles */
-
-
 #menu-buttons {
     display: flex;
     flex-direction: column;
@@ -153,8 +150,18 @@ dialog::backdrop {
     margin: 4px;
 }
 
-/* Game section styles */
+/* Hides the scrollbar from being visible on chrome, Safari and Opera */
+#intro-text::-webkit-scrollbar {
+    display: none;
+  }
 
+/* Hide scrollbar for IE, Edge and Firefox */
+#intro-text {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Game screen styles */
 #game-logo {
     position: absolute;
     top: 12%;
@@ -163,14 +170,6 @@ dialog::backdrop {
     height: fit-content;
     width: 90%;
     justify-content: center;
-}
-
-.display-flex {
-    display: flex;
-}
-
-.display-block {
-    display: block;
 }
 
 #game-screen {
@@ -199,7 +198,6 @@ dialog::backdrop {
 }
 
 /* Quiz area styles */
-
 #score-alert {
     display: flex;
     justify-content: space-between;
@@ -277,7 +275,6 @@ dialog::backdrop {
     align-items: flex-end;
     justify-content: space-between;
     height: 6%;
-
 }
 
 #quiz-info {
@@ -289,10 +286,6 @@ dialog::backdrop {
     justify-content: space-between;
     font-size: 1.3rem;
     margin: 10px;
-}
-
-.hide {
-    display: none;
 }
 
 /* victory section styles */
@@ -308,7 +301,6 @@ dialog::backdrop {
     align-content: center;
     align-self: center;
     text-align: center;
-
 }
 
 #success-text > p {
@@ -475,7 +467,6 @@ dialog::backdrop {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 #diff-box {
@@ -521,7 +512,6 @@ dialog::backdrop {
 }
 
 /* Leaderboard section styles */
-
 #leader-board {
     height: 100vh;
     width: 100vw;
@@ -529,7 +519,6 @@ dialog::backdrop {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 #score-board {
@@ -570,7 +559,6 @@ dialog::backdrop {
 }
 
 /* 404 page - Area not found */
-
 #page-not-found {
     display: flex;
     background-color: var(--ebony);
@@ -647,7 +635,6 @@ dialog::backdrop {
         width: 200px;
         line-height: 1.2em;
         height: 40px;
-
     }
 
     #intro-text {
@@ -724,7 +711,6 @@ dialog::backdrop {
     #game-logo {
         width: 170px;
         left: 50%;
-
     }
 
     #alerts,
@@ -746,7 +732,6 @@ dialog::backdrop {
         margin: 5px;
         font-size: 1.3rem;
         padding: 2px;
-
     }
 
     .fa-square {
@@ -864,8 +849,6 @@ dialog::backdrop {
         font-size: 1.5rem;
     }
 
-
-
     #answer-btn-box {
         flex-direction: row;
     }
@@ -880,7 +863,6 @@ dialog::backdrop {
         margin: 5px;
         font-size: 1.4rem;
         padding: 2px;
-
     }
 
     .fa-square {
@@ -978,9 +960,7 @@ dialog::backdrop {
     .diff-btn {
         height: 50px;
     }
-
 }
-
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
@@ -1018,13 +998,11 @@ dialog::backdrop {
     }
 
     /* Failure screen media queries */
-
     #fail-text {
         font-size: larger;
     }
 
     /* difficulty section */
-
     .diff-heading {
         font-size: 1.5rem;
     }
@@ -1081,7 +1059,6 @@ dialog::backdrop {
     .quiz-gamehead {
         font-size: 2rem;
     }
-
 }
 
 
@@ -1130,7 +1107,6 @@ dialog::backdrop {
         font-size: 2.3rem;
     }
 
-
     /* difficulty section */
     #diff-box {
         width: 40%;
@@ -1167,7 +1143,6 @@ dialog::backdrop {
     #intro-box > h2 {
         font-size: 1.9rem;
     }
-
 }
 
 
