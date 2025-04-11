@@ -2,13 +2,13 @@
 
 In command is a fast paced quiz game designed for a range of devices. The aim of the game is to complete the quiz as quick as possible whilst also not triggering the alarm and alerting the enemy to your presence.
 
-![Am I Responsive](assets\docs\readme-images\am-i-responsive.titlescreen.png)
+![Am I Responsive](assets/docs/readme-images/am-i-responsive.titlescreen.png)
 
 [View on GitHub Pages](https://nchrist89.github.io/In-Command/)
 
 ## Introduction
 
-![In Command Logo](assets\docs\readme-images\design\incommandlogofinal.png)
+![In Command Logo](assets/docs/readme-images/design/incommandlogofinal.png)
 
 In command has been the second website and first game I have created using Javascript. I had so much fun in building it and have learnt so much from this project and about my love for Javascript. The end result of the project isn't exactly what I had originally planned but it's turned out even better after a decision mid-way to change the feel of the project. It originally felt very dull and I wanted it to have a more 80's style Bladerunner vibe to it which would also work with the idea that I originally had planned and the outcome I am extremely happy with.
 
@@ -77,25 +77,25 @@ I have separated the colours used to the colours which mostly make up the quiz g
 
 The below colours are what make up the background colors and box borders, text background and text, menu buttons.
 
-![In command colours](assets\docs\readme-images\design\In.command.coolors.png)
+![In command colours](assets/docs/readme-images/design/In.command.coolors.png)
 
 The colours below make up the quiz game colours which are designed to feel bright and catch attention onscreen where the focus of the main quiz game. These colours also make up the replay game buttons.
 
-![quiz/game colours](assets\docs\readme-images\design\quiz.game.coolors.png)
+![quiz/game colours](assets/docs/readme-images/design/quiz.game.coolors.png)
 
 ### Typography
 
 Google Fonts has been used for the following fonts:
 
-![Orbitron](assets\docs\readme-images\design\google.font-orbitron.png)
+![Orbitron](assets/docs/readme-images/design/google.font-orbitron.png)
 
 Orbitron has been used as the main primary font which is used for all the main text on the website. When I designed the logo I realised the original font wasn't going to be suitable and I came across Orbitron, it matches the style of a futuristic bladerunner style font which would suit the feel I was looking for.
 
-![Press start 2P](assets\docs\readme-images\design\google.font-press-start-2p.png)
+![Press start 2P](assets/docs/readme-images/design/google.font-press-start-2p.png)
 
 Press Start 2P was the original font I had gone with for the quiz game but after using it for a while I realized the font size was too big and clunky to be within the quiz game and therefore I decided I would still use it but for the game buttons apart from the return to menu button.
 
-![VT323](assets\docs\readme-images\design\google.font-vt323.png)
+![VT323](assets/docs/readme-images/design/google.font-vt323.png)
 
 After realizing I was unable to use Press start 2P as the quiz game font I had to look for another font which would suit the style of the game but also be readable without causing too much frustration having to read and VT323 out of several fonts made the cut to be the font I went with.
 
@@ -108,13 +108,13 @@ All images on the homepage of the website have been generated using [Prome AI](h
 
 Wireframes was used to create the initial design of the quiz. I wanted for it to be simple and allow me to adapt it to anything I create around it.
 
-![Title page](assets\docs\readme-images\design\Wireframes\wireframes-title-screen.png)
+![Title page](assets/docs/readme-images/design/Wireframes/wireframes-title-screen.png)
 The title page has changed from the mock up wireframe. I originally wanted for their to be a lights off mode but I didn't end up going with it in the end.
 
-![game section](assets\docs\readme-images\design\Wireframes\wireframes-quiz.gamescreen.png)
+![game section](assets/docs/readme-images/design/Wireframes/wireframes-quiz.gamescreen.png)
 The game screen almost remains the same as what I had intended.
 
-![Leaderboard section](assets\docs\readme-images\design\Wireframes\wireframes-leaderboard.png)
+![Leaderboard section](assets/docs/readme-images/design/Wireframes/wireframes-leaderboard.png)
 The leaderboard screen has changed but I was unable to get the edited image I created to work with the scoreboard and adapting it responsively was causing many problems so I had to simplify it.
 
 ### Features
@@ -136,36 +136,36 @@ The leaderboard screen has changed but I was unable to get the edited image I cr
 * Title screen (main home page) is what first welcomes the user.
   * I am really happy with how this turned out. I put a lot of effort into making it right. The buttons are not ideal and the colours I wanted were not accessibility friendly so I have had to change them last minute.
 
-  ![Title screen](assets\docs\readme-images\design\screens\resposive-title-screen.png)
+  ![Title screen](assets/docs/readme-images/design/screens/resposive-title-screen.png)
 
 * Difficulty selection screen which opens when the user selects the play option.
   * This is a basic difficulty selection screen. The button colour is not idea but I had them match the title screen.
 
-  ![Difficulty screen](assets\docs\readme-images\design\screens\responsive-difficulty-screen.png)
+  ![Difficulty screen](assets/docs/readme-images/design/screens/responsive-difficulty-screen.png)
 
 * Game screen which opens after difficulty is selected.
   * The game screen was originally planned to have a background video play and the quiz game was displayed on an old computer monitor but this caused much frustration and would not have been ideal for user experience and therefore it was scrapped. The final outcome is much better, brighter and cleaner.
 
-  ![Game screen](assets\docs\readme-images\design\screens\responsive-gamescreen.png)
+  ![Game screen](assets/docs/readme-images/design/screens/responsive-gamescreen.png)
 
 * Failure screen which appears when the alerts counter reaches 5.
   * I originally had the guard pop-up on screen over the top of the quiz game but mid way through the project this was made into it's own screen section.
 
-  ![Failure screen](assets\docs\readme-images\design\screens\failure-screen.png)
+  ![Failure screen](assets/docs/readme-images/design/screens/failure-screen.png)
 
 * Victory screen which appears should the user complete the 15 questions or answer 10 correctly without failing.
   * The victory screen I decided on was a picture of a nuclear missile ready to be fired. A text box appears which shows you your final total score.
 
-  ![Victory screen](assets\docs\readme-images\design\screens\victory-screen.png)
+  ![Victory screen](assets/docs/readme-images/design/screens/victory-screen.png)
 
 * Leaderboard screen which can be accessed through the main title screen (home) or by completing the game after the victory screen.
   * The leaderboard screen I decided not to put to much time into seeing as I would only be able to make it available for local storage scores. In the future updates I will make a proper leaderboard which can store the scores on an SQL server which I look to learn and implement into this project in the coming months.
 
-  ![Leaderboard screen](assets\docs\readme-images\design\screens\responsive-leaderboard.png)
+  ![Leaderboard screen](assets/docs/readme-images/design/screens/responsive-leaderboard.png)
 
 * How to play modal which is not a screen but should be included here as an option.
 
-  ![How to play modal](assets\docs\readme-images\design\screens\responsive-how-to-play.png)
+  ![How to play modal](assets/docs/readme-images/design/screens/responsive-how-to-play.png)
 
 ### Accessibility
 
