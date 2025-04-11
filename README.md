@@ -125,12 +125,34 @@ The leaderboard screen has changed but I was unable to get the edited image I cr
 
 **Sections**
 
-  The website / game has several sections which are -
+  The website / game has several sections (screens) which are -
 
-  * Title screen (main home page) is what first welcomes the user.
-![]()
+* Title screen (main home page) is what first welcomes the user.
 
+  ![Title screen](assets\docs\readme-images\design\screens\titlescreen.png)
 
+* Difficulty selection screen which opens when the user selects the play option.
+
+  ![Difficulty screen](assets\docs\readme-images\design\screens\difficulty.png)
+
+* Game screen which opens after difficulty is selected.
+
+  ![Game screen](assets\docs\readme-images\design\screens\game-screen.png)
+
+* Failure screen which appears when the alerts counter reaches 5.
+
+  ![Failure screen](assets\docs\readme-images\design\screens\game-screen.png)
+
+* Victory screen which appears should the user complete the 15 questions or answer 10 correctly without failing.
+
+  ![Victory screen](assets\docs\readme-images\design\screens\victory-screen.png)
+
+* Leaderboard screen which can be accessed through the main title screen (home) or by completing the game after the victory screen.
+
+  ![Leaderboard screen](assets\docs\readme-images\design\screens\leaderboard-screen.png)
+
+* How to play modal which is not a screen but should be included here as an option.
+  ![How to play modal](assets\docs\readme-images\design\screens\how-to-play-modal.png)
 
 ### Accessibility
 
