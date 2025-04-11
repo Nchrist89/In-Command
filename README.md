@@ -2,7 +2,7 @@
 
 In command is a fast paced quiz game designed for a range of devices. The aim of the game is to complete the quiz as quick as possible whilst also not triggering the alarm and alerting the enemy to your presence.
 
-![Am I Responsive](assets/docs/readme-images/am-i-responsive.titlescreen.png)
+![Am I Responsive](assets/docs/readme-images/design/am-i-responsive-titlescreen.png)
 
 [View on GitHub Pages](https://nchrist89.github.io/In-Command/)
 
@@ -87,15 +87,15 @@ The colours below make up the quiz game colours which are designed to feel brigh
 
 Google Fonts has been used for the following fonts:
 
-![Orbitron](assets/docs/readme-images/design/google.font-orbitron.png)
+![Orbitron](assets/docs/readme-images/design/fonts/google-font-orbitron.png)
 
 Orbitron has been used as the main primary font which is used for all the main text on the website. When I designed the logo I realised the original font wasn't going to be suitable and I came across Orbitron, it matches the style of a futuristic bladerunner style font which would suit the feel I was looking for.
 
-![Press start 2P](assets/docs/readme-images/design/google.font-press-start-2p.png)
+![Press start 2P](assets/docs/readme-images/design/fonts/google-font-press-start-2p.png)
 
 Press Start 2P was the original font I had gone with for the quiz game but after using it for a while I realized the font size was too big and clunky to be within the quiz game and therefore I decided I would still use it but for the game buttons apart from the return to menu button.
 
-![VT323](assets/docs/readme-images/design/google.font-vt323.png)
+![VT323](assets/docs/readme-images/design/fonts/google-font-vt323.png)
 
 After realizing I was unable to use Press start 2P as the quiz game font I had to look for another font which would suit the style of the game but also be readable without causing too much frustration having to read and VT323 out of several fonts made the cut to be the font I went with.
 
@@ -255,7 +255,7 @@ To clone the Palms-Peaks-P1 repository:
 
 * Some parts of Javascript where noted in my comments has been corrected by AI but was written by me, only once I exhausted myself and frustration would I then ask chatGPT for assistance why my code may be incorrect.
 
-* The main 2 parts of code which I can say is completely provided by AI other than the changed variables is the API fetch function which I had issues with and the entire leaderboard javascript code. I didn't want to have to get too involved with the leaderboard code with once I realized the end result would be to have a local storage leaderboard. In later updates I wish to have a full working leaderboard and server which is when I will redo the leaderboard code.
+* The main 2 parts of code which I can say is completely provided by AI other than the changed variables is the API fetch function which I had issues with at the beginning of the project and I have left it as is. The entire leaderboard javascript code. I didn't want to have to get too involved with the leaderboard code once I realized the end result would have to be a local storage leaderboard. In later updates I wish to have a full working leaderboard and server which is when I will redo the leaderboard code.
 
 ### Content
 
@@ -273,4 +273,5 @@ Content for the website has solely been created by myself, some content where in
 * My tutor Rachel Furlong for Tutoring sessions weekly and guidance. Q&A's.
 * My father Ian Christie for suggesting the name 'In Command'.
 * Kevin Powell for all the tips and tricks he has provided in his youtube videos.
+* ChatGPT, Gemini and Sider AI tools for helping me with certain issues. giving me a better understanding of Javascript.
 
