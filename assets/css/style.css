@@ -28,6 +28,7 @@
 :root {
     --primary-font: "Orbitron", sans-serif;
     --secondary-font: "VT323", monospace;
+    --third-font: "Press Start 2P", system-ui;
 }
 
 /* how to play modal styles */
@@ -146,7 +147,7 @@ dialog::backdrop {
     text-shadow: 2px 2px 2px black;
     background-color: var(--green);
     border: 3px solid var(--green-yellow);
-    font-family: "Press Start 2P", system-ui;
+    font-family: var(--third-font);
     letter-spacing: 3px;
     font-size: 0.8rem;
     margin: 4px;
@@ -205,7 +206,7 @@ dialog::backdrop {
 }
 
 #alerts {
-    color: rgb(168, 26, 26);
+    color: #a81a1a;
     font-family: var(--secondary-font);
     font-size: 1.4rem;
 }
@@ -252,8 +253,10 @@ dialog::backdrop {
 #answer-btn-box {
     display: flex;
     flex-direction: column;
+    justify-self: flex-end;
     align-items: center;
     height: 40%;
+    margin-top: auto;
 }
 
 .ans-btn {
@@ -348,14 +351,14 @@ dialog::backdrop {
 }
 
 #saveScore {
-    font-family: "Press Start 2P", system-ui;
+    font-family: var(--third-font);
 }
 
 .victory-btn {
     color: black;
     background-color: var(--crimson);
     border: 3px solid var(--gravel);
-    font-family: "Press Start 2P", system-ui;
+    font-family: var(--third-font);
     letter-spacing: 3px;
     font-size: 0.7em;
     padding: 10px;
@@ -368,7 +371,7 @@ dialog::backdrop {
     text-decoration: none;
     line-height: 1.2em;
     height: fit-content;
-    font-family: "Press Start 2P", system-ui;
+    font-family: var(--third-font);
     letter-spacing: 3px;
     font-size: 0.9rem;
     margin: 4px;
@@ -387,7 +390,7 @@ dialog::backdrop {
     text-shadow: 2px 2px 2px black;
     background-color: var(--falu-red);
     border: 3px solid var(--ebony);
-    font-family: "Press Start 2P", system-ui;
+    font-family: var(--third-font);
     letter-spacing: 3px;
     font-size: 0.8rem;
     padding: 5px;
@@ -512,7 +515,7 @@ dialog::backdrop {
     margin: 5px;
     background-color: var(--green);
     border: 4px solid var(--bright-green);
-    font-family: "Press Start 2P", system-ui;
+    font-family: var(--third-font);
     letter-spacing: 2px;
     margin: 10px auto;
 }

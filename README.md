@@ -67,32 +67,68 @@ After running the idea past my father he suggested the name In command and this 
 
 ### Colour Scheme
 
+I have separated the colours used to the colours which mostly make up the quiz game face itself and the colours which are used over the project.
+
+The below colours are what make up the background colors and box borders, text background and text, menu buttons.
+
+![In command colours](assets\docs\readme-images\design\In.command.coolors.png)
+
+The colours below make up the quiz game colours which are designed to feel bright and catch attention onscreen where the focus of the main quiz game. These colours also make up the replay game buttons.
+
+![quiz/game colours](assets\docs\readme-images\design\quiz.game.coolors.png)
 
 ### Typography
 
 Google Fonts has been used for the following fonts:
 
+![Orbitron](assets\docs\readme-images\design\google.font-orbitron.png)
 
+Orbitron has been used as the main primary font which is used for all the main text on the website. When I designed the logo I realised the original font wasn't going to be suitable and I came across Orbitron, it matches the style of a futuristic bladerunner style font which would suit the feel I was looking for.
+
+![Press start 2P](assets\docs\readme-images\design\google.font-press-start-2p.png)
+
+Press Start 2P was the original font I had gone with for the quiz game but after using it for a while I realized the font size was too big and clunky to be within the quiz game and therefore I decided I would still use it but for the game buttons apart from the return to menu button.
+
+![VT323](assets\docs\readme-images\design\google.font-vt323.png)
+
+After realizing I was unable to use Press start 2P as the quiz game font I had to look for another font which would suit the style of the game but also be readable without causing too much frustration having to read and VT323 out of several fonts made the cut to be the font I went with.
 
 ### Imagery
 
-All images on the homepage of the website have been generated using [Prome AI](https://www.promeai.pro/ai-image-generation) website.
+All images on the homepage of the website have been generated using [Prome AI](https://www.promeai.pro/ai-image-generation) website. All images are owned by myself and have been edited within Gimp(Image manipulation software) to produce their final version used.
 
 
 ### Wireframes
 
-Wireframes was
+Wireframes was used to create the initial design of the quiz. I wanted for it to be simple and allow me to adapt it to anything I create around it.
 
-[Title page]()
+![Title page](assets\docs\readme-images\design\Wireframes\wireframes-title-screen.png)
+The title page has changed from the mock up wireframe. I originally wanted for their to be a lights off mode but I didn't end up going with it in the end.
 
-[game section]()
+![game section](assets\docs\readme-images\design\Wireframes\wireframes-quiz.gamescreen.png)
+The game screen almost remains the same as what I had intended.
 
-[Leaderboard section]()
+![Leaderboard section](assets\docs\readme-images\design\Wireframes\wireframes-leaderboard.png)
+The leaderboard screen has changed but I was unable to get the edited image I created to work with the scoreboard and adapting it responsively was causing many problems so I had to simplify it.
 
 ### Features
 
-* Index page.
+* The website / game all runs using Javascript and uses one HTML page which combines all the sections of the game into different screens which are available to the user when they need.
 
+* The main title page which is where the user opens up to is available to get to at all screens, this can be from the 'In Command' logo on screen or the main menu buttons available should the logo be unavailable on screen such as the failure screen.
+
+* The user has the ability to view the scoreboard from the main title page. It opens up giving the user a look at the scoreboard and automatically closes after a short period of time.
+
+* The entire game uses the entire viewport to display and therefore there is no navigation bar and no footer.
+
+* The user has 3 difficulty options to choose from, each giving them a higher starting bonus score.
+
+**Sections**
+
+  The website / game has several sections which are -
+
+  * Title screen (main home page) is what first welcomes the user.
+![]()
 
 
 
@@ -103,13 +139,15 @@ I have throughout the project ensured that the website has been accessibility fr
 * Using semantic HTML
 * Using descriptive alt attributes on images on the site.
 * Ensuring that there is sufficient colour contrast throughout the website.
-* Ensuring that menu items are accessible by marking the current page as active for screen readers.
+* Ensuring that answer correct and incorrect are visibly seen as feedback to the user.
 
 ## Technologies Used
 
 ### Languages Used
 
-HTML and CSS were used to create this website.
+* HTML and CSS were used to create this website.
+
+* Javascript for the game functionality and screen switching. All buttons are functional using Javascript.
 
 ### Frameworks, Libraries & Programs Used
 
@@ -129,13 +167,15 @@ Google Dev Tools - To troubleshoot and test all features on the website. Check a
 
 [Tiny Wow (highly recommend)](https://tinywow.com/) - To batch resize multiple images and to convert to WebP format for reduced file size.
 
-[Image Colour Picker](https://imagecolorpicker.com/user/palettes) - Used for generating the palette which has been used throughout the project. The website also generated the names for the colours which are also referred to as their variable root names in the project.
+[Image Colour Picker](https://imagecolorpicker.com/user/palettes) - Used for generating the palette which has been used throughout the project. Not all the colours were used in the final cut.
 
 [Gimp](https://www.gimp.org/) - Used for modifying and editing images used on the website.
 
 [Favicon.io](https://favicon.io/) - To create favicon.
 
 [Am I responsive](http://ami.responsivedesign.is/) - To show the website image across a range of devices.
+
+[Audacity](https://www.audacityteam.org/) - To rip the audio file from Youtube. The soundtrack used for the game.
 
 ## Deployment and local development
 
@@ -169,53 +209,6 @@ To clone the Palms-Peaks-P1 repository:
 3. Click on the Code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type 'git clone' in the terminal and then paste the link you copied in step 3. Press Enter.
-
-## Testing
-
-
-
-### W3C Validator
-
-The W3C validator has been used to validate the HTML on all pages of the website. It has also been used to validate CSS in the style.css file.
-
-* [Index page HTML]()
-
-
-### Solved Bugs
-
-
-
-### Known Bugs
-
-
-
-### Testing User Stories
-
-
-
-* Returning Visitors
-
-   *
-
-  *
-
-
-### Lighthouse
-
-I used Lighthouse within the Chrome Developer Tools to allow me to test the performance, accessibility, best practices and SEO of the website.
-
-#### Index Page
-
-
-
-
-
-### Full Testing
-
-
-
-
-
 
 ## Credits
 
