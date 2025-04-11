@@ -507,9 +507,6 @@ function saveHighScore(playerName, totalScore) {
         showHighScore(); // Only update leaderboard if a score was saved
     } else {
         console.log("No valid name provided, high score not saved.");
-        // Optionally, you could still call showHighScore() here if you want to ensure
-        // the leaderboard is displayed even if no new score was saved.
-        // However, it might be better to handle this in the submitScore() function.
     }
 }
 
@@ -572,9 +569,6 @@ mainMenuButton.forEach(button => {
 
 //Send to handle the quiz being replayed.
 playAgainButton.addEventListener("click", handleReplay);
-
-
-
 
 //waits for click and sends to difficulty handler.
 const difficultyButtons = document.querySelectorAll("[data-difficulty]");
