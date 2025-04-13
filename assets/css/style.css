@@ -69,6 +69,10 @@ dialog::backdrop {
 
 /* Title screen styles */
 
+#title-box h1 {
+    display: hidden;
+}
+
 #title-screen {
     background-color: var(--ebony);
     background-image: url(../images/titleimage.webp);

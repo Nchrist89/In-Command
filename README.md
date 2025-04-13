@@ -1,4 +1,4 @@
-#  website
+# In command website / game
 
 In command is a fast paced quiz game designed for a range of devices. The aim of the game is to complete the quiz as quick as possible whilst also not triggering the alarm and alerting the enemy to your presence.
 
