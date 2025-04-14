@@ -114,16 +114,44 @@ I have not heard back any other issues than the problem stated previously with t
 | Leaderboard button | Opens the leaderboard screen | Clicked leaderboard menu button | Opens the leaderboard to view and closes after a short period of time | Pass |
 | Scroll Intro text on mobile | On scroll text is shown | Scrolled up on text | Missing text is shown to display | Pass |
 
+_ _ _
+
 ### Difficulty Screen
 
 | Feature tested | Expected outcome | Test | Outcome | Pass / fail |
 | :--- | :--- | :--- | :--- | :--- |
-| Select Easy difficulty | Closes difficulty screen, opens game screen and starts easy quiz | clicked 'easy' | Closed difficulty screen, opened game screen and started easy quiz | Pass |
-| Select Medium difficulty | Closes difficulty screen, opens game screen and starts medium quiz | clicked 'medium' | Closed difficulty screen, opened game screen and started medium quiz | Pass |
-Select hard difficulty | Closes difficulty screen, opens game screen and starts hard quiz | clicked 'hard' | Closed difficulty screen, opened game screen and started hard quiz | Pass |
+| Select Easy difficulty button | Closes difficulty screen, opens game screen and starts easy quiz with api address | clicked 'easy' | Screen switch / ![Api address easy difficulty](/assets/docs/readme-images/testing/api-easy.png) | Pass |
+| Select Medium difficulty button | Closes difficulty screen, opens game screen and starts medium quiz with api address | clicked 'medium' | Screen switch / ![Api address medium difficulty](/assets/docs/readme-images/testing/api-medium.png) | Pass |
+Select hard difficulty button | Closes difficulty screen, opens game screen and starts hard quiz with api address | clicked 'hard' | Screen switch / ![Api address hard difficulty](/assets/docs/readme-images/testing/api-hard.png) | Pass |
 | main menu button | returns user to main menu | clicked main menu button | reloads index.html taking user back to the Title-screen | Pass |
 
+_ _ _
+
 ### Game screen
+
+| Feature tested | Expected outcome | Test | Outcome | Pass / fail |
+| :--- | :--- | :--- | :--- | :--- |
+| In Command logo | Returns user to title screen | clicked logo | Reloads index.html returning user to Title screen | Pass |
+| Question box populates first question | First question is pulled from data.results[ variable] | Console.log confirms correct question number pulled from data | Question box populated with question | Pass |
+| Answers populate answer boxes | Incorrect and correct answers are pulled from data variable and sent to shuffle function and populate answer boxes | Confirmed through console.log that the answers are shuffling and populating answer boxes + visually in game | Answers correctly populate answer boxes | Pass |
+| Correct answer is assigned dataset correct  | assignCorrect function takes correctAns variable and compares to the answers populated and marks the correct and incorrect with a dataset attribute | Confirmed in console.log that the dataset attribute cross referenced with data fetched is correct | Correct and incorrect answers have the right dataset attribute | Pass |
+| Correct answer feedback | Choosing correct answer displays green background on answer button | Correct answer chosen cross referenced with data.results confirms correct answer styling is right | Correct answer background turns green | Pass |
+| Incorrect answer feedback | Choosing and incorrect answer displays red background on answer button | incorrect answer chosen cross referenced with data.results confirms incorrect answer is incorrect | Incorrect answer background displays red | Pass |
+| No Answer Chosen | Timer reaches zero, correct answer highlights blue | Let question timer reach zero | Correct answer has blue background displayed | Pass |
+| Answer counter / hacking display | Yellow progress square added to hacking bar | Chose correct answer | Yellow square populates hacking bar | Pass |
+| Alert counter | Alert counter increases with incorrect answer | Incorrect answer given | Alert counter increases by 1 digit each time | Pass |
+| Question number | Question number should increase by 1 each question | Confirmed in console.log QuestionNum counter is increased and shows visually in game | Pass |
+| Score counter | Score Counter increases with value acquired each question | Console.log confirms value increased by matches answer provided and time remaining bonus | Pass |
+_ _ _
+
+### Failure screen
+| Feature tested | Expected outcome | Test | Outcome | Pass / fail |
+| :--- | :--- | :--- | :--- | :--- |
+| Fail quiz displays failure screen | Alert counter reaches 5 and Failure screen displays | Raised alert counter to 5 | Failure screen displays and hides game screen | Pass |
+
+
+
+
 
 
 

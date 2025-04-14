@@ -470,11 +470,12 @@ function scoreUpdate(score, totalTimeRem) {
     scoreDisplay.innerText = totalScore;
 }
 
+//All leaderboard code below was provided by Gemini and I changed the parts I needed.
 //When name is input into field, this function runs.
 function submitScore() {
-    const playerNameInput = document.getElementById("username"); // Changed to "username"
+    const playerNameInput = document.getElementById("username");
     const playerName = playerNameInput.value.trim();
-    const nameInputContainer = document.getElementById("name-input-container"); // Assuming you still have this ID
+    const nameInputContainer = document.getElementById("name-input-container");
 
     if (playerName) {
         saveHighScore(playerName, totalScore);
@@ -544,6 +545,7 @@ function showHighScore() {
     }
 }
 
+//All below code is mine *****
 //shows leaderboard after quiz completion. Victory screen.
 function viewScoreBoard() {
     addClass(screenIds.victoryScreen, "hide");
@@ -560,6 +562,7 @@ leaderBoardButton.addEventListener("click", () => {
     setTimeout(() => removeClass(screenIds.titleScreen, "hide"), 5000);
     setTimeout(() => addClass(screenIds.leaderBoardScreen, "hide"), 5000);
 });
+
 
 //clicking main menu button returns user to main menu.
 const mainMenuButton = document.querySelectorAll(".rtn-menu-btn");
