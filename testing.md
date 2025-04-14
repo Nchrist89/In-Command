@@ -140,14 +140,46 @@ _ _ _
 | No Answer Chosen | Timer reaches zero, correct answer highlights blue | Let question timer reach zero | Correct answer has blue background displayed | Pass |
 | Answer counter / hacking display | Yellow progress square added to hacking bar | Chose correct answer | Yellow square populates hacking bar | Pass |
 | Alert counter | Alert counter increases with incorrect answer | Incorrect answer given | Alert counter increases by 1 digit each time | Pass |
-| Question number | Question number should increase by 1 each question | Confirmed in console.log QuestionNum counter is increased and shows visually in game | Pass |
-| Score counter | Score Counter increases with value acquired each question | Console.log confirms value increased by matches answer provided and time remaining bonus | Pass |
+| Question number | Question number should increase by 1 each question | Confirmed in console.log QuestionNum counter is increased | Question number increases by 1 | Pass |
+| Score counter | Score Counter increases with value acquired each question | Console.log confirms value increased by matches answer provided and time remaining bonus | Score counter increases correctly | Pass |
+| Answer buttons disabled | After answer is clicked, the answer buttons are disabled | clicked answer and tried others | Answer buttons all disabled | Pass |
+| Answer counter / hacking Progress reaches 10 | screen switch to victory screen and quiz end | Answer counter increased to 10 | Game screen hides and victory screen displays, quiz ends | Pass |
 _ _ _
 
 ### Failure screen
 | Feature tested | Expected outcome | Test | Outcome | Pass / fail |
 | :--- | :--- | :--- | :--- | :--- |
 | Fail quiz displays failure screen | Alert counter reaches 5 and Failure screen displays | Raised alert counter to 5 | Failure screen displays and hides game screen | Pass |
+| Main menu button | Returns user to title-screen main menu | Clicked main menu button | Reloads index.html taking user to the main menu title screen | Pass |
+| Play again button | Switches screen to game screen and restarts quiz, reset variables | Clicked 'play again' button | Switched screens and loaded question from counter 1, variables confirmed to reset through console.log | Pass |
+___
+
+### Victory screen
+
+| Feature tested | Expected outcome | Test | Outcome | Pass / fail |
+| :--- | :--- | :--- | :--- | :--- |
+| Save score button | Saves user score and screen switch to display leaderboard | Clicked save score button | game screen hides and leaderboard screen displays | User score added to score table | Pass |
+| Main Menu Button | Reloads index.html and returns user to title screen | clicked Main menu button | Refreshed window to title screen | Pass |
+| Final score box | shows the users final total score | Confirmed with console.log figure calculated | final score matches figure calculated | Pass |
+___
+
+### Leaderboard Screen
+
+| Feature tested | Expected outcome | Test | Outcome | Pass / fail |
+| :--- | :--- | :--- | :--- | :--- |
+| Main menu button | returns user to title screen main menu | Clicked main menu button | Reloads index.html returning to the title screen | Pass |
+| Score populates list | submit score places score in correct list placement | Saved high score | visually seen that new highscore placement is correct | Pass |
+___
+
+### 404 page
+
+| Feature tested | Expected outcome | Test | Outcome | Pass / fail |
+| :--- | :--- | :--- | :--- | :--- |
+| Main menu button | Returns user to title screen | clicked main menu button | reloaded index.html returning me to the title screen | Pass |
+_ _ _
+
+
+
 
 
 
