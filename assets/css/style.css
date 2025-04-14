@@ -70,7 +70,7 @@ dialog::backdrop {
 /* Title screen styles */
 
 #title-box h1 {
-    display: hidden;
+    visibility: hidden;
 }
 
 #title-screen {
@@ -397,7 +397,6 @@ dialog::backdrop {
     background-color: var(--ebony);
     width: 100vw;
     height: 100vh;
-    color: var(--ebony);
     font-family: var(--primary-font);
     text-align: center;
     flex-direction: column;
@@ -591,6 +590,10 @@ dialog::backdrop {
     text-align: center;
     background-color: var(--regent-gray);
     border: 5px solid var(--cashmere);
+}
+
+#not-found-btn {
+    margin-top: 20px;
 }
 
 /* Extra small devices (phones, 620px and down) */
