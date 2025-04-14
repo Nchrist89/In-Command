@@ -14,9 +14,9 @@ With every additional function which was added into the process, I again tested 
 
 I have done the majority of testing through Chrome Developer Tools while building and once complete I played the game several times to confirm that it was performing as expected.
 
-I have provided the link to friends and family who have enjoyed playing and provided feedback should there be any issues. Once issue which was raised and I spent a while trying to find out what I must have got wrong in my code and this was really worrying me, but after much testing I found out that it was actually the data provided by Open Trivia AI that was causing an issue. Not my code which was such a relief.
+I have provided the link to friends and family who have enjoyed playing and provided feedback should there be any issues. An issue which was raised to me, I spent a while trying to find out what I must have got wrong in my code, and this was really worrying me. After much testing, I found out that it was actually the data provided by Open Trivia AI that was causing an issue. Not my code which was such a relief.
 
-Most users have not said that they have encountered any other issue than the one above and have found it exciting and an addicting game which has been great for testing.
+Most users have not encountered any other issue than the one above and they have found it very exciting and a very addictive game which has been great for testing.
 
 ## Automated testing
 
@@ -44,7 +44,7 @@ JsHint has been used to test script.js which is my only javascript script used f
 
 The three unused variables are being used and are used when selecting a difficulty, the variable is then used in conjunction with the ApiAddress variable which stores the difficulty selected.
 
-The fourth variable submitScore is actually a function name and I am unsure why this is showing as a variable.
+The fourth variable 'submitScore' is actually a function name and I am unsure why this is showing as a variable.
 
 ## Lighthouse Testing
 
@@ -67,7 +67,7 @@ Lighthouse has been used to test the performance and page load statistics as wel
 `First time visitors`
 
 | Goal | Goal achieved by |
-| :--- | :--- |
+| :--- | :--------------- |
 | I would like to enjoy a quiz that provides a need to want to get a better score and pulls me back to want to replay the game. | The user is encouraged by failure to replay the game and increase their score by beating the clock. |
 | I would like to start with the easy difficulty option where I can build my confidence and then gradually work my way up the difficulty levels without feeling overwhelmed. | I have added 3 different options for difficulty which are Easy, medium and hard which the user can choose from. Each with a skill bonus added. |
 | I would like to see visual feedback on wether or not I got a question right or wrong. so I can learn from it and improve upon my knowledge next time. | Visual feedback is provided to the user when they get a question right or wrong. The answer button will display a green background color for a correct answer and a red background color which flashes for incorrect answer.|
@@ -76,10 +76,55 @@ Lighthouse has been used to test the performance and page load statistics as wel
 `Returning Visitor Goals`
 
 | Goal | Goal achieved by |
-| :--- | :--- |
+| :--- | :--------------- |
 | I would like to complete the quiz as quickly as possible while answering the questions correctly, so I can improve upon my score and climb the leaderboard. | I have added a countdown timer to each question, the more time you have left the bigger your time bonus is which add's to your total score. For correct answers this is significantly increased. |
 | I want to have consequences for questions which I get incorrect so that I feel the thrill of the challenge and I am encouraged to improve the next time. | Players are met with failure should they reach an alert counter of 5 and are required to replay to improve upon there previous attempts. The thrill of being victorious has had players returning to play again and again. |
 | I want multiple paths to victory so I can replay the game attempting to complete with a new challenge. | I have added two different ways of beating the game. One is to get past all 15 questions and another where if you have 10 correct answers you win the game. |
+
+- - -
+
+## Full testing
+
+I have done full testing on the following devices.
+
+  * Asus vivobook 15 - Windows 11 ( chrome, firefox, edge, operaGX ).
+
+  * Umidigi A15T smartphone - Chrome browser.
+
+I have also had friends testing and providing feedback on the following devices. Most of which had Google Pixel 9.
+
+  * Google Pixel 9
+  * Google Pixel 9
+  * Google Pixel 9 Pro
+  * Samsung Galaxy S24
+  * Samsung Galaxy S24
+  * iPhone XR
+
+I have not heard back any other issues than the problem stated previously with the Open Trivia API sending data which had spaces in the answer fields causing an issue with the correct answer being correct. I will look to try correct this in a future update with another function for the data to pass through first.
+
+## Index page testing (In sections as screens)
+
+### Title screen
+
+| Feature tested | Expected outcome | Test | Outcome | Pass / fail |
+| :--- | :--- | :--- | :--- | :--- |
+| In command Logo | Reloads index.html page | Clicked Logo | index.html page reloads | Pass |
+| Play menu button | Opens difficulty selection screen | Clicked play button | Opened difficulty selection screen | Pass |
+| How to play menu button | Opens how to play with instructions | Clicked how to play button | Opens Modal with instructions on how to play | Pass |
+| Leaderboard button | Opens the leaderboard screen | Clicked leaderboard menu button | Opens the leaderboard to view and closes after a short period of time | Pass |
+| Scroll Intro text on mobile | On scroll text is shown | Scrolled up on text | Missing text is shown to display | Pass |
+
+### Difficulty Screen
+
+| Feature tested | Expected outcome | Test | Outcome | Pass / fail |
+| :--- | :--- | :--- | :--- | :--- |
+| Select Easy difficulty | Closes difficulty screen, opens game screen and starts easy quiz | clicked 'easy' | Closed difficulty screen, opened game screen and started easy quiz | Pass |
+| Select Medium difficulty | Closes difficulty screen, opens game screen and starts medium quiz | clicked 'medium' | Closed difficulty screen, opened game screen and started medium quiz | Pass |
+Select hard difficulty | Closes difficulty screen, opens game screen and starts hard quiz | clicked 'hard' | Closed difficulty screen, opened game screen and started hard quiz | Pass |
+| main menu button | returns user to main menu | clicked main menu button | reloads index.html taking user back to the Title-screen | Pass |
+
+### Game screen
+
 
 
 
