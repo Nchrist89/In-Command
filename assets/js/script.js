@@ -1,44 +1,15 @@
-// jshint esversion: 6
-
-//Two warnings
-//67	Redefinition of 'alert'.
-//215	'async functions' is only available in ES8 (use 'esversion: 8').
-//Four unused variables
-//17	easyQuiz
-//18	mediumQuiz
-//19	hardQuiz
-//459	submitScore
-
-
-//Modal which contains the how to play instructions at title screen.
-const modal = document.getElementById("modal");
-const openModal = document.getElementById("open-modal");
-const closeModal = document.getElementById("close-modal");
-
-openModal.addEventListener("click", () => {
-    modal.showModal();
-});
-
-closeModal.addEventListener("click", () => {
-    modal.close();
-});
-
 const easyQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=easy&type=multiple";
 const mediumQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=medium&type=multiple";
 const hardQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=hard&type=multiple";
-
-let difficultyChosenBonus = 0;
-
-//Data and question number counter variable
-let data;
-let counter = 0;
-let apiAddress;
 
 //Sound track variable
 const soundTrack = document.getElementById("song"); //audio element
 
 //Question number element
 const questionNum = document.getElementById("question-num");
+
+// correct answer progress bar variable.
+const hackingBar = document.getElementById("hacking-progress");
 
 //Timer variables
 const timerDisplay = document.getElementById("countdown");
@@ -53,9 +24,13 @@ const answerBtn = document.querySelectorAll(".ans-btn"); //Nodelist
 
 const playAgainButton = document.getElementById("replay-btn");
 
+//Difficulty variable
+let difficultyChosenBonus = 0;
 
-// correct answer progress bar variable.
-const hackingBar = document.getElementById("hacking-progress");
+//Data and question number counter variable
+let data;
+let counter = 0;
+let apiAddress;
 
 //answer and correct element variables
 let answerChosen; // button element chosen.
@@ -64,12 +39,13 @@ let correctAns; // stores the string of the answer.
 let correctElement; //the element of the correct button.
 let answerCounter = 0; // answer correct total.
 
+//Fail and replay variables
 let quizFailed = false;
 let playOnceMore = false;
 
 //Score variables
 let totalScore = 0; // Total end score.
-let currentScore = 0;
+let currentScore = 0; //
 let totalTimeRem = 0; // adds up answer seconds remaining.
 
 //Alert variable
@@ -120,6 +96,7 @@ quizTimer.prototype.updateDisplay = function () {
     this.display.textContent = seconds < 10 ? "0" + seconds : seconds;
 };
 
+//My code
 //Screen hide and display
 const screenIds = {
     victoryScreen: "victory-screen",
@@ -130,7 +107,8 @@ const screenIds = {
     diffScreen: "difficulty-screen"
 };
 
-//adds class screenId element. Used to add classes to particular screen sections.
+//My code
+//adds class screenId element. Used to add classes to screen sections.
 function addClass(screenId, className) {
     const element = document.getElementById(screenId);
     if (element) {
@@ -138,7 +116,8 @@ function addClass(screenId, className) {
     }
 }
 
-//remove class screenId element. Used to remove classes to particular screen sections.
+//My code
+//remove class screenId element. Used to remove classes to screen sections.
 function removeClass(screenId, className) {
     const element = document.getElementById(screenId);
     if (element) {
@@ -146,6 +125,7 @@ function removeClass(screenId, className) {
     }
 }
 
+//My code
 //advice to use data to manage difficulty selection by mentor, code by me.
 const difficulties = [
     { name: "easy", bonus: 1000},
@@ -153,6 +133,7 @@ const difficulties = [
     { name: "hard", bonus: 1500}
 ];
 
+//My code
 //Handles the event when user selects difficulty.
 function difficultyHandler(event) {
     const selectedDifficultyName = event.target.dataset.difficulty;
@@ -167,6 +148,7 @@ function difficultyHandler(event) {
     }
 }
 
+//My code
 //Handles if the user has selected to reply game.
 function handleReplay() {
     console.log("replay game!");
@@ -174,7 +156,8 @@ function handleReplay() {
     playQuizGame();
 }
 
-//runs when the user selects difficulty.
+//My code
+//runs when the user selects play from title-screen
 function chooseDifficulty() {
     removeClass(screenIds.titleScreen, "display-flex");
     addClass(screenIds.titleScreen, "hide");
@@ -182,12 +165,13 @@ function chooseDifficulty() {
     addClass(screenIds.diffScreen, "display-flex");
 }
 
+//My code
 //auto reloads to return user back to main title-screen.
 function returnMenu() {
     window.location.reload();
 }
 
-
+//My code
 //Starts the quiz by switching screens then fetching questions.
 function playQuizGame() {
     //if player selects replay, variables will be reset.
@@ -219,7 +203,6 @@ function playQuizGame() {
     fetchQuestions();
 }
 
-
 // Fetch questions from open trivia API.
 // code taken from chatGPT.
 async function fetchQuestions() {
@@ -236,6 +219,7 @@ async function fetchQuestions() {
     getQuestion();
 }
 
+//My code
 //retrieve question function
 function getQuestion() {
     if (counter <= 14) {
@@ -253,6 +237,7 @@ function getQuestion() {
     }
 }
 
+//My code
 //Deals answers to answer button elements.
 function answerDealer() {
     correctAns = currentQuestion.correct_answer;
@@ -273,6 +258,7 @@ function answerDealer() {
     enableBtns();
 }
 
+//Gemini AI provided code
 //Shuffles answers prior to dealing them.
 function shuffleAns(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -281,6 +267,7 @@ function shuffleAns(array) {
     }
 }
 
+//My code
 //Assigns the correct answer the data-value of correct.
 function assignCorrect() {
     for (let button of answerBtn) {
@@ -299,6 +286,7 @@ function assignCorrect() {
     }
 }
 
+//My code
 //Checks to see if answer button clicked is the correct button.
 function checkAnswer(e) {
     disableBtns();
@@ -307,20 +295,13 @@ function checkAnswer(e) {
     console.log("Time remaining:", remainingTime);
     answerChosen = e.currentTarget;
 
-    //Handles the correct answer event.
-
-    if (answerCounter === 10) {
-        console.log("You were quick enough to hack the system!");
-        runEndGame();
-
-    } else if (answerChosen.dataset.value === "correct") {
-        answerCounter++;
+    if (answerChosen.dataset.value === "correct") {
+        ++answerCounter;
         currentScore += 100;
         totalTimeRem += remainingTime;
         changeStyle("correct", answerChosen);
         console.log("answer chosen is CORRECT!!");
         scoreUpdate(currentScore, totalTimeRem);
-
 
         //Handles the incorrect answer event or unanswered.
     } else if (answerChosen.dataset.value === "incorrect") {
@@ -338,6 +319,7 @@ function checkAnswer(e) {
     }
 }
 
+//My code
 // Disables answer buttons after answer has been chosen(nodelist)
 function disableBtns() {
     answerBtn.forEach(button => {
@@ -345,6 +327,7 @@ function disableBtns() {
     });
 }
 
+//My code
 //Enables answer buttons when answers are placed.
 function enableBtns() {
     answerBtn.forEach(button => {
@@ -352,6 +335,7 @@ function enableBtns() {
     });
 }
 
+//My code
 //timer reaches zero event handler.
 function handleTimeout() {
     disableBtns();
@@ -361,6 +345,7 @@ function handleTimeout() {
     changeStyle("noAnswer", correctElement);
 }
 
+//My code
 //changes style of button to indicate if right or wrong answer.
 function changeStyle(result, answerChosen) {
     console.log("changing style");
@@ -374,6 +359,7 @@ function changeStyle(result, answerChosen) {
         //incorrect answer styling.
     } else if (result === "incorrect") {
         answerChosen.classList.add("incorrect");
+        correctElement.classList.add("no-answer");
         setTimeout(() => nextQuestion(), 5100);
 
         //no answer chosen styling.
@@ -387,6 +373,7 @@ function changeStyle(result, answerChosen) {
     }
 }
 
+//My code
 //Runs if the user gets 5 questions wrong.
 function gotCaught() {
     //if wrong answer 5 times.
@@ -412,6 +399,7 @@ function gotCaught() {
     }
 }
 
+//My code
 //Increases when user chooses correct answer.
 function hackProgress() {
     hackingBar.innerHTML = ""; //clears existing squares.
@@ -423,10 +411,16 @@ function hackProgress() {
     }
 }
 
+//My code
 //resets dataset value and styling.
 function nextQuestion() {
     console.log("NextQuestion");
-    if (quizFailed) {
+
+    if (answerCounter === 10) {
+        console.log("You were quick enough to hack the system!");
+        runEndGame();
+
+    } else if (quizFailed) {
         correctElement.classList.remove("no-answer");
         answerChosen.classList.remove("incorrect");
         console.log("You failed to hack the system!");
@@ -444,6 +438,7 @@ function nextQuestion() {
         //if answer is incorrect.
     } else if (answerChosen.innerHTML !== correctAns) {
         console.log("incorrect Answer");
+        correctElement.classList.remove("no-answer")
         answerChosen.classList.remove("incorrect");
         getQuestion();
 
@@ -452,6 +447,7 @@ function nextQuestion() {
     }
 }
 
+//My code
 //runs the victory screen endgame.
 function runEndGame() {
     addClass(screenIds.gameScreen, "hide");
@@ -460,6 +456,7 @@ function runEndGame() {
     endScore.innerHTML = totalScore;
 }
 
+//My code
 //updates total score with bonus time remaining.
 function scoreUpdate(score, totalTimeRem) {
     let timeBonus = totalTimeRem * 10;
@@ -489,13 +486,17 @@ function submitScore() {
     } else {
         console.log("No name provided.");
         // Optionally provide feedback to the user that the name is required
-        alert("Please enter your name to save your score.");
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!"
+          });
     }
 }
 
 // Saves the users highscore to local storage
 // had to get help from Gemini on how to use local storage.
-//code written by me not copied and edited where possible.
+// code written by me not copied and edited where possible.
 function saveHighScore(playerName, totalScore) {
     if (playerName && playerName.trim() !== "") { // Added trim and check for empty string
         const highScoresList = localStorage.getItem(HIGH_SCORE_KEY);
@@ -511,6 +512,7 @@ function saveHighScore(playerName, totalScore) {
     }
 }
 
+//AI leaderboard code copied
 //retrieves the highscores from local storage.
 function retrieveHighScores() {
     const highScoreList = localStorage.getItem(HIGH_SCORE_KEY);
@@ -519,7 +521,6 @@ function retrieveHighScores() {
 
 //displays the highscores in a unordered list
 //on the leaderboard screen.
-
 function showHighScore() {
     const highScores = retrieveHighScores();
     const highScoreElement = document.getElementById("score-board");
@@ -545,7 +546,6 @@ function showHighScore() {
     }
 }
 
-//All below code is mine *****
 //shows leaderboard after quiz completion. Victory screen.
 function viewScoreBoard() {
     addClass(screenIds.victoryScreen, "hide");
@@ -563,7 +563,7 @@ leaderBoardButton.addEventListener("click", () => {
     setTimeout(() => addClass(screenIds.leaderBoardScreen, "hide"), 5000);
 });
 
-
+//All below code is mine *****
 //clicking main menu button returns user to main menu.
 const mainMenuButton = document.querySelectorAll(".rtn-menu-btn");
 mainMenuButton.forEach(button => {
@@ -583,4 +583,17 @@ difficultyButtons.forEach(button => {
 const playGame = document.getElementById("play-game");
 playGame.addEventListener("click", () => {
     chooseDifficulty();
+});
+
+//Modal which contains the how to play instructions at title screen.
+const modal = document.getElementById("modal");
+const openModal = document.getElementById("open-modal");
+const closeModal = document.getElementById("close-modal");
+
+openModal.addEventListener("click", () => {
+    modal.showModal();
+});
+
+closeModal.addEventListener("click", () => {
+    modal.close();
 });

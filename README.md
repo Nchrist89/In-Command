@@ -2,27 +2,26 @@
 
 In command is a fast paced quiz game designed for a range of devices. The aim of the game is to complete the quiz as quick as possible whilst also not triggering the alarm and alerting the enemy to your presence.
 
-![Am I Responsive](assets/docs/readme-images/design/am-i-responsive-titlescreen.png)
+![Am I Responsive](/docs/readme-images/design/am-i-responsive-titlescreen.png)
 
 [View on GitHub Pages](https://nchrist89.github.io/In-Command/)
 
 ## Introduction
 
-![In Command Logo](assets/docs/readme-images/design/incommandlogofinal.png)
+ ![In Command Logo](/docs/readme-images/design/incommandlogofinal.png)
 
-In command has been the second website and first game I have created using Javascript. I had so much fun in building it and have learnt so much from this project and about my love for Javascript. The end result of the project isn't exactly what I had originally planned but it's turned out even better after a decision mid-way to change the feel of the project. It originally felt very dull and I wanted it to have a more 80's style Bladerunner vibe to it which would also work with the idea that I originally had planned and the outcome I am extremely happy with.
+In command has been the second website and first game I have created using Javascript. I had so much fun in building it and have learnt so much from this project and about my love for Javascript. The end result of the project isn't exactly what I had originally planned but it's turned out even better after a decision mid-way to change the feel of the project. Originally it felt very dull and I wanted it to give it a livelier feel, so I added an 80's style Bladerunner vibe to it. It would also work with the idea that I originally planned. The outcome I am extremely happy with.
 
-The logo and all images were all designed by AI with prompts which took quite a long time to get just right and were also edited by me. The only thing I have not solely created was the soundtrack and this was from a youtube video which I had to rip the soundtrack from using Audacity software.
+The logo and all images were all designed by AI with prompts which took quite a long time to get just right. They were also edited by me. The only thing I have not solely created was the soundtrack. The soundtrack was from a youtube video of an old sega game soundtrack. I had to rip the soundtrack from the video using Audacity software.
 
-I have given the link to many family and friends, all of which have enjoyed the game quite a lot and expressed their frustration at the difficulty but also the want to succeed and be victorious meaning it has been quite addictive and given the game some replayability which has kept quite a few of them entertained whilst letting me know of any issues.
+I have given the link to many family and friends, all of which have enjoyed the game quite a lot and expressed their frustration at the difficulty but also the want to succeed and be victorious meaning it has been quite addictive and given the game some replayability. This has kept quite a few of them entertained whilst letting me know of any issues.
 
-I was let down at the end when I realized in order to make an actual functioning leaderboard. I would need to create a server which could store the scores, so unfortunately I have had to settle with local storage but other than that, I am happy with it. I will look forward to improve and add to it in the future.
+I was let down at the end when I realized that in order to make an actual functioning leaderboard. I would need to create a server which could store the scores. Unfortunately, I have had to settle with a local storage leaderboard. Other than that, I am happy with it. I will look forward to improve and add to it in the future.
 
-The game itself should be the user hacking the machine and the hacking part is substituted with a quiz which in a way is the difficulty in the hacking of the computer. I done it this way to enable me to have a reason for the quiz failure and different victory outcomes. This allowed me to create a basis for the story behind it.
+The game itself is the user hacking the machine and the hacking part is substituted with a quiz which in a way is the difficulty in the hacking of the computer. I done it this way to enable me to have a reason for the quiz failure and different victory outcomes. This allowed me to create a basis for the story behind it.
 
 ## CONTENTS
 
-___
 ## User Experience (UX)
 
 **Initial Planning**
@@ -47,27 +46,27 @@ After running the idea past my father he suggested the name In command and this 
 
 **Client Goals**
 
-* To provide an interesting way of adapting a quiz into a replayable game, which will be exciting and fun to the user and engage them to replay and be victorious.
+* To provide an interesting way of adapting a quiz into a replayable game, which will be exciting and fun to the user and engage them to replay.
 
-* to provide multiple ways to succeed at the given objective.
+* To provide multiple ways to succeed at the game.
 
 **First Time Visitor Goals**
 
-*As a player looking for fun and replayability* - I would like to enjoy a quiz that provides a need to want to get a better score and pulls me back to want to replay the game.
+As a player looking for fun and replayability - *I would like to enjoy a quiz that provides a need to want to get a better score and pulls me back to want to replay the game.*
 
-*As a novice player* - I would like to start with the easy difficulty option where I can build my confidence and then gradually work my way up the difficulty levels without feeling overwhelmed.
+As a novice player - *I would like to start with the easy difficulty option where I can build my confidence and then gradually work my way up the difficulty levels without feeling overwhelmed.*
 
-*As a player looking for feedback* - I would like to see visual feedback on wether or not I got a question right or wrong. so I can learn from it and improve upon my knowledge next time.
+As a player looking for feedback - *I would like to see visual feedback on wether or not I got a question right or wrong. so I can learn from it and improve upon my knowledge next time.*
 
-*As a player interested in progress of completion* - I would like to be provided visual knowledge of my correct and incorrect guesses so I am kept aware of my progress within the game.
+As a player interested in progress of completion - *I would like to be provided visual knowledge of my correct and incorrect guesses so I am kept aware of my progress within the game.*
 
 **Returning visitor goals**
 
-*As a competitive player* - I would like to complete the quiz as quickly as possible while answering the questions correctly, so I can improve upon my score and climb the leaderboard.
+As a competitive player - *I would like to complete the quiz as quickly as possible while answering the questions correctly, so I can improve upon my score and climb the leaderboard.*
 
-*As a player who prefers challenges* - I want to have consequences for questions which I get incorrect so that I feel the thrill of the challenge and I am encouraged to improve the next time.
+As a player who prefers challenges - *I want to have consequences for questions which I get incorrect so that I feel the thrill of the challenge and I am encouraged to improve the next time.*
 
-*As a strategic player* - I want multiple paths to victory so I can replay the game attempting to complete with a new challenge.
+As a strategic player - *I want multiple paths to victory so I can replay the game attempting to complete with a new challenge.*
 
 ## Design
 
@@ -77,25 +76,25 @@ I have separated the colours used to the colours which mostly make up the quiz g
 
 The below colours are what make up the background colors and box borders, text background and text, menu buttons.
 
-![In command colours](assets/docs/readme-images/design/In.command.coolors.png)
+![In command colours](/docs/readme-images/design/In.command.coolors.png)
 
 The colours below make up the quiz game colours which are designed to feel bright and catch attention onscreen where the focus of the main quiz game. These colours also make up the replay game buttons.
 
-![quiz/game colours](assets/docs/readme-images/design/quiz.game.coolors.png)
+![quiz/game colours](/docs/readme-images/design/quiz.game.coolors.png)
 
 ### Typography
 
 Google Fonts has been used for the following fonts:
 
-![Orbitron](assets/docs/readme-images/design/fonts/google-font-orbitron.png)
+![Orbitron](/docs/readme-images/design/fonts/google-font-orbitron.png)
 
-Orbitron has been used as the main primary font which is used for all the main text on the website. When I designed the logo I realised the original font wasn't going to be suitable and I came across Orbitron, it matches the style of a futuristic bladerunner style font which would suit the feel I was looking for.
+Orbitron has been used as the main primary font which is used for all the main text on the website. When I designed the logo I realized the original font wasn't going to be suitable and I came across Orbitron, it matches the style of a futuristic blade-runner style font which would suit the feel I was looking for.
 
-![Press start 2P](assets/docs/readme-images/design/fonts/google-font-press-start-2p.png)
+![Press start 2P](/docs/readme-images/design/fonts/google-font-press-start-2p.png)
 
 Press Start 2P was the original font I had gone with for the quiz game but after using it for a while I realized the font size was too big and clunky to be within the quiz game and therefore I decided I would still use it but for the game buttons apart from the return to menu button.
 
-![VT323](assets/docs/readme-images/design/fonts/google-font-vt323.png)
+![VT323](/docs/readme-images/design/fonts/google-font-vt323.png)
 
 After realizing I was unable to use Press start 2P as the quiz game font I had to look for another font which would suit the style of the game but also be readable without causing too much frustration having to read and VT323 out of several fonts made the cut to be the font I went with.
 
@@ -108,13 +107,13 @@ All images on the homepage of the website have been generated using [Prome AI](h
 
 Wireframes was used to create the initial design of the quiz. I wanted for it to be simple and allow me to adapt it to anything I create around it.
 
-![Title page](assets/docs/readme-images/design/Wireframes/wireframes-title-screen.png)
+![Title page](/docs/readme-images/design/Wireframes/wireframes-title-screen.png)
 The title page has changed from the mock up wireframe. I originally wanted for their to be a lights off mode but I didn't end up going with it in the end.
 
-![game section](assets/docs/readme-images/design/Wireframes/wireframes-quiz.gamescreen.png)
+![game section](/docs/readme-images/design/Wireframes/wireframes-quiz.gamescreen.png)
 The game screen almost remains the same as what I had intended.
 
-![Leaderboard section](assets/docs/readme-images/design/Wireframes/wireframes-leaderboard.png)
+![Leaderboard section](/docs/readme-images/design/Wireframes/wireframes-leaderboard.png)
 The leaderboard screen has changed but I was unable to get the edited image I created to work with the scoreboard and adapting it responsively was causing many problems so I had to simplify it.
 
 ### Features
@@ -136,36 +135,36 @@ The leaderboard screen has changed but I was unable to get the edited image I cr
 * Title screen (main home page) is what first welcomes the user.
   * I am really happy with how this turned out. I put a lot of effort into making it right. The buttons are not ideal and the colours I wanted were not accessibility friendly so I have had to change them last minute.
 
-  ![Title screen](assets/docs/readme-images/design/screens/resposive-title-screen.png)
+  ![Title screen](/docs/readme-images/design/screens/resposive-title-screen.png)
 
 * Difficulty selection screen which opens when the user selects the play option.
   * This is a basic difficulty selection screen. The button colour is not idea but I had them match the title screen.
 
-  ![Difficulty screen](assets/docs/readme-images/design/screens/responsive-difficulty-screen.png)
+  ![Difficulty screen](/docs/readme-images/design/screens/responsive-difficulty-screen.png)
 
 * Game screen which opens after difficulty is selected.
   * The game screen was originally planned to have a background video play and the quiz game was displayed on an old computer monitor but this caused much frustration and would not have been ideal for user experience and therefore it was scrapped. The final outcome is much better, brighter and cleaner.
 
-  ![Game screen](assets/docs/readme-images/design/screens/responsive-gamescreen.png)
+  ![Game screen](/docs/readme-images/design/screens/responsive-gamescreen.png)
 
 * Failure screen which appears when the alerts counter reaches 5.
-  * I originally had the guard pop-up on screen over the top of the quiz game but mid way through the project this was made into it's own screen section.
+  * I originally had the guard pop-up on screen over the top of the quiz game but mid way through the project this then became part of the failure screen.
 
-  ![Failure screen](assets/docs/readme-images/design/screens/failure-screen.png)
+  ![Failure screen](/docs/readme-images/design/screens/failure-screen.png)
 
 * Victory screen which appears should the user complete the 15 questions or answer 10 correctly without failing.
   * The victory screen I decided on was a picture of a nuclear missile ready to be fired. A text box appears which shows you your final total score.
 
-  ![Victory screen](assets/docs/readme-images/design/screens/victory-screen.png)
+  ![Victory screen](/docs/readme-images/design/screens/victory-screen.png)
 
 * Leaderboard screen which can be accessed through the main title screen (home) or by completing the game after the victory screen.
   * The leaderboard screen I decided not to put to much time into seeing as I would only be able to make it available for local storage scores. In the future updates I will make a proper leaderboard which can store the scores on an SQL server which I look to learn and implement into this project in the coming months.
 
-  ![Leaderboard screen](assets/docs/readme-images/design/screens/responsive-leaderboard.png)
+  ![Leaderboard screen](/docs/readme-images/design/screens/responsive-leaderboard.png)
 
 * How to play modal which is not a screen but should be included here as an option.
 
-  ![How to play modal](assets/docs/readme-images/design/screens/responsive-how-to-play.png)
+  ![How to play modal](/docs/readme-images/design/screens/responsive-how-to-play.png)
 
 ### Accessibility
 
@@ -245,17 +244,48 @@ To clone the Palms-Peaks-P1 repository:
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type 'git clone' in the terminal and then paste the link you copied in step 3. Press Enter.
 
+## Testing
+
+For full testing, Please refer to [Testing.md](/testing.md)
+
+## Solved Bugs
+
+| Bug | How it was solved |
+| :--- | :--- |
+| If a player wanted to reply the game again, the timeout for the change styling and next question would get interrupted and cause the question next up to immediately follow while the incorrect styling was happening | Setting timeout to 4000ms before the CheckAnswer function passes onto the gotCaught() function ensured that the changeStyle function would complete and when the player restarted the game everything was reset for the new question.|
+| I had an issue where the correct answer was showing not correct even though the correct answer from the API data was saved as the variable correctAns | Instead of having the answer compared to the innerText of the answer box value, I instead changed this to innerHTML and this had resolved that issue. |
+| A conundrum was having the progress bar reflect progress which would ideally look like an old dos screen load bar | I looked online but couldn't find what I was looking for. While going through it in my head lying in bed, I came up with the idea of using javascript to create I elements and add the font awesome classes to it also using javascript. I went to font awesome website where I found the square I wanted and this looked more like what I had planned. Not ideal, but better than I had found online and I managed to make it work |
+| There was an issue where the game would fail, after the alert counter hit 1 | It took a while to figure out why this was happening but I checked with Gemini AI and it also said it was not sure what the issue could be, it suggested I create a fail quiz variable which would result to true or false. I took this information and created the variable and should the quiz be failed, this would result to true and therefore I could set the failure counter to reach 5 before that resulted to true and this resolved my issue |
+| Answer buttons clickable after the user selected an answer | I had a quick look online and looked at how I could set the property to disabled on the answers or add the attribute in, when I looked at what the variable I had stored for the answer buttons I noticed it was a nodelist and, therefore had different properties / methods which lead me to looking into more on nodelists. I then found information online about creating a function to have them disabled with the nodelist I already had as the variable. |
+| Assigning an answer as the correct answer | When deciding how I would label the correct answer, I had thought of a way in comparing the correct answer in the field to the correct answer. I couldn't get this working and therefore I came up with the idea to use a dataset I used where I created a drumkit on the 30 day javascript challenge online. This would apply a correct value to the data-correct dataset where I could then use the checkAnswer function to confirm if that answer clicked had the dataset value of correct. |
+| ChangeStyle and Timer function problem | This took hours of backwards and forwards of changing different things and having it work, not work and almost caused me to take the timer out completely but it also had to stay. after a few more hours I eventually made it all work. I have no idea how I managed to solve it, I just did |
+| wrong answer change styling | I have just resolved this issue which I have gone back to and fixed it, the styling for the incorrect answer was not showing the correct answer and I wasn't able to previously. This has now been fixed |
+
+Throughout the work cycle, I encountered many issues with some taking hours to resolve. I can't remember all of them, but there were a lot, I spent many hours on functions making sure they were working correctly, only to have to go back and completely redo them when I added additional things like the timer and gotCaught function. I wish I had taken screenshots of these issues but at the time I was too frustrated and tearing my hair out trying to resolve them. Afterwards, I had done way too many things to know exactly how I resolved them completely, it wasn't just one thing but a combination of issues throughout the code which were correct to begin with but had to be changed. This issue kept happening throughout when adding and changing certain things to work.
+
+## Known bugs
+
+| Bug | Issue |
+| :--- | :--- |
+| Progress Bar | Although this issue is partially resolved on making it work it still doesn't function correctly on mobile and the additional squares added to the bar take up the next row. I tried to fix this using flexbox but I couldn't get it working exactly. I left this issue till later focusing on getting the project complete and I haven't got around to getting it done due to time |
+| button styling | I have an issue where if the user selects an answer which is incorrect
+
+
 ## Credits
 
 ### Code used
 
 * All HTML and CSS code is owned by me and written by myself.
 
+* I have commented on each part of javascript code and function to confirm if the code was done by me
+
 * There is quite a bit of code which I had help completing and correcting using AI but the majority of the code has been either rewritten and added to.
 
 * Some parts of Javascript where noted in my comments has been corrected by AI but was written by me, only once I exhausted myself and frustration would I then ask chatGPT for assistance why my code may be incorrect.
 
-* The main 2 parts of code which I can say is completely provided by AI other than the changed variables is the API fetch function which I had issues with at the beginning of the project and I have left it as is. The entire leaderboard javascript code. I didn't want to have to get too involved with the leaderboard code once I realized the end result would have to be a local storage leaderboard. In later updates I wish to have a full working leaderboard and server which is when I will redo the leaderboard code.
+* The shuffle function I had asked Gemini AI for which provided the code.
+
+* The 2 parts of code which I can say is completely provided by AI other than the changed variables is the API fetch function which I had issues with at the beginning of the project and I have left it as is apart from change variables and error message. The entire leaderboard javascript code. I didn't want to have to get too involved with the leaderboard code once I realized the end result would have to be a local storage leaderboard. In later updates I wish to have a full working leaderboard and server which is when I will redo the leaderboard code.
 
 ### Content
 

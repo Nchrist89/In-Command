@@ -10,7 +10,7 @@ Visit the full site here [In Command](https://nchrist89.github.io/In-Command/)
 
 Testing was carried out while building the project. I started off getting the basic structure for the quiz game created and firstly added the first question to the question box. Once I had this sorted I created a next button which I could click which would then populate the next question into the field. When that was done I followed on to having the answer buttons placed in each answer box. I tested this and selected next question which would then repopulate the answer boxes again. When I had the code correctly shuffling and assigning a correct answer value to the answer box with the correct answer in it. Further testing was done again ensuring that the correct answer was showing with a dataset value of correct.
 
-With every additional function which was added into the process, I again tested the game thoroughly and had to overcome a multitude of different bugs. From finding out certain variables which I thought were holding a particular value but were not to finding out more information about nodelists and the methods available to me using them. I started to learn at a much deeper level about Javascript and was really starting to enjoy it, and also the frustration of bug fixing and resolving the issue.
+With every additional function which was added into the process, I again tested the game thoroughly and had to overcome a multitude of different bugs. From finding out certain variables which I thought were holding a particular value but were not to finding out more information about nodelist's and the methods available to me using them. I started to learn at a much deeper level about Javascript and was really starting to enjoy it, and also the frustration of bug fixing and resolving the issue.
 
 I have done the majority of testing through Chrome Developer Tools while building and once complete I played the game several times to confirm that it was performing as expected.
 
@@ -18,13 +18,15 @@ I have provided the link to friends and family who have enjoyed playing and prov
 
 Most users have not encountered any other issue than the one above and they have found it very exciting and a very addictive game which has been great for testing.
 
+I have decided to manual test my code rather than automated testing. This is because in the current project, I did not see the reason for automated testing but completely understand why I would definitely use it in many projects. There were even times on this project where I felt automated testing would be really helpful beside the manual testing I was already doing. I look to learn more about automated testing and how I can use it in future projects.
+
 ## Automated testing
 
 I have used W3C testing to test my HTML page and 404 page.
 
  * Index page test
 
- ![W3C index.html](/assets/docs/readme-images/testing/w3c/w3c-incommand-test.png)
+ ![W3C index.html](/docs/readme-images/testing/w3c/w3c-incommand-test.png)
 
 INSERT 404.html testing here.
 
@@ -32,7 +34,7 @@ Testing has also been performed on style.css with no errors found.
 
 * Stylesheet test
 
-![W3C In command stylesheet](/assets/docs/readme-images/testing/w3c/w3c-incommand-stylesheet.png)
+![W3C In command stylesheet](/docs/readme-images/testing/w3c/w3c-incommand-stylesheet.png)
 
 Some warnings for my stylesheet test, but these were only related to the fact there has been root styling variables used within the project.
 
@@ -40,7 +42,7 @@ Some warnings for my stylesheet test, but these were only related to the fact th
 
 JsHint has been used to test script.js which is my only javascript script used for the project.
 
-![JSHint test](/assets/docs/readme-images/testing/jshint-test.png)
+![JSHint test](/docs/readme-images/testing/jshint-test.png)
 
 The three unused variables are being used and are used when selecting a difficulty, the variable is then used in conjunction with the ApiAddress variable which stores the difficulty selected.
 
@@ -54,11 +56,11 @@ Lighthouse has been used to test the performance and page load statistics as wel
 
  A 100 across all 4 categories for my index.html page.
 
-![Lighthouse index.html](/assets/docs/readme-images/testing/lighthouse/lighthouse-indexhtml.png)
+![Lighthouse index.html](/docs/readme-images/testing/lighthouse/lighthouse-indexhtml.png)
 
 ### Mobile test
 
-![Lighthouse mobile test](/assets/docs/readme-images/testing/lighthouse/lighthouse-mobile.png)
+![Lighthouse mobile test](/docs/readme-images/testing/lighthouse/lighthouse-mobile.png)
 
 ## Manual testing
 
@@ -120,9 +122,9 @@ _ _ _
 
 | Feature tested | Expected outcome | Test | Outcome | Pass / fail |
 | :--- | :--- | :--- | :--- | :--- |
-| Select Easy difficulty button | Closes difficulty screen, opens game screen and starts easy quiz with api address | clicked 'easy' | Screen switch / ![Api address easy difficulty](/assets/docs/readme-images/testing/api-easy.png) | Pass |
-| Select Medium difficulty button | Closes difficulty screen, opens game screen and starts medium quiz with api address | clicked 'medium' | Screen switch / ![Api address medium difficulty](/assets/docs/readme-images/testing/api-medium.png) | Pass |
-Select hard difficulty button | Closes difficulty screen, opens game screen and starts hard quiz with api address | clicked 'hard' | Screen switch / ![Api address hard difficulty](/assets/docs/readme-images/testing/api-hard.png) | Pass |
+| Select Easy difficulty button | Closes difficulty screen, opens game screen and starts easy quiz with api address | clicked 'easy' | Screen switch / ![Api address easy difficulty](/docs/readme-images/testing/api-easy.png) | Pass |
+| Select Medium difficulty button | Closes difficulty screen, opens game screen and starts medium quiz with api address | clicked 'medium' | Screen switch / ![Api address medium difficulty](/docs/readme-images/testing/api-medium.png) | Pass |
+Select hard difficulty button | Closes difficulty screen, opens game screen and starts hard quiz with api address | clicked 'hard' | Screen switch / ![Api address hard difficulty](/docs/readme-images/testing/api-hard.png) | Pass |
 | main menu button | returns user to main menu | clicked main menu button | reloads index.html taking user back to the Title-screen | Pass |
 
 _ _ _

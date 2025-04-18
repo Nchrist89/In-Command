@@ -385,7 +385,7 @@ dialog::backdrop {
     color: whitesmoke;
     text-shadow: 2px 2px 2px black;
     background-color: var(--falu-red);
-    border: 3px solid var(--ebony);
+    border: 3px solid red;
     font-family: var(--third-font);
     letter-spacing: 3px;
     font-size: 0.8rem;
@@ -614,6 +614,7 @@ dialog::backdrop {
     .rtn-menu-btn {
         width: 80%;
         padding: 5px;
+        margin-top: 15px;
     }
 }
 
