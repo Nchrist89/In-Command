@@ -1,9 +1,9 @@
-const easyQuiz = "https://opentdb.com/api.php?amount=15&category=20&difficulty=easy&type=multiple";
-const mediumQuiz = "https://opentdb.com/api.php?amount=15&category=20&difficulty=medium&type=multiple";
-const hardQuiz = "https://opentdb.com/api.php?amount=15&category=20&difficulty=hard&type=multiple";
+const easyQuiz = "https://opentdb.com/api.php?amount=15&category=15&difficulty=easy&type=multiple";
+const mediumQuiz = "https://opentdb.com/api.php?amount=15&category=15&difficulty=medium&type=multiple";
+const hardQuiz = "https://opentdb.com/api.php?amount=15&category=15&difficulty=hard&type=multiple";
 
 //Sound track variable
-const soundTrack = document.getElementById("song"); //audio element
+const soundTrack = document.getElementById("song");
 
 //Question number element
 const questionNum = document.getElementById("question-num");
@@ -28,15 +28,15 @@ const playAgainButton = document.getElementById("replay-btn");
 let difficultyChosenBonus = 0;
 
 //Data and question number counter variable
-let data;
+let data = [];
 let counter = 0;
 let apiAddress;
 
 //answer and correct element variables
 let answerChosen; // button element chosen.
 let currentQuestion; // stores the current question object.
-let correctAns; // stores the string of the answer.AC
-let correctElement; //the element of the correct button.
+let correctAns; // stores the string of the answer.
+let correctElement; // the element of the correct button.
 let answerCounter = 0; // answer correct total.
 
 //Fail and replay variables
@@ -45,7 +45,7 @@ let playOnceMore = false;
 
 //Score variables
 let totalScore = 0; // Total end score.
-let currentScore = 0; //
+let currentScore = 0; // initial starting value
 let totalTimeRem = 0; // adds up answer seconds remaining.
 
 //Alert variable
@@ -55,9 +55,11 @@ let alert = 0;
 const HIGH_SCORE_KEY = 'highScores';
 const MAX_HIGH_SCORES = 10;
 
-// Constructs a timer to use for the quiz.
-// instructions provided by Gemini AI.
-// written and changed by me and added to by me.
+/*
+Constructs a timer to use for the quiz.
+Instructions provided by Gemini AI.
+Written and changed by me and added to by me.
+*/
 function quizTimer(displayElement, ceaseTimer) {
     this.display = displayElement;
     this.ceaseTimer = ceaseTimer;
@@ -308,6 +310,7 @@ function checkAnswer(e) {
         alert++;
         const alertDisplay = document.getElementById("alert-display");
         alertDisplay.innerHTML = alert;
+        // cooldown before running through gotCaught function
         setTimeout(() => gotCaught(), 5000);
     } else {
         console.log("error check answer end!");
@@ -370,7 +373,7 @@ function changeStyle(result, answerChosen) {
 //Runs if the user gets 5 questions wrong.
 function gotCaught() {
     //if wrong answer 5 times.
-    if (alert === 5) {
+    if (alert === 2) {
         quizFailed = true;
         console.log("got caught 5 times!");
         addClass(screenIds.gameScreen, "hide");
@@ -388,7 +391,7 @@ function gotCaught() {
         addClass(screenIds.failureScreen, "display-flex");
         soundTrack.pause();
     } else {
-        console.log("Go to Next Question");
+        console.log("Still in the game!");
     }
 }
 
@@ -407,9 +410,7 @@ function hackProgress() {
 //My code
 //resets dataset value and styling.
 function nextQuestion() {
-    console.log("NextQuestion");
-
-    if (answerCounter === 10) {
+    if (answerCounter === 5) {
         console.log("You were quick enough to hack the system!");
         runEndGame();
 
@@ -478,8 +479,8 @@ function submitScore() {
         // Optionally provide feedback to the user that the name is required
         Swal.fire({
             icon: "error",
-            title: "Oops...",
-            text: "Something went wrong!"
+            title: "No name provided",
+            text: "Please enter your name to save your score."
           });
     }
 }

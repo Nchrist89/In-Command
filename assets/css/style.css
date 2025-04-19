@@ -455,7 +455,6 @@ dialog::backdrop {
 }
 
 /* Difficulty box styles */
-
 .diff-heading {
     font-family: var(--primary-font);
     color: var(--ebony);
@@ -665,7 +664,6 @@ dialog::backdrop {
     }
 
     /* difficulty screen media queries */
-
     .rtn-menu-btn {
         margin-top: 25px;
     }
@@ -711,9 +709,7 @@ dialog::backdrop {
         padding: 5px;
     }
 
-
     /* Difficulty screen media queries */
-
     .diff-heading {
         margin: 3%;
     }
@@ -764,7 +760,6 @@ dialog::backdrop {
     }
 
     /* Failure screen media queries */
-
     #fail-text > p {
         padding: 4px;
         margin-top: 0;
@@ -1078,18 +1073,22 @@ dialog::backdrop {
         height: 240px;
     }
 
+    /* victory screen */
     .victory-btn {
         width: 240px;
     }
 
+    /*leaderboard screen */
     #leaderBoard-text {
         font-size: 1.3rem;
     }
 
+    /* difficulty screen */
     #diff-box {
         padding: 35px;
     }
 
+    /* game screen */
     #alerts,
     #quiz-info,
     #question-box,
@@ -1157,6 +1156,7 @@ dialog::backdrop {
 
 /* Extra Extra large devices (Extra large monitors, 2100px and up) */
 @media only screen and (min-width: 2100px) {
+    /* Title screen media queries */
     #title-logo {
         width: 800px;
         left: 15%;

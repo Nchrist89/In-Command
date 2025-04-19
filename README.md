@@ -22,6 +22,37 @@ The game itself is the user hacking the computer and the hacking part is substit
 
 ## CONTENTS
 
+- [In command website / game](#in-command-website--game)
+  - [Introduction](#introduction)
+  - [CONTENTS](#contents)
+  - [User Experience (UX)](#user-experience-ux)
+    - [User Stories](#user-stories)
+  - [Design](#design)
+    - [Colour Scheme](#colour-scheme)
+    - [Typography](#typography)
+    - [Imagery](#imagery)
+    - [Wireframes](#wireframes)
+    - [Features](#features)
+    - [Sections / screens (In place of pages)](#sections--screens-in-place-of-pages)
+    - [Accessibility](#accessibility)
+  - [Technologies Used](#technologies-used)
+    - [Languages Used](#languages-used)
+    - [Frameworks, Libraries \& Programs Used](#frameworks-libraries--programs-used)
+  - [Deployment and local development](#deployment-and-local-development)
+    - [Deployment](#deployment)
+    - [Local Development](#local-development)
+      - [How to Fork](#how-to-fork)
+      - [How to Clone](#how-to-clone)
+  - [Testing](#testing)
+  - [Solved Bugs](#solved-bugs)
+  - [Known bugs](#known-bugs)
+  - [Credits](#credits)
+    - [Code used](#code-used)
+    - [Content](#content)
+    - [Media](#media)
+      - [Images](#images)
+    - [Acknowledgements](#acknowledgements)
+
 ## User Experience (UX)
 
 **Initial Planning**
