@@ -373,7 +373,7 @@ function changeStyle(result, answerChosen) {
 //Runs if the user gets 5 questions wrong.
 function gotCaught() {
     //if wrong answer 5 times.
-    if (alert === 2) {
+    if (alert === 5) {
         quizFailed = true;
         console.log("got caught 5 times!");
         addClass(screenIds.gameScreen, "hide");
@@ -410,7 +410,7 @@ function hackProgress() {
 //My code
 //resets dataset value and styling.
 function nextQuestion() {
-    if (answerCounter === 5) {
+    if (answerCounter === 10) {
         console.log("You were quick enough to hack the system!");
         runEndGame();
 
