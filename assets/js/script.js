@@ -1,6 +1,6 @@
-const easyQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=easy&type=multiple";
-const mediumQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=medium&type=multiple";
-const hardQuiz = "https://opentdb.com/api.php?amount=15&category=14&difficulty=hard&type=multiple";
+const easyQuiz = "https://opentdb.com/api.php?amount=15&category=20&difficulty=easy&type=multiple";
+const mediumQuiz = "https://opentdb.com/api.php?amount=15&category=20&difficulty=medium&type=multiple";
+const hardQuiz = "https://opentdb.com/api.php?amount=15&category=20&difficulty=hard&type=multiple";
 
 //Sound track variable
 const soundTrack = document.getElementById("song"); //audio element
@@ -212,7 +212,6 @@ async function fetchQuestions() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         data = await response.json(); //Assign the data to the data variable.
-        console.log(data);
     } catch (error) {
         console.error("Error fetching questions:", error);
     }
@@ -232,7 +231,6 @@ function getQuestion() {
         answerDealer();
     } else {
         quizFailed = true;
-        console.log("quiz failed at getQuestion.");
         gotCaught();
     }
 }
@@ -275,12 +273,9 @@ function assignCorrect() {
             button.setAttribute("data-value", "correct");
             correctElement = document.getElementById(button.id);
             console.log(button.id);
-            console.log(button.innerHTML);
-            console.log(data.results[counter]);
         } else {
             //otherwise it will assign the data-value of incorrect.
             button.setAttribute("data-value", "incorrect");
-            console.log(answerBtn);
         }
         button.addEventListener("click", checkAnswer);
     }
@@ -348,7 +343,6 @@ function handleTimeout() {
 //My code
 //changes style of button to indicate if right or wrong answer.
 function changeStyle(result, answerChosen) {
-    console.log("changing style");
     //correct answer styling
     if (result === "correct") {
         answerChosen.classList.add("correct");
@@ -364,12 +358,11 @@ function changeStyle(result, answerChosen) {
 
         //no answer chosen styling.
     } else if (result === "noAnswer") {
-        console.log("NO ANSWER!");
         correctElement.classList.add("no-answer");
         setTimeout(() => nextQuestion(), 5100);
 
     } else {
-        console.log("error! styling function end!");
+        console.log("styling function end!");
     }
 }
 
@@ -379,7 +372,7 @@ function gotCaught() {
     //if wrong answer 5 times.
     if (alert === 5) {
         quizFailed = true;
-        console.log("got caught 4 times!");
+        console.log("got caught 5 times!");
         addClass(screenIds.gameScreen, "hide");
         removeClass(screenIds.gameScreen, "display-block");
         removeClass(screenIds.failureScreen, "hide");
@@ -426,18 +419,15 @@ function nextQuestion() {
         console.log("You failed to hack the system!");
         // if no answer is chosen.
     } else if (!answerChosen) {
-        console.log("no-answer");
         correctElement.classList.remove("no-answer");
         correctElement.removeAttribute("data-value", "correct");
         getQuestion();
         //if answer is correct.
     } else if (answerChosen.innerHTML === correctAns) {
-        console.log("correct Answer");
         answerChosen.classList.remove("correct");
         getQuestion();
         //if answer is incorrect.
     } else if (answerChosen.innerHTML !== correctAns) {
-        console.log("incorrect Answer");
         correctElement.classList.remove("no-answer")
         answerChosen.classList.remove("incorrect");
         getQuestion();

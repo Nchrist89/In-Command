@@ -4,21 +4,19 @@
 
 Visit the full site here [In Command](https://nchrist89.github.io/In-Command/)
 
----
-
 ## CONTENTS
 
 Testing was carried out while building the project. I started off getting the basic structure for the quiz game created and firstly added the first question to the question box. Once I had this sorted I created a next button which I could click which would then populate the next question into the field. When that was done I followed on to having the answer buttons placed in each answer box. I tested this and selected next question which would then repopulate the answer boxes again. When I had the code correctly shuffling and assigning a correct answer value to the answer box with the correct answer in it. Further testing was done again ensuring that the correct answer was showing with a dataset value of correct.
 
-With every additional function which was added into the process, I again tested the game thoroughly and had to overcome a multitude of different bugs. From finding out certain variables which I thought were holding a particular value but were not to finding out more information about nodelist's and the methods available to me using them. I started to learn at a much deeper level about Javascript and was really starting to enjoy it, and also the frustration of bug fixing and resolving the issue.
+With every additional function which was added into the process, I again tested the game thoroughly and had to overcome a multitude of different bugs. Also finding out certain variables which I thought were holding a particular value but were not to finding out more information about nodelist's and the methods available to me using them. I started to learn at a much deeper level about Javascript and was really starting to enjoy it, and also the frustration of bug fixing and resolving the issue.
 
-I have done the majority of testing through Chrome Developer Tools while building and once complete I played the game several times to confirm that it was performing as expected.
+I have done the majority of testing through Chrome Developer Tools while building and once complete I played the game several times to confirm that it was performing as expected after each individual function test.
 
 I have provided the link to friends and family who have enjoyed playing and provided feedback should there be any issues. An issue which was raised to me, I spent a while trying to find out what I must have got wrong in my code, and this was really worrying me. After much testing, I found out that it was actually the data provided by Open Trivia AI that was causing an issue. Not my code which was such a relief.
 
 Most users have not encountered any other issue than the one above and they have found it very exciting and a very addictive game which has been great for testing.
 
-I have decided to manual test my code rather than automated testing. This is because in the current project, I did not see the reason for automated testing but completely understand why I would definitely use it in many projects. There were even times on this project where I felt automated testing would be really helpful beside the manual testing I was already doing. I look to learn more about automated testing and how I can use it in future projects.
+I have decided to manual test my code rather than automated testing. This is because in the current project, I did not see the reason for automated testing but completely understand why I would definitely use it in many future projects. There were even times on this project where I felt automated testing would be really helpful beside the manual testing I was already doing. This was in relation to a timing issue which I had trouble managing to resolve with manual testing and realized the issue would be much easier to troubleshoot with automated testing. I ended up resolving the issue with console.log and a few other things but I look to learn much more about automated testing and how I can use it in future projects.
 
 ## Automated testing
 
@@ -160,7 +158,7 @@ ___
 
 | Feature tested | Expected outcome | Test | Outcome | Pass / fail |
 | :--- | :--- | :--- | :--- | :--- |
-| Save score button | Saves user score and screen switch to display leaderboard | Clicked save score button | game screen hides and leaderboard screen displays | User score added to score table | Pass |
+| Save score button | Saves user score and screen switch to display leaderboard | Clicked save score button | game screen hides and leaderboard screen displays, User score added to score table | Pass |
 | Main Menu Button | Reloads index.html and returns user to title screen | clicked Main menu button | Refreshed window to title screen | Pass |
 | Final score box | shows the users final total score | Confirmed with console.log figure calculated | final score matches figure calculated | Pass |
 ___

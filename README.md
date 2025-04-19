@@ -70,6 +70,8 @@ As a strategic player - *I want multiple paths to victory so I can replay the ga
 
 ## Design
 
+I had a lot of fun with the design on the project. The images took much more time than you would expect but it's difficult explaining to AI what I wanted. The images were edited in many different ways and input into the project how they are.
+
 ### Colour Scheme
 
 I have separated the colours used to the colours which mostly make up the quiz game face itself and the colours which are used over the project.
@@ -260,15 +262,21 @@ For full testing, Please refer to [Testing.md](/testing.md)
 | Assigning an answer as the correct answer | When deciding how I would label the correct answer, I had thought of a way in comparing the correct answer in the field to the correct answer. I couldn't get this working and therefore I came up with the idea to use a dataset I used where I created a drumkit on the 30 day javascript challenge online. This would apply a correct value to the data-correct dataset where I could then use the checkAnswer function to confirm if that answer clicked had the dataset value of correct. |
 | ChangeStyle and Timer function problem | This took hours of backwards and forwards of changing different things and having it work, not work and almost caused me to take the timer out completely but it also had to stay. after a few more hours I eventually made it all work. I have no idea how I managed to solve it, I just did |
 | wrong answer change styling | I have just resolved this issue which I have gone back to and fixed it, the styling for the incorrect answer was not showing the correct answer and I wasn't able to previously. This has now been fixed |
+| victory screen coming up late | I have now changed the correct answers variable to update before the nextQuestion function runs so if the answer selected is correct it pulls up the victory screen on question end. |
 
 Throughout the work cycle, I encountered many issues with some taking hours to resolve. I can't remember all of them, but there were a lot, I spent many hours on functions making sure they were working correctly, only to have to go back and completely redo them when I added additional things like the timer and gotCaught function. I wish I had taken screenshots of these issues but at the time I was too frustrated and tearing my hair out trying to resolve them. Afterwards, I had done way too many things to know exactly how I resolved them completely, it wasn't just one thing but a combination of issues throughout the code which were correct to begin with but had to be changed. This issue kept happening throughout when adding and changing certain things to work.
 
 ## Known bugs
 
+While checking my known bugs I have gone back and just resolved a few.
+
 | Bug | Issue |
 | :--- | :--- |
-| Progress Bar | Although this issue is partially resolved on making it work it still doesn't function correctly on mobile and the additional squares added to the bar take up the next row. I tried to fix this using flexbox but I couldn't get it working exactly. I left this issue till later focusing on getting the project complete and I haven't got around to getting it done due to time |
-| button styling | I have an issue where if the user selects an answer which is incorrect
+| Progress Bar / hacking bar | Although this issue is partially resolved on making it work it still doesn't function correctly on mobile and the additional squares added to the bar take up the next row. I tried to fix this using flexbox but I couldn't get it working exactly. I left this issue till later focusing on getting the project complete and I haven't got around to getting it done due to time |
+| responsiveness across devices & buttons | I have again tried to fix the responsiveness on different devices and landscape for mobile, it's still not perfect but I have no time left and I have tried the best I can to adapt the project to all the devices I can and will have to remain as it is |
+| Leaderboard | The leaderboard is local storage and the functionality is not what I had planned. In future I will go back and create a server leaderboard.
+
+There is probably more bugs to be found but I have tried my best with the time I've had available and resolved all I could. I wish I could start the project all over again and I would do things very differently knowing the issues I've encountered and how I could have prevented them earlier. Unfortunately I have to move on to learning for Project 3.
 
 
 ## Credits
@@ -293,13 +301,15 @@ Content for the website has solely been created by myself, some content where in
 
 ### Media
 
+* The soundtrack was taken from a sega game called [Revenge Of Shinobi - My lover](https://www.youtube.com/watch?v=JysmyANEzvo)
+
 #### Images
 
 * Each image on the website has been created by providing AI with prompts to produce the desired image needed for my content. I have a premium account with PromeAI so the images created using it are legally owned by myself.
 
 ### Acknowledgements
 
-* My mentor Jubril Akolade for assistance helping provide guidance and knowledge. helpful hints along the journey.
+* My mentor Jubril Akolade for assistance helping provide guidance and knowledge. helpful hints along the journey where I could improve my project.
 * My tutor Rachel Furlong for Tutoring sessions weekly and guidance. Q&A's.
 * My father Ian Christie for suggesting the name 'In Command'.
 * Kevin Powell for all the tips and tricks he has provided in his youtube videos.
