@@ -35,7 +35,7 @@ let apiAddress;
 //answer and correct element variables
 let answerChosen; // button element chosen.
 let currentQuestion; // stores the current question object.
-let correctAns; // stores the string of the answer.
+let correctAns; // stores the string of the answer.AC
 let correctElement; //the element of the correct button.
 let answerCounter = 0; // answer correct total.
 
@@ -314,8 +314,8 @@ function checkAnswer(e) {
     }
 }
 
-//My code
-// Disables answer buttons after answer has been chosen(nodelist)
+// My code
+//Disables answer buttons after answer has been chosen(nodelist)
 function disableBtns() {
     answerBtn.forEach(button => {
         button.disabled = true;
@@ -428,7 +428,7 @@ function nextQuestion() {
         getQuestion();
         //if answer is incorrect.
     } else if (answerChosen.innerHTML !== correctAns) {
-        correctElement.classList.remove("no-answer")
+        correctElement.classList.remove("no-answer");
         answerChosen.classList.remove("incorrect");
         getQuestion();
 

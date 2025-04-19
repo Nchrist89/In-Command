@@ -8,7 +8,7 @@ In command is a fast paced quiz game designed for a range of devices. The aim of
 
 ## Introduction
 
- ![In Command Logo](/docs/readme-images/design/incommandlogofinal.png)
+ ![In Command Logo](/docs/readme-images/design/incommandlogofinal.png)
 
 In command has been the second website and first game I have created using Javascript. I had so much fun in building it and have learnt so much from this project and about my love for Javascript. The end result of the project isn't exactly what I had originally planned but it's turned out even better after a decision mid-way to change the feel of the project. Originally it felt very dull and I wanted it to give it a livelier feel, so I added an 80's style Bladerunner vibe to it. It would also work with the idea that I originally planned. The outcome I am extremely happy with.
 
@@ -18,7 +18,7 @@ I have given the link to many family and friends, all of which have enjoyed the 
 
 I was let down at the end when I realized that in order to make an actual functioning leaderboard. I would need to create a server which could store the scores. Unfortunately, I have had to settle with a local storage leaderboard. Other than that, I am happy with it. I will look forward to improve and add to it in the future.
 
-The game itself is the user hacking the machine and the hacking part is substituted with a quiz which in a way is the difficulty in the hacking of the computer. I done it this way to enable me to have a reason for the quiz failure and different victory outcomes. This allowed me to create a basis for the story behind it.
+The game itself is the user hacking the computer and the hacking part is substituted with a quiz which in a way is the difficulty in the hacking of the computer. I done it this way to enable me to have a reason for the quiz failure and different victory outcomes. This allowed me to create a basis for the story behind it.
 
 ## CONTENTS
 
@@ -26,9 +26,9 @@ The game itself is the user hacking the machine and the hacking part is substitu
 
 **Initial Planning**
 
-When deciding what I wanted to build for my second project, I had a lot of wild idea's and upon looking at how I would create these idea's using Javascript I quickly understood just how difficult they would all be and after looking at various idea's others had gone with, I decided that a quiz could enable me to go with the original idea I had planned but not in the way I had originally planned it. I felt I could make the quiz more interesting and build upon a standard quiz with consequences. A reason to build up correct answers and a question timer to have tension which after brainstorming for many hours, I had come up with what would be the idea behind 'In Command!'.
+When deciding what I wanted to build for my second project, I had a lot of wild idea's running around in my head. Upon looking at how I would create these idea's using Javascript, I quickly understood just how difficult they would all be. After looking at various idea's others had gone with, I decided that a quiz could enable me to go with the original idea I had planned but not in the way I had originally planned it. I felt I could make the quiz more interesting and build upon a standard quiz. There is a reason to build up correct answers and a question timer to have tension which after brainstorming for many hours, I had come up with the idea behind 'In Command!'.
 
-After running the idea past my father he suggested the name In command and this was a great Idea because the game was taking place on an old style computer (terminal) and would look like it was written in command prompt. Secondly you are a secret agent needing to take command of the situation and the computer and as the player you have the end result of taking command on the leaderboard. So there it was, In Command stuck as the name.
+After running the idea past my father he suggested the name In command and this was a great Idea because the game was taking place on an old style computer (terminal) and would look like it was written in command prompt. Secondly you are a secret agent needing to take command of the computer and as the player you have the end result of taking command on the leaderboard. So there it was, In Command stuck as the name.
 
 **Key information for the site**
 
@@ -104,7 +104,6 @@ After realizing I was unable to use Press start 2P as the quiz game font I had t
 
 All images on the homepage of the website have been generated using [Prome AI](https://www.promeai.pro/ai-image-generation) website. All images are owned by myself and have been edited within Gimp(Image manipulation software) to produce their final version used.
 
-
 ### Wireframes
 
 Wireframes was used to create the initial design of the quiz. I wanted for it to be simple and allow me to adapt it to anything I create around it.
@@ -132,41 +131,41 @@ The leaderboard screen has changed but I was unable to get the edited image I cr
 
 ### Sections / screens (In place of pages)
 
-  The website / game has several sections (screens) which are -
+  The website / game has several sections (screens) which are -
 
 * Title screen (main home page) is what first welcomes the user.
-  * I am really happy with how this turned out. I put a lot of effort into making it right. The buttons are not ideal and the colours I wanted were not accessibility friendly so I have had to change them last minute.
+  * I am really happy with how this turned out. I put a lot of effort into making it right. The buttons are not ideal and the colours I wanted were not accessibility friendly so I have had to change them last minute.
 
-  ![Title screen](/docs/readme-images/design/screens/resposive-title-screen.png)
+  ![Title screen](/docs/readme-images/design/screens/resposive-title-screen.png)
 
 * Difficulty selection screen which opens when the user selects the play option.
-  * This is a basic difficulty selection screen. The button colour is not idea but I had them match the title screen.
+  * This is a basic difficulty selection screen. The button colour is not idea but I had them match the title screen.
 
-  ![Difficulty screen](/docs/readme-images/design/screens/responsive-difficulty-screen.png)
+  ![Difficulty screen](/docs/readme-images/design/screens/responsive-difficulty-screen.png)
 
 * Game screen which opens after difficulty is selected.
-  * The game screen was originally planned to have a background video play and the quiz game was displayed on an old computer monitor but this caused much frustration and would not have been ideal for user experience and therefore it was scrapped. The final outcome is much better, brighter and cleaner.
+  * The game screen was originally planned to have a background video play and the quiz game was displayed on an old computer monitor but this caused much frustration and would not have been ideal for user experience and therefore it was scrapped. The final outcome is much better, brighter and cleaner.
 
-  ![Game screen](/docs/readme-images/design/screens/responsive-gamescreen.png)
+  ![Game screen](/docs/readme-images/design/screens/responsive-gamescreen.png)
 
 * Failure screen which appears when the alerts counter reaches 5.
-  * I originally had the guard pop-up on screen over the top of the quiz game but mid way through the project this then became part of the failure screen.
+  * I originally had the guard pop-up on screen over the top of the quiz game but mid way through the project this then became part of the failure screen.
 
-  ![Failure screen](/docs/readme-images/design/screens/failure-screen.png)
+  ![Failure screen](/docs/readme-images/design/screens/failure-screen.png)
 
 * Victory screen which appears should the user complete the 15 questions or answer 10 correctly without failing.
-  * The victory screen I decided on was a picture of a nuclear missile ready to be fired. A text box appears which shows you your final total score.
+  * The victory screen I decided on was a picture of a nuclear missile ready to be fired. A text box appears which shows you your final total score.
 
-  ![Victory screen](/docs/readme-images/design/screens/victory-screen.png)
+  ![Victory screen](/docs/readme-images/design/screens/victory-screen.png)
 
 * Leaderboard screen which can be accessed through the main title screen (home) or by completing the game after the victory screen.
-  * The leaderboard screen I decided not to put to much time into seeing as I would only be able to make it available for local storage scores. In the future updates I will make a proper leaderboard which can store the scores on an SQL server which I look to learn and implement into this project in the coming months.
+  * The leaderboard screen I decided not to put to much time into seeing as I would only be able to make it available for local storage scores. In the future updates I will make a proper leaderboard which can store the scores on an SQL server which I look to learn and implement into this project in the coming months.
 
-  ![Leaderboard screen](/docs/readme-images/design/screens/responsive-leaderboard.png)
+  ![Leaderboard screen](/docs/readme-images/design/screens/responsive-leaderboard.png)
 
 * How to play modal which is not a screen but should be included here as an option.
 
-  ![How to play modal](/docs/readme-images/design/screens/responsive-how-to-play.png)
+  ![How to play modal](/docs/readme-images/design/screens/responsive-how-to-play.png)
 
 ### Accessibility
 
@@ -254,9 +253,9 @@ For full testing, Please refer to [Testing.md](/testing.md)
 
 | Bug | How it was solved |
 | :--- | :--- |
-| If a player wanted to reply the game again, the timeout for the change styling and next question would get interrupted and cause the question next up to immediately follow while the incorrect styling was happening | Setting timeout to 4000ms before the CheckAnswer function passes onto the gotCaught() function ensured that the changeStyle function would complete and when the player restarted the game everything was reset for the new question.|
-| I had an issue where the correct answer was showing not correct even though the correct answer from the API data was saved as the variable correctAns | Instead of having the answer compared to the innerText of the answer box value, I instead changed this to innerHTML and this had resolved that issue. |
-| A conundrum was having the progress bar reflect progress which would ideally look like an old dos screen load bar | I looked online but couldn't find what I was looking for. While going through it in my head lying in bed, I came up with the idea of using javascript to create I elements and add the font awesome classes to it also using javascript. I went to font awesome website where I found the square I wanted and this looked more like what I had planned. Not ideal, but better than I had found online and I managed to make it work |
+| If a player wanted to reply the game again, the timeout for the change styling and next question would get interrupted and cause the question next up to immediately follow while the incorrect styling was happening | Setting timeout to 4000ms before the Check-Answer function passes onto the got-Caught() function ensured that the change-Style function would complete and when the player restarted the game everything was reset for the new question.|
+| I had an issue where the correct answer was showing not correct even though the correct answer from the API data was saved as the variable correct-Ans | Instead of having the answer compared to the innerText of the answer box value, I instead changed this to innerHTML and this had resolved that issue. |
+| A conundrum was having the progress bar reflect progress which would ideally look like an old dos screen load bar | I looked online but couldn't find what I was looking for. While going through it in my head lying in bed, I came up with the idea of using Javascript to create I elements and add the font awesome classes to it also using Javascript. I went to font awesome website where I found the square I wanted and this looked more like what I had planned. Not ideal, but better than I had found online and I managed to make it work |
 | There was an issue where the game would fail, after the alert counter hit 1 | It took a while to figure out why this was happening but I checked with Gemini AI and it also said it was not sure what the issue could be, it suggested I create a fail quiz variable which would result to true or false. I took this information and created the variable and should the quiz be failed, this would result to true and therefore I could set the failure counter to reach 5 before that resulted to true and this resolved my issue |
 | Answer buttons clickable after the user selected an answer | I had a quick look online and looked at how I could set the property to disabled on the answers or add the attribute in, when I looked at what the variable I had stored for the answer buttons I noticed it was a nodelist and, therefore had different properties / methods which lead me to looking into more on nodelists. I then found information online about creating a function to have them disabled with the nodelist I already had as the variable. |
 | Assigning an answer as the correct answer | When deciding how I would label the correct answer, I had thought of a way in comparing the correct answer in the field to the correct answer. I couldn't get this working and therefore I came up with the idea to use a dataset I used where I created a drumkit on the 30 day javascript challenge online. This would apply a correct value to the data-correct dataset where I could then use the checkAnswer function to confirm if that answer clicked had the dataset value of correct. |
@@ -277,7 +276,6 @@ While checking my known bugs I have gone back and just resolved a few.
 | Leaderboard | The leaderboard is local storage and the functionality is not what I had planned. In future I will go back and create a server leaderboard.
 
 There is probably more bugs to be found but I have tried my best with the time I've had available and resolved all I could. I wish I could start the project all over again and I would do things very differently knowing the issues I've encountered and how I could have prevented them earlier. Unfortunately I have to move on to learning for Project 3.
-
 
 ## Credits
 

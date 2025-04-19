@@ -1,3 +1,4 @@
+
 ![In command logo](/assets/images/incommandlogo.webp)
 
 # In command - Testing
@@ -8,23 +9,23 @@ Visit the full site here [In Command](https://nchrist89.github.io/In-Command/)
 
 Testing was carried out while building the project. I started off getting the basic structure for the quiz game created and firstly added the first question to the question box. Once I had this sorted I created a next button which I could click which would then populate the next question into the field. When that was done I followed on to having the answer buttons placed in each answer box. I tested this and selected next question which would then repopulate the answer boxes again. When I had the code correctly shuffling and assigning a correct answer value to the answer box with the correct answer in it. Further testing was done again ensuring that the correct answer was showing with a dataset value of correct.
 
-With every additional function which was added into the process, I again tested the game thoroughly and had to overcome a multitude of different bugs. Also finding out certain variables which I thought were holding a particular value but were not to finding out more information about nodelist's and the methods available to me using them. I started to learn at a much deeper level about Javascript and was really starting to enjoy it, and also the frustration of bug fixing and resolving the issue.
+With every additional function which was added into the process, I again tested the game thoroughly and had to overcome a multitude of different bugs. Also finding out certain variables which I thought were holding a certain type of data but were not to finding out more information about nodelist's and the methods available to me using them. I started to learn at a much deeper level about Javascript and was really starting to enjoy it, and also the frustration of bug fixing and resolving the issue.
 
-I have done the majority of testing through Chrome Developer Tools while building and once complete I played the game several times to confirm that it was performing as expected after each individual function test.
+I have done the majority of testing through Chrome Developer Tools while building and once complete I played the game several times to confirm that it was performing as expected after each individually added function test.
 
 I have provided the link to friends and family who have enjoyed playing and provided feedback should there be any issues. An issue which was raised to me, I spent a while trying to find out what I must have got wrong in my code, and this was really worrying me. After much testing, I found out that it was actually the data provided by Open Trivia AI that was causing an issue. Not my code which was such a relief.
 
 Most users have not encountered any other issue than the one above and they have found it very exciting and a very addictive game which has been great for testing.
 
-I have decided to manual test my code rather than automated testing. This is because in the current project, I did not see the reason for automated testing but completely understand why I would definitely use it in many future projects. There were even times on this project where I felt automated testing would be really helpful beside the manual testing I was already doing. This was in relation to a timing issue which I had trouble managing to resolve with manual testing and realized the issue would be much easier to troubleshoot with automated testing. I ended up resolving the issue with console.log and a few other things but I look to learn much more about automated testing and how I can use it in future projects.
+I have decided to manually test my code rather than automated testing. This is because in the current project, To begin with, I did not see the reason for automated testing but completely understand why I would definitely use it in many future projects. There were even times on this project where I felt automated testing would be really helpful beside the manual testing I was already doing. This was in relation to a timing issue which I had trouble managing to resolve with manual testing and realized the issue would be much easier to troubleshoot with automated testing. I ended up resolving the issue with console.log and a few other things but I look to learn much more about automated testing and how I can use it in future projects.
 
 ## Automated testing
 
 I have used W3C testing to test my HTML page and 404 page.
 
- * Index page test
+ * Index page test
 
- ![W3C index.html](/docs/readme-images/testing/w3c/w3c-incommand-test.png)
+ ![W3C index.html](/docs/readme-images/testing/w3c/w3c-incommand-test.png)
 
 INSERT 404.html testing here.
 
@@ -39,12 +40,12 @@ Some warnings for my stylesheet test, but these were only related to the fact th
 ## Javascript testing
 
 JsHint has been used to test script.js which is my only javascript script used for the project.
+  * I have checked the redefinition on line 52. I believe this is referring to the variable when replay game is started and the variable is reset to zero in the replay game function on line 181.
+  * Swal variable is not a variable but an alert pulled from Sweet alert, was advised by mentor this would flag on JShint.
+  * The difficulty variables, easy, medium and hard are being used by the HTML buttons 'on-click'.
+  * submitScore is not a variable but a function, unsure why this is showing as an unused variable.
 
-![JSHint test](/docs/readme-images/testing/jshint-test.png)
-
-The three unused variables are being used and are used when selecting a difficulty, the variable is then used in conjunction with the ApiAddress variable which stores the difficulty selected.
-
-The fourth variable 'submitScore' is actually a function name and I am unsure why this is showing as a variable.
+![JSHint test](/docs/readme-images/testing/jshint.png)
 
 ## Lighthouse Testing
 
@@ -52,7 +53,7 @@ Lighthouse has been used to test the performance and page load statistics as wel
 
 ### Computer test
 
- A 100 across all 4 categories for my index.html page.
+ 100 across all 4 categories for my index.html page.
 
 ![Lighthouse index.html](/docs/readme-images/testing/lighthouse/lighthouse-indexhtml.png)
 
@@ -68,7 +69,7 @@ Lighthouse has been used to test the performance and page load statistics as wel
 
 | Goal | Goal achieved by |
 | :--- | :--------------- |
-| I would like to enjoy a quiz that provides a need to want to get a better score and pulls me back to want to replay the game. | The user is encouraged by failure to replay the game and increase their score by beating the clock. |
+| I would like to enjoy a quiz that provides a need to want to get a better score and pulls me back to want to replay the game. | The user is encouraged by failure to replay the game and getting to the victory screen, increase their score by beating the clock. |
 | I would like to start with the easy difficulty option where I can build my confidence and then gradually work my way up the difficulty levels without feeling overwhelmed. | I have added 3 different options for difficulty which are Easy, medium and hard which the user can choose from. Each with a skill bonus added. |
 | I would like to see visual feedback on wether or not I got a question right or wrong. so I can learn from it and improve upon my knowledge next time. | Visual feedback is provided to the user when they get a question right or wrong. The answer button will display a green background color for a correct answer and a red background color which flashes for incorrect answer.|
 | I would like to be provided visual knowledge of my correct and incorrect guesses so I am kept aware of my progress within the game. | Correct guesses are shown by the hacking progress bar available at the top of the quiz game. This reflects correct answers given. Incorrect guesses are shown by the number accrued on the alert counter on screen. |
@@ -87,18 +88,18 @@ Lighthouse has been used to test the performance and page load statistics as wel
 
 I have done full testing on the following devices.
 
-  * Asus vivobook 15 - Windows 11 ( chrome, firefox, edge, operaGX ).
+  * Asus vivobook 15 - Windows 11 ( chrome, firefox, edge, operaGX ).
 
-  * Umidigi A15T smartphone - Chrome browser.
+  * Umidigi A15T smartphone - Chrome browser.
 
 I have also had friends testing and providing feedback on the following devices. Most of which had Google Pixel 9.
 
-  * Google Pixel 9
-  * Google Pixel 9
-  * Google Pixel 9 Pro
-  * Samsung Galaxy S24
-  * Samsung Galaxy S24
-  * iPhone XR
+  * Google Pixel 9
+  * Google Pixel 9
+  * Google Pixel 9 Pro
+  * Samsung Galaxy S24
+  * Samsung Galaxy S24
+  * iPhone XR
 
 I have not heard back any other issues than the problem stated previously with the Open Trivia API sending data which had spaces in the answer fields causing an issue with the correct answer being correct. I will look to try correct this in a future update with another function for the data to pass through first.
 
@@ -134,13 +135,13 @@ _ _ _
 | In Command logo | Returns user to title screen | clicked logo | Reloads index.html returning user to Title screen | Pass |
 | Question box populates first question | First question is pulled from data.results[ variable] | Console.log confirms correct question number pulled from data | Question box populated with question | Pass |
 | Answers populate answer boxes | Incorrect and correct answers are pulled from data variable and sent to shuffle function and populate answer boxes | Confirmed through console.log that the answers are shuffling and populating answer boxes + visually in game | Answers correctly populate answer boxes | Pass |
-| Correct answer is assigned dataset correct  | assignCorrect function takes correctAns variable and compares to the answers populated and marks the correct and incorrect with a dataset attribute | Confirmed in console.log that the dataset attribute cross referenced with data fetched is correct | Correct and incorrect answers have the right dataset attribute | Pass |
+| Correct answer is assigned dataset correct  | assignCorrect function takes correctAns variable and compares to the answers populated and marks the correct and incorrect with a dataset attribute | Confirmed in console.log that the dataset attribute cross referenced with data fetched is correct | Correct and incorrect answers have the right dataset attribute | Pass |
 | Correct answer feedback | Choosing correct answer displays green background on answer button | Correct answer chosen cross referenced with data.results confirms correct answer styling is right | Correct answer background turns green | Pass |
-| Incorrect answer feedback | Choosing and incorrect answer displays red background on answer button | incorrect answer chosen cross referenced with data.results confirms incorrect answer is incorrect | Incorrect answer background displays red | Pass |
+| Incorrect answer feedback | Choosing the incorrect answer displays red background on answer button and correct answer is highlighted blue | incorrect answer chosen cross referenced with data.results confirms incorrect answer is incorrect | Incorrect answer background displays red and correct answer is highlighted blue | Pass |
 | No Answer Chosen | Timer reaches zero, correct answer highlights blue | Let question timer reach zero | Correct answer has blue background displayed | Pass |
 | Answer counter / hacking display | Yellow progress square added to hacking bar | Chose correct answer | Yellow square populates hacking bar | Pass |
 | Alert counter | Alert counter increases with incorrect answer | Incorrect answer given | Alert counter increases by 1 digit each time | Pass |
-| Question number | Question number should increase by 1 each question | Confirmed in console.log QuestionNum counter is increased | Question number increases by 1 | Pass |
+| Question number | Question number should increase by 1 each question | Confirmed in console.log QuestionNum variable counter is increased | Question number increases by 1 | Pass |
 | Score counter | Score Counter increases with value acquired each question | Console.log confirms value increased by matches answer provided and time remaining bonus | Score counter increases correctly | Pass |
 | Answer buttons disabled | After answer is clicked, the answer buttons are disabled | clicked answer and tried others | Answer buttons all disabled | Pass |
 | Answer counter / hacking Progress reaches 10 | screen switch to victory screen and quiz end | Answer counter increased to 10 | Game screen hides and victory screen displays, quiz ends | Pass |
@@ -177,6 +178,10 @@ ___
 | :--- | :--- | :--- | :--- | :--- |
 | Main menu button | Returns user to title screen | clicked main menu button | reloaded index.html returning me to the title screen | Pass |
 _ _ _
+
+
+
+
 
 
 
