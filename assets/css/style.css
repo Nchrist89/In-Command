@@ -1,10 +1,18 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Google font import */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&family=VT323&display=swap');
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 /* Hex color palette */
@@ -32,6 +40,8 @@
 
 /* hide and display screens styles. */
 .display-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -48,8 +58,11 @@
     background-color: var(--regent-gray);
     color: var(--ebony);
     text-align: center;
-    justify-self: center;
-    align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     font-family: var(--primary-font);
     font-weight: bold;
     padding: 10px;
@@ -61,6 +74,10 @@
     margin: 5px;
     letter-spacing: 1px;
     line-height: 1.2rem;
+}
+
+dialog::-webkit-backdrop {
+    background: rgba(0, 0, 0, 0.7);
 }
 
 dialog::backdrop {
@@ -87,21 +104,35 @@ dialog::backdrop {
     position: absolute;
     top: 5%;
     left: 5%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     width: 90%;
 }
 
 #title-box {
     margin: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     width: 100%;
 }
 
 #intro-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin: 2%;
 }
 
@@ -137,8 +168,13 @@ dialog::backdrop {
 
 /* Menu styles */
 #menu-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .menu-btn {
@@ -170,10 +206,16 @@ dialog::backdrop {
     position: absolute;
     top: 12%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     width: 90%;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 #game-screen {
@@ -194,7 +236,9 @@ dialog::backdrop {
     position: absolute;
     top: 60%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
 #quiz-header {
@@ -203,8 +247,12 @@ dialog::backdrop {
 
 /* Quiz area styles */
 #score-alert {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 #alerts {
@@ -218,25 +266,37 @@ dialog::backdrop {
 }
 
 #quiz-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: 95%;
     margin: 5px;
 }
 
 .quiz-gamehead {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 30px;
     font-family: var(--secondary-font);
     font-size: 1.4rem;
     color: var(--bright-yellow);
     margin: 5px;
-    align-items: baseline;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
 }
 
 #hacking-progress {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
     color: var(--green-yellow);
 }
 
@@ -253,10 +313,17 @@ dialog::backdrop {
 }
 
 #answer-btn-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     justify-self: flex-end;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 40%;
     margin-top: auto;
 }
@@ -268,26 +335,42 @@ dialog::backdrop {
     background-color: black;
     font-family: var(--secondary-font);
     font-size: 1rem;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     color: var(--bright-yellow);
     width: 95%;
     letter-spacing: 2px;
 }
 
 #quiz-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     height: 6%;
 }
 
 #quiz-info {
     font-family: var(--secondary-font);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
     color: var(--bright-green);
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     font-size: 1.3rem;
     margin: 10px;
 }
@@ -302,8 +385,11 @@ dialog::backdrop {
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--ebony);
-    align-content: center;
-    align-self: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     text-align: center;
 }
 
@@ -332,7 +418,9 @@ dialog::backdrop {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     border: 5px solid var(--gravel);
 }
 
@@ -366,6 +454,8 @@ dialog::backdrop {
     padding: 5px;
     text-decoration: none;
     line-height: 1.2em;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     font-family: var(--third-font);
     letter-spacing: 3px;
@@ -399,7 +489,10 @@ dialog::backdrop {
     height: 100vh;
     font-family: var(--primary-font);
     text-align: center;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 #fail-text > h3 {
@@ -409,6 +502,8 @@ dialog::backdrop {
 
 #fail-text {
     width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     background-color: var(--regent-gray);
     margin-bottom: 25px;
@@ -424,7 +519,9 @@ dialog::backdrop {
     position: absolute;
     top: 75%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     max-height: 60%;
     min-width: 150px;
 }
@@ -437,9 +534,18 @@ dialog::backdrop {
 }
 
 .incorrect {
-    animation: flash 1s infinite alternate;
+    -webkit-animation: flash 1s infinite alternate;
+            animation: flash 1s infinite alternate;
     color: var(--bright-yellow);
     font-size: larger;
+}
+
+@-webkit-keyframes flash {
+    from {
+        background-color: inherit;
+    } to {
+        background-color: rgb(130, 16, 16);
+    }
 }
 
 @keyframes flash {
@@ -466,14 +572,23 @@ dialog::backdrop {
     background-color: var(--ebony);
     width: 100vw;
     height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #diff-box {
     border: 4px solid var(--steel-gray);
     width: 70%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     padding: 10px;
     background-color: var(--regent-gray);
@@ -481,10 +596,18 @@ dialog::backdrop {
 }
 
 #difficulty-btn-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
     max-width: 90%;
     margin: auto;
@@ -524,10 +647,17 @@ dialog::backdrop {
 }
 
 #score-board {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background-color: var(--ebony);
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
     font-family: var(--primary-font);
     font-weight: bold;
@@ -540,7 +670,9 @@ dialog::backdrop {
     position: absolute;
     top: 55%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     height: 65%;
     width: 80%;
     max-width: 400px;
@@ -562,6 +694,8 @@ dialog::backdrop {
 
 /* 404 page - Area not found */
 #page-not-found {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background-color: var(--ebony);
 }
@@ -570,7 +704,9 @@ dialog::backdrop {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     background-image: url(../images/area-not-found.webp);
     background-size: cover;
     background-position: center;
@@ -622,6 +758,8 @@ dialog::backdrop {
     /* Title screen media queries */
     #modal {
         font-size: 1.1rem;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
         padding: 20px;
         width: 70%;
@@ -644,8 +782,13 @@ dialog::backdrop {
     }
 
     #menu-buttons {
-        flex-direction: row;
-        justify-content: space-evenly;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
         text-align: center;
     }
 
@@ -670,9 +813,13 @@ dialog::backdrop {
 
     /* Game screen media queries */
     #game-logo {
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
         max-width: 350px;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 }
 
@@ -734,7 +881,10 @@ dialog::backdrop {
     }
 
     #answer-btn-box {
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
     }
 
     .ans-btn {
@@ -767,7 +917,12 @@ dialog::backdrop {
     }
 
     #difficulty-btn-box {
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
     }
 
@@ -836,7 +991,10 @@ dialog::backdrop {
     }
 
     #difficulty-btn-box {
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
     }
 
     .diff-heading {
@@ -864,7 +1022,10 @@ dialog::backdrop {
     }
 
     #answer-btn-box {
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
     }
 
     .ans-btn {
@@ -975,6 +1136,8 @@ dialog::backdrop {
     }
 
     #diff-box {
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
     }
 
@@ -1037,6 +1200,8 @@ dialog::backdrop {
     }
 
     #diff-box {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
         text-align: center;
     }
@@ -1108,8 +1273,13 @@ dialog::backdrop {
     }
 
     #menu-buttons {
-        flex-direction: column;
-        justify-content: space-evenly;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
         text-align: center;
         position: absolute;
         top: 34%;
@@ -1181,7 +1351,6 @@ dialog::backdrop {
         font-size: 1.9rem;
     }
 }
-
 
 
 

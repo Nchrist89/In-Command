@@ -1,3 +1,4 @@
+//Quiz difficulty api fetch addresses
 const easyQuiz = "https://opentdb.com/api.php?amount=15&category=15&difficulty=easy&type=multiple";
 const mediumQuiz = "https://opentdb.com/api.php?amount=15&category=15&difficulty=medium&type=multiple";
 const hardQuiz = "https://opentdb.com/api.php?amount=15&category=15&difficulty=hard&type=multiple";
@@ -476,7 +477,7 @@ function submitScore() {
         viewScoreBoard();
     } else {
         console.log("No name provided.");
-        // Optionally provide feedback to the user that the name is required
+        // provide feedback to the user that the name is required
         Swal.fire({
             icon: "error",
             title: "No name provided",
