@@ -46,6 +46,7 @@ The game itself is the user hacking the computer and the hacking part is substit
   - [Testing](#testing)
   - [Solved Bugs](#solved-bugs)
   - [Known bugs](#known-bugs)
+  - [Testing User Stories](#testing-user-stories)
   - [Credits](#credits)
     - [Code used](#code-used)
     - [Content](#content)
@@ -109,11 +110,11 @@ I have separated the colours used to the colours which mostly make up the quiz g
 
 The below colours are what make up the background colors and box borders, text background and text, menu buttons.
 
-![In command colours](/docs/readme-images/design/In.command.coolors.png)
+![In command colours](docs/readme-images/design/colours/in.command.coolors.png)
 
 The colours below make up the quiz game colours which are designed to feel bright and catch attention onscreen where the focus of the main quiz game. These colours also make up the replay game buttons.
 
-![quiz/game colours](/docs/readme-images/design/quiz.game.coolors.png)
+![quiz/game colours](docs/readme-images/design/colours/quiz.game.coolors.png)
 
 ### Typography
 
@@ -307,6 +308,28 @@ While checking my known bugs I have gone back and just resolved a few.
 | Leaderboard | The leaderboard is local storage and the functionality is not what I had planned. In future I will go back and create a server leaderboard.
 
 There is probably more bugs to be found but I have tried my best with the time I've had available and resolved all I could. I wish I could start the project all over again and I would do things very differently knowing the issues I've encountered and how I could have prevented them earlier. Unfortunately I have to move on to learning for Project 3.
+
+## Testing User Stories
+
+**First Time Visitor Goals**
+
+As a player looking for fun and replayability - *I would like to enjoy a quiz that provides a need to want to get a better score and pulls me back to want to replay the game.*
+  * Players are encouraged to increase their high score for a reason to climb the leaderboard to be In Command, Increase in their high score can be through the difficulty, a time bonus for the amount of time remaining on a question.
+
+As a novice player - *I would like to start with the easy difficulty option where I can build my confidence and then gradually work my way up the difficulty levels without feeling overwhelmed.*
+  * Players have the ability to choose from 3 difficulties being easy, medium and hard. Each will supply a different set of quiz questions by OpenTrivia.db. Each difficulty will also apply a different time bonus which will increase their final score if the game is completed.
+
+As a player looking for feedback - *I would like to see visual feedback on wether or not I got a question right or wrong. so I can learn from it and improve upon my knowledge next time.*
+
+As a player interested in progress of completion - *I would like to be provided visual knowledge of my correct and incorrect guesses so I am kept aware of my progress within the game.*
+
+**Returning visitor goals**
+
+As a competitive player - *I would like to complete the quiz as quickly as possible while answering the questions correctly, so I can improve upon my score and climb the leaderboard.*
+
+As a player who prefers challenges - *I want to have consequences for questions which I get incorrect so that I feel the thrill of the challenge and I am encouraged to improve the next time.*
+
+As a strategic player - *I want multiple paths to victory so I can replay the game attempting to complete with a new challenge.*
 
 ## Credits
 
