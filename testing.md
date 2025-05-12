@@ -7,6 +7,26 @@ Visit the full site here [In Command](https://nchrist89.github.io/In-Command/)
 
 ## CONTENTS
 
+- [In command - Testing](#in-command---testing)
+  - [CONTENTS](#contents)
+  - [Testing Paradigm](#testing-paradigm)
+  - [Automated testing](#automated-testing)
+  - [Javascript testing](#javascript-testing)
+  - [Lighthouse Testing](#lighthouse-testing)
+    - [Computer test](#computer-test)
+    - [Mobile test](#mobile-test)
+  - [Manual testing](#manual-testing)
+    - [Testing user stories](#testing-user-stories)
+  - [Full testing](#full-testing)
+  - [Index page testing (In sections as screens)](#index-page-testing-in-sections-as-screens)
+    - [Title screen](#title-screen)
+    - [Difficulty Screen](#difficulty-screen)
+    - [Game screen](#game-screen)
+    - [Failure screen](#failure-screen)
+    - [Victory screen](#victory-screen)
+    - [Leaderboard Screen](#leaderboard-screen)
+    - [404 page](#404-page)
+
 Testing was carried out while building the project. I started off getting the basic structure for the quiz game created and firstly added the first question to the question box. Once I had this sorted I created a next button which I could click which would then populate the next question into the field. When that was done I followed on to having the answer buttons placed in each answer box. I tested this and selected next question which would then repopulate the answer boxes again. When I had the code correctly shuffling and assigning a correct answer value to the answer box with the correct answer in it. Further testing was done again ensuring that the correct answer was showing with a dataset value of correct.
 
 With every additional function which was added into the process, I again tested the game thoroughly and had to overcome a multitude of different bugs. Also finding out certain variables which I thought were holding a certain type of data but were not to finding out more information about nodelist's and the methods available to me using them. I started to learn at a much deeper level about Javascript and was really starting to enjoy it, and also the frustration of bug fixing and resolving the issue.
@@ -17,7 +37,13 @@ I have provided the link to friends and family who have enjoyed playing and prov
 
 Most users have not encountered any other issue than the one above and they have found it very exciting and a very addictive game which has been great for testing.
 
-I have decided to manually test my code rather than automated testing. This is because in the current project, I did not see the reason for automated testing, but completely understand why I would definitely use it in many future projects. There were even times on this project where I felt automated testing would be really helpful beside the manual testing I was already doing. This was in relation to a timing issue which I had trouble managing to resolve with manual testing and realized the issue would be much easier to troubleshoot with automated testing. I ended up resolving the issue with console.log and a few other things but I look to learn much more about automated testing and how I can use it in future projects.
+## Testing Paradigm
+
+I have decided to manually test my code rather than start my project through Jest automated testing. This is because in the current project, I did not see the reason for automated testing due to it's size but completely understand why I would definitely use automated in many future projects.
+
+Manual testing did get very repetitive throughout the project and for this reason, I see there would have been a reason for automated testing. There were even times on this project where I felt automated testing would be really helpful beside the manual testing I was already doing. This was in relation to a timing issue which I had trouble managing to resolve with manual testing and realized the issue would be much easier to troubleshoot with automated testing where it would have been simpler to replicate and quickly run tests in it's own environment. This would also help with preventing any user interaction while carrying out said tests. Automated would also be beneficial when returning to the project for future implementations where I could test before I add a feature into the code. I could also then see where a problem lies before I end up creating it.
+
+In the future, I will look to include automated testing when starting a project. I now see exactly why this approach is easier to manage.
 
 ## Automated testing
 
