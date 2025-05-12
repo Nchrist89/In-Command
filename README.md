@@ -315,21 +315,35 @@ There is probably more bugs to be found but I have tried my best with the time I
 
 As a player looking for fun and replayability - *I would like to enjoy a quiz that provides a need to want to get a better score and pulls me back to want to replay the game.*
   * Players are encouraged to increase their high score for a reason to climb the leaderboard to be In Command, Increase in their high score can be through the difficulty, a time bonus for the amount of time remaining on a question.
+  ![medium bonus](docs/readme-images/testing/user-stories/medium-bonus.png)
 
 As a novice player - *I would like to start with the easy difficulty option where I can build my confidence and then gradually work my way up the difficulty levels without feeling overwhelmed.*
-  * Players have the ability to choose from 3 difficulties being easy, medium and hard. Each will supply a different set of quiz questions by OpenTrivia.db. Each difficulty will also apply a different time bonus which will increase their final score if the game is completed.
+  * Players have the ability to choose from 3 difficulties being easy, medium and hard. Each will supply a different set of quiz questions by OpenTrivia.db. Each difficulty will also apply a different time bonus which will increase their final score.
+  ![hard bonus](docs/readme-images/testing/user-stories/hard-bonus.png)
 
 As a player looking for feedback - *I would like to see visual feedback on wether or not I got a question right or wrong. so I can learn from it and improve upon my knowledge next time.*
 
 As a player interested in progress of completion - *I would like to be provided visual knowledge of my correct and incorrect guesses so I am kept aware of my progress within the game.*
+  * For the above two user stories, I have provided two ways for there to be visual feedback. One in which is shown to the user after selecting their answer choice and another which adds up the correct and incorrect answers which are the hacking progress shown below and the alert counter shown below. With the incorrect answer being selected it indicates the correct answer highlighting it with a blue background.
+
+![Correct answer](docs/readme-images/testing/user-stories/correct-answer.png)
+![Incorrect answer](docs/readme-images/testing/user-stories/incorrect-answer.png)
 
 **Returning visitor goals**
 
 As a competitive player - *I would like to complete the quiz as quickly as possible while answering the questions correctly, so I can improve upon my score and climb the leaderboard.*
+  * The user is able to improve their high score by answering the questions quickly. For each question, a timer countdown is started. The more time the user has remaining is added up and multiplied adding to their score.
+
+![console time bonus](docs/readme-images/testing/user-stories/time-bonus-console.png)
+
+![time bonus javascript](docs/readme-images/testing/user-stories/time-bonus-code.png)
 
 As a player who prefers challenges - *I want to have consequences for questions which I get incorrect so that I feel the thrill of the challenge and I am encouraged to improve the next time.*
+  * When a user has either not answered a question or has answered a question incorrectly. The alert counter increases by 1. If the alert counter should reach 5 then the user has failed and they are met with the failure screen where they can replay the game.
+  ![User failure](docs/readme-images/testing/user-stories/failure-user-stories.png)
 
 As a strategic player - *I want multiple paths to victory so I can replay the game attempting to complete with a new challenge.*
+  * There is two different ways in which a user can complete the game. Either by completing all 15 questions, or by answering 10 questions and therefore answering ten in a quick time will increase the users score quickly contributing to a higher score.
 
 ## Credits
 
