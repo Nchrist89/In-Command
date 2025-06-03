@@ -365,8 +365,6 @@ Content for the website has solely been created by myself, some content where in
 
 ### Media
 
-* The soundtrack was taken from a sega game called [Revenge Of Shinobi - My lover](https://www.youtube.com/watch?v=JysmyANEzvo)
-
 #### Images
 
 * Each image on the website has been created by providing AI with prompts to produce the desired image needed for my content. I have a premium account with PromeAI so the images created using it are legally owned by myself.
