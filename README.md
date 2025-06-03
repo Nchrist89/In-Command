@@ -110,11 +110,11 @@ I have separated the colours used to the colours which mostly make up the quiz g
 
 The below colours are what make up the background colors and box borders, text background and text, menu buttons.
 
-![In command colours](docs/readme-images/design/colours/in.command.coolors.png)
+![In command colours](docs/readme-images/design/colours/in-command-coolors.png)
 
 The colours below make up the quiz game colours which are designed to feel bright and catch attention onscreen where the focus of the main quiz game. These colours also make up the replay game buttons.
 
-![quiz/game colours](docs/readme-images/design/colours/quiz.game.coolors.png)
+![quiz/game colours](docs/readme-images/design/colours/quiz-game-coolors.png)
 
 ### Typography
 
@@ -140,13 +140,13 @@ All images on the homepage of the website have been generated using [Prome AI](h
 
 Wireframes was used to create the initial design of the quiz. I wanted for it to be simple and allow me to adapt it to anything I create around it.
 
-![Title page](/docs/readme-images/design/Wireframes/wireframes-title-screen.png)
+![Title page](/docs/readme-images/design/wireframes/wireframes-title-screen.png)
 The title page has changed from the mock up wireframe. I originally wanted for their to be a lights off mode but I didn't end up going with it in the end.
 
-![game section](/docs/readme-images/design/Wireframes/wireframes-quiz.gamescreen.png)
+![game section](/docs/readme-images/design/wireframes/wireframes-quiz.gamescreen.png)
 The game screen almost remains the same as what I had intended.
 
-![Leaderboard section](/docs/readme-images/design/Wireframes/wireframes-leaderboard.png)
+![Leaderboard section](/docs/readme-images/design/wireframes/wireframes-leaderboard.png)
 The leaderboard screen has changed but I was unable to get the edited image I created to work with the scoreboard and adapting it responsively was causing many problems so I had to simplify it.
 
 ### Features
@@ -241,8 +241,6 @@ Google Dev Tools - To troubleshoot and test all features on the website. Check a
 [Favicon.io](https://favicon.io/) - To create favicon.
 
 [Am I responsive](http://ami.responsivedesign.is/) - To show the website image across a range of devices.
-
-[Audacity](https://www.audacityteam.org/) - To rip the audio file from Youtube. The soundtrack used for the game.
 
 ## Deployment and local development
 
