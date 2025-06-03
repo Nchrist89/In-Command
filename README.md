@@ -12,7 +12,7 @@ In command is a fast paced quiz game designed for a range of devices. The aim of
 
 In command has been the second website and first game I have created using Javascript. I had so much fun in building it and have learnt so much from this project and about my love for Javascript. The end result of the project isn't exactly what I had originally planned but it's turned out even better after a decision mid-way to change the feel of the project. Originally it felt very dull and I wanted it to give it a livelier feel, so I added an 80's style Bladerunner vibe to it. It would also work with the idea that I originally planned. The outcome I am extremely happy with.
 
-The logo and all images were all designed by AI with prompts which took quite a long time to get just right. They were also edited by me. The only thing I have not solely created was the soundtrack. The soundtrack was from a youtube video of an old sega game soundtrack. I had to rip the soundtrack from the video using Audacity software.
+The logo and all images were all designed by AI with prompts which took quite a long time to get just right. They were also edited by me using Gimp image editor.
 
 I have given the link to many family and friends, all of which have enjoyed the game quite a lot and expressed their frustration at the difficulty but also the want to succeed and be victorious meaning it has been quite addictive and given the game some replayability. This has kept quite a few of them entertained whilst letting me know of any issues.
 
