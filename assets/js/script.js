@@ -3,9 +3,6 @@ const easyQuiz = "https://opentdb.com/api.php?amount=15&category=15&difficulty=e
 const mediumQuiz = "https://opentdb.com/api.php?amount=15&category=15&difficulty=medium&type=multiple";
 const hardQuiz = "https://opentdb.com/api.php?amount=15&category=15&difficulty=hard&type=multiple";
 
-//Sound track variable
-const soundTrack = document.getElementById("song");
-
 //Question number element
 const questionNum = document.getElementById("question-num");
 
